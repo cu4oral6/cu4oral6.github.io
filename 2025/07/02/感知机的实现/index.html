@@ -89,23 +89,205 @@
 
 
     
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
     
     <style>
         body {
-            background-image: url(https://yiluyanxia.github.io/images/bg.jpg);
+            background-image: url(/images/bg.jpeg);
             background-attachment: fixed;  /* 背景固定，不随页面滚动 */
             background-repeat: no-repeat;  /* 防止背景图片重复 */
             background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
             background-position: center;   /* 背景居中显示 */
         }
         .paper {
-            background-image: url(https://yiluyanxia.github.io/images/bg.jpg);
+            background-image: url(/images/bg.jpeg);
             background-attachment: fixed;  /* 背景固定，不随页面滚动 */
             background-repeat: no-repeat;  /* 防止背景图片重复 */
             background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
             background-position: center;   /* 背景居中显示 */
         }  
     </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
 
 
     
@@ -119,7 +301,7 @@
                 left: '42px', // default: 'unset'
                 time: '0.3s', // default: '0.3s'
                 mixColor: '#fff', // default: '#fff'
-                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
                 buttonColorDark: '#100f2c',  // default: '#100f2c'
                 buttonColorLight: '#fff', // default: '#fff'
                 saveInCookies: true, // default: true,
@@ -249,10 +431,10 @@
         
         <div class=".article-gallery"><h3 id="感知机的实现"><a href="#感知机的实现" class="headerlink" title="感知机的实现"></a>感知机的实现</h3><p><a href="/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/img.png" title="image.png" class="gallery-item" style="box-shadow: none;"> <img src="/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/img.png" alt="image.png"></a><br>x1、x2是输入信号，y是输出信号，w1、w2是权重（w是weight的首字母）。图中的○称为“神经元”或者“节点”。输入信号被送往神经元时，会被分别乘以固定的权重（w1x1、w2x2)。神经元会计算传送过来的信号的总和，只有当这个总和超过了某个界限值时，才会输出1。这也称为“神经元被激活”。这里将这个界限值称为阈值，用符号θ表示。</p>
 <p><a href="/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/img_1.png" title="img" class="gallery-item" style="box-shadow: none;"> <img src="/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/img_1.png" alt="img"></a></p>
-<h4 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">AND</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    w1, w2, theta = <span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.7</span></span><br><span class="line">    tmp =  x1*w1 + x2*w2</span><br><span class="line">    <span class="keyword">if</span> tmp &lt;= theta:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h4 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">AND</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    w1, w2, theta = <span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.7</span></span><br><span class="line">    tmp =  x1*w1 + x2*w2</span><br><span class="line">    <span class="keyword">if</span> tmp &lt;= theta:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
 
 <pre><code>0
 0
@@ -261,48 +443,48 @@
 </code></pre>
 <h4 id="导入权重和偏执"><a href="#导入权重和偏执" class="headerlink" title="导入权重和偏执"></a>导入权重和偏执</h4><p><a href="/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/img_2.png" title="image" class="gallery-item" style="box-shadow: none;"> <img src="/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/img_2.png" alt="image"></a></p>
 <p>b为<strong>偏置</strong>，w1和 w2称为<strong>权重</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array([<span class="number">0</span>,<span class="number">1</span>]) <span class="comment">#输入</span></span><br><span class="line">w = np.array([<span class="number">0.5</span>,<span class="number">0.5</span>]) <span class="comment">#权重</span></span><br><span class="line">b = -<span class="number">0.7</span> <span class="comment">#偏置</span></span><br><span class="line"><span class="built_in">print</span>(w*x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array([<span class="number">0</span>,<span class="number">1</span>]) <span class="comment">#输入</span></span><br><span class="line">w = np.array([<span class="number">0.5</span>,<span class="number">0.5</span>]) <span class="comment">#权重</span></span><br><span class="line">b = -<span class="number">0.7</span> <span class="comment">#偏置</span></span><br><span class="line"><span class="built_in">print</span>(w*x)</span><br></pre></td></tr></table></figure>
 
 <pre><code>[0.  0.5]
 </code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.<span class="built_in">sum</span>(w*x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.<span class="built_in">sum</span>(w*x)</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>np.float64(0.5)
 </code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.<span class="built_in">sum</span>(w*x) + b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.<span class="built_in">sum</span>(w*x) + b</span><br></pre></td></tr></table></figure>
 
 
 
 
 <pre><code>np.float64(-0.19999999999999996)
 </code></pre>
-<h4 id="使用权重和偏置的实现"><a href="#使用权重和偏置的实现" class="headerlink" title="使用权重和偏置的实现"></a>使用权重和偏置的实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">AND</span>(<span class="params">x1, x2</span>):</span><br><span class="line">   x = np.array([x1, x2])</span><br><span class="line">   w = np.array([<span class="number">0.5</span>, <span class="number">0.5</span>])</span><br><span class="line">   b = -<span class="number">0.7</span></span><br><span class="line">   <span class="keyword">if</span> np.<span class="built_in">sum</span>(w*x) + b &lt;= <span class="number">0</span>:</span><br><span class="line">       <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用权重和偏置的实现"><a href="#使用权重和偏置的实现" class="headerlink" title="使用权重和偏置的实现"></a>使用权重和偏置的实现</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">AND</span>(<span class="params">x1, x2</span>):</span><br><span class="line">   x = np.array([x1, x2])</span><br><span class="line">   w = np.array([<span class="number">0.5</span>, <span class="number">0.5</span>])</span><br><span class="line">   b = -<span class="number">0.7</span></span><br><span class="line">   <span class="keyword">if</span> np.<span class="built_in">sum</span>(w*x) + b &lt;= <span class="number">0</span>:</span><br><span class="line">       <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
 
 <pre><code>0
 0
 0
 1
 </code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">NAND</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    x = np.array([x1, x2])</span><br><span class="line">    w = np.array([-<span class="number">0.5</span>, -<span class="number">0.5</span>])</span><br><span class="line">    b = <span class="number">0.7</span></span><br><span class="line">    <span class="keyword">if</span> np.<span class="built_in">sum</span>(w*x) + b &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">NAND</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    x = np.array([x1, x2])</span><br><span class="line">    w = np.array([-<span class="number">0.5</span>, -<span class="number">0.5</span>])</span><br><span class="line">    b = <span class="number">0.7</span></span><br><span class="line">    <span class="keyword">if</span> np.<span class="built_in">sum</span>(w*x) + b &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(NAND(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(NAND(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(NAND(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(NAND(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(NAND(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(NAND(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(NAND(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(NAND(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
 
 <pre><code>1
 1
 1
 0
 </code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">OR</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    x = np.array([x1, x2])</span><br><span class="line">    w = np.array([<span class="number">0.5</span>, <span class="number">0.5</span>])</span><br><span class="line">    b = -<span class="number">0.2</span></span><br><span class="line">    <span class="keyword">if</span> np.<span class="built_in">sum</span>(w*x) + b &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">OR</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    x = np.array([x1, x2])</span><br><span class="line">    w = np.array([<span class="number">0.5</span>, <span class="number">0.5</span>])</span><br><span class="line">    b = -<span class="number">0.2</span></span><br><span class="line">    <span class="keyword">if</span> np.<span class="built_in">sum</span>(w*x) + b &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(OR(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(OR(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(OR(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(OR(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(OR(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(OR(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(OR(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(OR(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
 
 <pre><code>0
 1
@@ -311,10 +493,10 @@
 </code></pre>
 <h4 id="异或门的实现"><a href="#异或门的实现" class="headerlink" title="异或门的实现"></a>异或门的实现</h4><p>需要组合与门、与非门、或门</p>
 <p><a href="/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/img_3.png" title="image.png" class="gallery-item" style="box-shadow: none;"> <img src="/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/img_3.png" alt="image.png"></a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">XOR</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    <span class="keyword">return</span> AND(OR(x1, x2), NAND(x1, x2))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">XOR</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    <span class="keyword">return</span> AND(OR(x1, x2), NAND(x1, x2))</span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(XOR(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(XOR(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(XOR(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(XOR(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(XOR(<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(XOR(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(XOR(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(XOR(<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
 
 <pre><code>0
 1
