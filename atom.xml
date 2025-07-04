@@ -6,7 +6,7 @@
   <link href="http://531party.cn/atom.xml" rel="self"/>
   
   <link href="http://531party.cn/"/>
-  <updated>2025-07-03T14:12:06.722Z</updated>
+  <updated>2025-07-04T01:08:03.976Z</updated>
   <id>http://531party.cn/</id>
   
   <author>
@@ -21,14 +21,15 @@
     <link href="http://531party.cn/2025/07/03/%E9%B1%BC%E4%B9%A6%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     <id>http://531party.cn/2025/07/03/%E9%B1%BC%E4%B9%A6%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</id>
     <published>2025-07-03T08:11:12.000Z</published>
-    <updated>2025-07-03T14:12:06.722Z</updated>
+    <updated>2025-07-04T01:08:03.976Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;神经网络&quot;&gt;&lt;a href=&quot;#神经网络&quot; class=&quot;headerlink&quot; title=&quot;神经网络&quot;&gt;&lt;/a&gt;神经网络&lt;/h3&gt;&lt;p&gt;$$&lt;br&gt;y&amp;#x3D;&#92;begin{cases} 0</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;神经网络&quot;&gt;神经网络&lt;/h3&gt;
+&lt;p style=&quot;&quot;&gt;&lt;a</summary>
         
       
     
@@ -51,7 +52,8 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;感知机的实现&quot;&gt;&lt;a href=&quot;#感知机的实现&quot; class=&quot;headerlink&quot; title=&quot;感知机的实现&quot;&gt;&lt;/a&gt;感知机的实现&lt;/h3&gt;&lt;p&gt;&lt;a</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;感知机的实现&quot;&gt;感知机的实现&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;img.png&quot; title=&quot;image.png&quot; class=&quot;gallery-item&quot; style=&quot;box-shadow:</summary>
         
       
     
@@ -145,7 +147,9 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h1 id=&quot;博客使用命令记录&quot;&gt;&lt;a href=&quot;#博客使用命令记录&quot; class=&quot;headerlink&quot; title=&quot;博客使用命令记录&quot;&gt;&lt;/a&gt;博客使用命令记录&lt;/h1&gt;&lt;h3</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h1&gt;博客使用命令记录&lt;/h1&gt;
+&lt;h3 id=&quot;创建一遍新文章&quot;&gt;创建一遍新文章&lt;/h3&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
         
       
     
