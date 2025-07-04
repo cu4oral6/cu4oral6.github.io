@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="手写数字识别" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    手写数字识别
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-07-04</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：1.2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：5分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB"><span class="post-toc-text">手写数字识别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E6%8E%A8%E7%90%86%E5%A4%84%E7%90%86"><span class="post-toc-text">神经网络的推理处理</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%89%B9%E5%A4%84%E7%90%86"><span class="post-toc-text">批处理</span></a></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><p><a href="sample_weight.pkl">sample_weight.pkl</a></p>
+<p><a href="dataset">dataset</a></p>
+<h4 id="手写数字识别">手写数字识别</h4>
+<p>需要引入dataset文件，因为本书附带源代码数据集下载地址已失效，故引入已下载好的数据集</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir) <span class="comment"># 为了导入父目录中的文件而进行的设定</span></span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line"><span class="comment">#( 训练图像 , 训练标签 )，( 测试图像，测试标签 )</span></span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(flatten=<span class="literal">True</span>,</span><br><span class="line">normalize=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出各个数据的形状</span></span><br><span class="line"><span class="built_in">print</span>(x_train.shape) <span class="comment"># (60000, 784)</span></span><br><span class="line"><span class="built_in">print</span>(t_train.shape) <span class="comment"># (60000,)</span></span><br><span class="line"><span class="built_in">print</span>(x_test.shape) <span class="comment"># (10000, 784)</span></span><br><span class="line"><span class="built_in">print</span>(t_test.shape) <span class="comment"># (10000,)</span></span><br></pre></td></tr></table></figure>
+<pre><code>(60000, 784)
+(60000,)
+(10000, 784)
+(10000,)
+</code></pre>
+<p>读入MNIST数据集</p>
+<pre><code>Parameters
+----------
+normalize : 将图像的像素值正规化为0.0~1.0
+one_hot_label :
+    one_hot_label为True的情况下，标签作为one-hot数组返回
+    one-hot数组是指[0,0,1,0,0,0,0,0,0,0]这样的数组
+flatten : 是否将图像展开为一维数组
+
+Returns
+-------
+(训练图像, 训练标签), (测试图像, 测试标签)
+</code></pre>
+<p>normalize这种归一化是深度学习中的常见预处理步骤，可以：</p>
+<p>使不同尺度特征具有可比性</p>
+<p>帮助优化算法更快收敛</p>
+<p>提高数值计算的稳定性</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#参数normalize设置是否将输入图像正规化为 0.0～1.0 的值。如果将该参数设置为 False，则输入图像的像素会保持原来的 0～255。</span></span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(flatten=<span class="literal">True</span>,</span><br><span class="line">normalize=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 输出各个数据的形状</span></span><br><span class="line"><span class="built_in">print</span>(x_train.shape)</span><br><span class="line"><span class="built_in">print</span>(t_train.shape)</span><br><span class="line"><span class="built_in">print</span>(x_test.shape)</span><br><span class="line"><span class="built_in">print</span>(t_test.shape)</span><br></pre></td></tr></table></figure>
+<pre><code>(60000, 784)
+(60000,)
+(10000, 784)
+(10000,)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">img_show</span>(<span class="params">img</span>):</span><br><span class="line">    pil_img = Image.fromarray(np.uint8(img))  <span class="comment">#把保存为 NumPy 数组的图像数据转换为 PIL 用的数据对象</span></span><br><span class="line">    pil_img.show()</span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(flatten=<span class="literal">True</span>,</span><br><span class="line">normalize=<span class="literal">False</span>)</span><br><span class="line">img = x_train[<span class="number">0</span>]</span><br><span class="line">label = t_train[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(label) <span class="comment"># 5</span></span><br><span class="line"><span class="built_in">print</span>(img.shape) <span class="comment"># (784,)</span></span><br><span class="line">img = img.reshape(<span class="number">28</span>, <span class="number">28</span>) <span class="comment"># 把图像的形状变成原来的尺寸</span></span><br><span class="line"><span class="built_in">print</span>(img.shape) <span class="comment"># (28, 28)</span></span><br><span class="line">img_show(img)</span><br><span class="line">plt.imshow(img)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<pre><code>5
+(784,)
+(28, 28)
+</code></pre>
+<p><a href="%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB_4_1.png" title="png" class="gallery-item" style="box-shadow: none;"> <img src="%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB_4_1.png" alt="png"></a></p>
+<h5 id="神经网络的推理处理">神经网络的推理处理</h5>
+<p>对MNIST数据集实现神经网络的推理处理。<br>
+神经网络的输入层有784个神经元（图像28*28），输出层有10个神经元（数字0-9）。<br>
+第1个隐藏层有50个神经元，第2个隐藏层有100个神经元。50和100可以设置为任意值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sigmoid</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">softmax</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">if</span> a.ndim == <span class="number">2</span>:</span><br><span class="line">        a = a.T</span><br><span class="line">        a = a - np.<span class="built_in">max</span>(a, axis=<span class="number">0</span>)</span><br><span class="line">        y = np.exp(a) / np.<span class="built_in">sum</span>(np.exp(a), axis=<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> y.T</span><br><span class="line"></span><br><span class="line">    c = np.<span class="built_in">max</span>(a)</span><br><span class="line">    exp_a = np.exp(a-c)</span><br><span class="line">    <span class="keyword">return</span> exp_a / np.<span class="built_in">sum</span>(exp_a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    (x_train, t_train), (x_test, t_test) = \</span><br><span class="line">    load_mnist(normalize=<span class="literal">True</span>, flatten=<span class="literal">True</span>, one_hot_label=<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">return</span> x_test, t_test</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">init_network</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;sample_weight.pkl&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        network = pickle.load(f)</span><br><span class="line">    <span class="keyword">return</span> network</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">network, x</span>):</span><br><span class="line">    W1, W2, W3 = network[<span class="string">&#x27;W1&#x27;</span>], network[<span class="string">&#x27;W2&#x27;</span>], network[<span class="string">&#x27;W3&#x27;</span>]</span><br><span class="line">    b1, b2, b3 = network[<span class="string">&#x27;b1&#x27;</span>], network[<span class="string">&#x27;b2&#x27;</span>], network[<span class="string">&#x27;b3&#x27;</span>]</span><br><span class="line">    a1 = np.dot(x, W1) + b1</span><br><span class="line">    z1 = sigmoid(a1)</span><br><span class="line">    a2 = np.dot(z1, W2) + b2</span><br><span class="line">    z2 = sigmoid(a2)</span><br><span class="line">    a3 = np.dot(z2, W3) + b3</span><br><span class="line">    y = softmax(a3)</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line">x, t = get_data()</span><br><span class="line">network = init_network()</span><br><span class="line">accuracy_cnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(x)):</span><br><span class="line">    y = predict(network, x[i])</span><br><span class="line">    p = np.argmax(y) <span class="comment"># 获取概率最高的元素的索引</span></span><br><span class="line">    <span class="keyword">if</span> p == t[i]:</span><br><span class="line">        accuracy_cnt += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Accuracy:&quot;</span> + <span class="built_in">str</span>(<span class="built_in">float</span>(accuracy_cnt) / <span class="built_in">len</span>(x)))</span><br></pre></td></tr></table></figure>
+<pre><code>Accuracy:0.9352
+</code></pre>
+<h5 id="批处理">批处理</h5>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出刚才神经网络的各层的权重的形状</span></span><br><span class="line">x, _ = get_data()</span><br><span class="line">network = init_network()</span><br><span class="line">W1, W2, W3 = network[<span class="string">&#x27;W1&#x27;</span>], network[<span class="string">&#x27;W2&#x27;</span>], network[<span class="string">&#x27;W3&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x.shape  <span class="comment">#10000行 784列</span></span><br></pre></td></tr></table></figure>
+<pre><code>(10000, 784)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x[<span class="number">0</span>].shape</span><br></pre></td></tr></table></figure>
+<pre><code>(784,)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W1.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(784, 50)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W2.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(50, 100)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W3.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(100, 10)
+</code></pre>
+<p><a href="img.png" class="gallery-item" style="box-shadow: none;"> <img src="img.png" alt=""></a></p>
+<p>我们想用 predict()函数一次性打包处理 100 张图像。为此，可以把 x 的形状改为 100 × 784，将100 张图像打包作为输入数据。</p>
+<p><a href="img_1.png" class="gallery-item" style="box-shadow: none;"> <img src="img_1.png" alt=""></a></p>
+<p>输 入 数 据 的 形 状 为 100 × 784，输 出 数 据 的 形 状 为100 × 10。这表示输入的 100 张图像的结果被一次性输出了。比如，x[0]和y[0]中保存了第 0 张图像及其推理结果，x[1]和 y[1]中保存了第 1 张图像及其推理结果，等等。<br>
+这种打包式输入数据称为<strong>批(batch)</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x, t = get_data()</span><br><span class="line">network = init_network()</span><br><span class="line">batch_size = <span class="number">100</span> <span class="comment"># 批数量</span></span><br><span class="line">accuracy_cnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(x), batch_size):</span><br><span class="line">    x_batch = x[i:i+batch_size]</span><br><span class="line">    y_batch = predict(network, x_batch)</span><br><span class="line">    p = np.argmax(y_batch, axis=<span class="number">1</span>)</span><br><span class="line">    accuracy_cnt += np.<span class="built_in">sum</span>(p == t[i:i+batch_size])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Accuracy:&quot;</span> + <span class="built_in">str</span>(<span class="built_in">float</span>(accuracy_cnt) / <span class="built_in">len</span>(x)))</span><br></pre></td></tr></table></figure>
+<pre><code>Accuracy:0.9352
+</code></pre>
+<p>argmax()获取值最大的元素的索引，参数 axis=1,这指定了在 100 × 10 的数组中，沿着第 1 维方向（以第 1 维为轴）找到值最大的元素的索引（第 0 维对应第 1 个维度）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">16</span>,<span class="number">3</span>],[<span class="number">5</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>],[<span class="number">12</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>],[<span class="number">13</span>,<span class="number">14</span>,<span class="number">3</span>,<span class="number">16</span>]])</span><br><span class="line">y = np.argmax(x,axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure>
+<pre><code>[2 1 0 3]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">y = np.argmax(x,axis=<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure>
+<pre><code>[3 3 0 3]
+</code></pre>
+<p>在 NumPy 数组之间使用比较运算符（==）生成由 True/False构成的布尔型数组，并计算 True的个数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">y = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">t = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(y==t)</span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">sum</span>(y==t))</span><br></pre></td></tr></table></figure>
+<pre><code>[ True  True False  True]
+3
+</code></pre>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-07-04</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/07/03/%E9%B1%BC%E4%B9%A6%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">鱼书第三章神经网络</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>
