@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="损失函数" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    损失函数
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-07-07</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：886</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：4分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="post-toc-text">损失函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9D%87%E6%96%B9%E8%AF%AF%E5%B7%AE"><span class="post-toc-text">均方误差</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AE"><span class="post-toc-text">交叉熵误差</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mini-batch%E5%AD%A6%E4%B9%A0"><span class="post-toc-text">mini-batch学习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#mini-batch%E7%89%88%E4%BA%A4%E5%8F%89%E7%86%B5%E8%AF%AF%E5%B7%AE%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="post-toc-text">mini-batch版交叉熵误差的实现</span></a></li></ol></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h3 id="损失函数">损失函数</h3>
+<p>损失函数是表示神经网络性能的“恶劣程度”的指标，即当前的神经网络对监督数据在多大程度上不拟合，在多大程度上不一致。</p>
+<h4 id="均方误差">均方误差</h4>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=E%3D%5Cfrac%7B1%7D%7B2%7D%20%5Csum_%7Bk%7D%5E%7B%7D%28y_%7Bk%7D-t_%7Bk%7D%29%5E2%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=E%3D%5Cfrac%7B1%7D%7B2%7D%20%5Csum_%7Bk%7D%5E%7B%7D%28y_%7Bk%7D-t_%7Bk%7D%29%5E2%0A" /></a></p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 均方误差</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mean_squared_error</span>(<span class="params">y, t</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.5</span> * np.<span class="built_in">sum</span>((y-t)**<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设 “2”为正确解</span></span><br><span class="line">t = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例 1：“2”的概率最高的情况（ 0.6）</span></span><br><span class="line">y = [<span class="number">0.1</span>, <span class="number">0.05</span>, <span class="number">0.6</span>, <span class="number">0.0</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.0</span>]</span><br><span class="line"></span><br><span class="line">mse = mean_squared_error(np.array(y), np.array(t))</span><br><span class="line"><span class="built_in">print</span>(mse)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例 2：“7”的概率最高的情况（ 0.6）</span></span><br><span class="line">y = [<span class="number">0.1</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.6</span>, <span class="number">0.0</span>, <span class="number">0.0</span>]</span><br><span class="line">mse = mean_squared_error(np.array(y), np.array(t))</span><br><span class="line"><span class="built_in">print</span>(mse)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一个结果的损失函数值更小，和监督数据之间的误差较小</span></span><br></pre></td></tr></table></figure>
+<pre><code>0.09750000000000003
+0.5975
+</code></pre>
+<h4 id="交叉熵误差">交叉熵误差</h4>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=E%3D-%20%5Csum_%7Bk%7D%5E%7B%7D%20t_%7Bk%7D%20log%20y_%7Bk%7D%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=E%3D-%20%5Csum_%7Bk%7D%5E%7B%7D%20t_%7Bk%7D%20log%20y_%7Bk%7D%0A" /></a></p><p>log表示以e为底数的自然对数(<a target="_blank" rel="noopener" href="https://math.now.sh?inline=log_%7Be%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=log_%7Be%7D" style="display:inline-block;margin: 0;"/></a>)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">1e-7</span>, <span class="number">1</span>, <span class="number">0.1</span>)</span><br><span class="line">y = np.log(x)</span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>​<br>
+<a href="%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0_3_0.png" title="png" class="gallery-item" style="box-shadow: none;"> <img src="%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0_3_0.png" alt="png"></a><br>
+​</p>
+<p>如图所示，x 等于 1 时，y 为 0；随着 x 向 0 靠近，y 逐渐变小。<br>
+当出现 np.log(0)时，np.log(0)会变为负无限大的 -inf，这样一来就会导致后续计算无法进行。作为保护性对策，添加一个微小值可以防止负无限大的发生。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross_entropy_error</span>(<span class="params">y, t</span>):</span><br><span class="line">    delta = <span class="number">1e-7</span></span><br><span class="line">    <span class="keyword">return</span> -np.<span class="built_in">sum</span>(t * np.log(y + delta))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设 “2”为正确解</span></span><br><span class="line">t = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例 1：“2”的概率最高的情况（ 0.6）</span></span><br><span class="line">y = [<span class="number">0.1</span>, <span class="number">0.05</span>, <span class="number">0.6</span>, <span class="number">0.0</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.0</span>]</span><br><span class="line"></span><br><span class="line">ce = cross_entropy_error(np.array(y), np.array(t))</span><br><span class="line"><span class="built_in">print</span>(ce)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例 2：“7”的概率最高的情况（ 0.6）</span></span><br><span class="line">y = [<span class="number">0.1</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.6</span>, <span class="number">0.0</span>, <span class="number">0.0</span>]</span><br><span class="line"></span><br><span class="line">ce = cross_entropy_error(np.array(y), np.array(t))</span><br><span class="line"><span class="built_in">print</span>(ce)</span><br></pre></td></tr></table></figure>
+<pre><code>0.510825457099338
+2.302584092994546
+</code></pre>
+<h4 id="mini-batch学习">mini-batch学习</h4>
+<p>经网络的学习也是从训练数据中选出一批数据（称为 mini-batch, 小<br>
+批量），然后对每个 mini-batch 进行学习。比如，从 60000 个训练数据中随机选择 100 笔，再用这 100 笔数据进行学习。这种学习方式称为 mini-batch 学习。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line">(x_train, t_train), (x_test, t_test) = \</span><br><span class="line">load_mnist(normalize=<span class="literal">True</span>, one_hot_label=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(x_train.shape) <span class="comment"># (60000, 784)</span></span><br><span class="line"><span class="built_in">print</span>(t_train.shape) <span class="comment"># (60000, 10)</span></span><br></pre></td></tr></table></figure>
+<pre><code>(60000, 784)
+(60000, 10)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#如何从这个训练数据中随机抽取 10 笔数据呢？我们可以使用NumPy 的 np.random.choice()，写成如下形式。</span></span><br><span class="line">train_size = x_train.shape[<span class="number">0</span>]</span><br><span class="line">batch_size = <span class="number">10</span></span><br><span class="line">batch_mask = np.random.choice(train_size, batch_size)</span><br><span class="line"><span class="built_in">print</span>(batch_mask)</span><br><span class="line">x_batch = x_train[batch_mask]</span><br><span class="line">t_batch = t_train[batch_mask]</span><br></pre></td></tr></table></figure>
+<pre><code>[ 9537 44156 10611 22753 16854 30423 47880 10135 51607  6676]
+</code></pre>
+<h5 id="mini-batch版交叉熵误差的实现">mini-batch版交叉熵误差的实现</h5>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=E%3D-%5Cfrac%7B1%7D%7BN%7D%20%5Csum_%7Bn%7D%20%5Csum%7Bk%7D%20t_%7Bnk%7D%20logy%7Bnk%7D%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=E%3D-%5Cfrac%7B1%7D%7BN%7D%20%5Csum_%7Bn%7D%20%5Csum%7Bk%7D%20t_%7Bnk%7D%20logy%7Bnk%7D%0A" /></a></p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross_entropy_error</span>(<span class="params">y, t</span>):</span><br><span class="line">    <span class="keyword">if</span> y.ndim == <span class="number">1</span>:</span><br><span class="line">        y = y.reshape(<span class="number">1</span>, y.size)</span><br><span class="line">        t = t.reshape(<span class="number">1</span>, t.size)</span><br><span class="line"></span><br><span class="line">    batch_size = y.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> -np.<span class="built_in">sum</span>(t * np.log(y + <span class="number">1e-7</span>)) / batch_size</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sigmoid</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">softmax</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">if</span> a.ndim == <span class="number">2</span>:</span><br><span class="line">        a = a.T</span><br><span class="line">        a = a - np.<span class="built_in">max</span>(a, axis=<span class="number">0</span>)</span><br><span class="line">        y = np.exp(a) / np.<span class="built_in">sum</span>(np.exp(a), axis=<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> y.T</span><br><span class="line"></span><br><span class="line">    c = np.<span class="built_in">max</span>(a)</span><br><span class="line">    exp_a = np.exp(a - c)</span><br><span class="line">    <span class="keyword">return</span> exp_a / np.<span class="built_in">sum</span>(exp_a)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">init_network</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;sample_weight.pkl&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        network = pickle.load(f)</span><br><span class="line">    <span class="keyword">return</span> network</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">network, x</span>):</span><br><span class="line">    W1, W2, W3 = network[<span class="string">&#x27;W1&#x27;</span>], network[<span class="string">&#x27;W2&#x27;</span>], network[<span class="string">&#x27;W3&#x27;</span>]</span><br><span class="line">    b1, b2, b3 = network[<span class="string">&#x27;b1&#x27;</span>], network[<span class="string">&#x27;b2&#x27;</span>], network[<span class="string">&#x27;b3&#x27;</span>]</span><br><span class="line">    a1 = np.dot(x, W1) + b1</span><br><span class="line">    z1 = sigmoid(a1)</span><br><span class="line">    a2 = np.dot(z1, W2) + b2</span><br><span class="line">    z2 = sigmoid(a2)</span><br><span class="line">    a3 = np.dot(z2, W3) + b3</span><br><span class="line">    y = softmax(a3)</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line">network = init_network()</span><br><span class="line">y_batch = predict(network, x_batch)</span><br><span class="line">p = np.argmax(y_batch, axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(p)</span><br><span class="line"><span class="built_in">print</span>(np.argmax(t_batch,axis=<span class="number">1</span>))</span><br><span class="line">accuracy_cnt = np.<span class="built_in">sum</span>(p == np.argmax(t_batch,axis=<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(accuracy_cnt)</span><br><span class="line">ce = cross_entropy_error(y_batch, t_batch)</span><br><span class="line"><span class="built_in">print</span>(ce)</span><br></pre></td></tr></table></figure>
+<pre><code>[8 7 8 7 9 3 1 6 6 0]
+[8 7 8 7 9 3 1 6 6 0]
+10
+0.06250350308837369
+</code></pre>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-07-07</span>
+            
+                <span>该篇文章被 xander</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/'>
+                            深度学习入门
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/07/07/matplotlib/">matplotlib</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>
