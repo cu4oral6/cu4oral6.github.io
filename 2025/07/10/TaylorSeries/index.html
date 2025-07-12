@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="最近更新列表" />
+    <meta name="description" content="TaylorSeries" />
     <meta name="hexo-theme-A4" content="v1.9.8" />
     <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
     <title>xander&#39;s blog</title>
@@ -314,13 +314,17 @@
         
         
             
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
         
         <div class="paper">
             
             
             
             
-                <div class="shadow-drop-2-top paper-main">
+                <div class="shadow-drop-2-bottom paper-main">
                     
 
 
@@ -365,134 +369,135 @@
         
     </ul>
 </div> 
-                    <div class="archive-list">
-    <ul class="archive">
         
-  
-        <!--文章先按照时间排好序-->
-        
-  
-  
-        
-        
-  
-        
-  
-        
-        
-  
-        <!--循环遍历文章数组-->
-        
-  
-        <li>
-            <span class="year-font-color">
-                最近更新：
-            </span>
-        </li>
-        <!--放 文章-->
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
         
             
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/12 
-              </span>
-              <div class="archive-main">
+                <div class="post-main-title" style="text-align: center;">
+                    TaylorSeries
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
                 
-                  <a class="archive-title" href="/2025/07/10/TaylorSeries/">TaylorSeries</a>
-              </div>
-            </li>
+                    <span>最近更新：2025-07-12</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：355</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：1分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
         
             
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/07 
-              </span>
-              <div class="archive-main">
-                
-                  <a class="archive-title" href="/2025/07/07/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/">损失函数</a>
-              </div>
-            </li>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Taylor-series"><span class="post-toc-text">Taylor series</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0"><span class="post-toc-text">泰勒级数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B3%B0%E5%8B%92%E5%AE%9A%E7%90%86"><span class="post-toc-text">泰勒定理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86"><span class="post-toc-text">梯度下降数学原理</span></a></li></ol>
+            
+        
+        <div class=".article-gallery"><h3 id="Taylor-series">Taylor series</h3>
+<h3 id="泰勒级数">泰勒级数</h3>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=%5Csum%5E%7B%5Cinfty%7D_%7Bn%3D0%7D%5Cfrac%7Bf%5E%7B%28n%29%7D(a)%7D%7Bn!%7D(x-a)%5En%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=%5Csum%5E%7B%5Cinfty%7D_%7Bn%3D0%7D%5Cfrac%7Bf%5E%7B%28n%29%7D(a)%7D%7Bn!%7D(x-a)%5En%0A" /></a></p><p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=n!" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=n!" style="display:inline-block;margin: 0;"/></a>表示n的阶乘，而<a target="_blank" rel="noopener" href="https://math.now.sh?inline=f%5E%7B%28n%29%7D(a)" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f%5E%7B%28n%29%7D(a)" style="display:inline-block;margin: 0;"/></a>表示函数f在点a处的n阶导数</p>
+<h3 id="泰勒定理">泰勒定理</h3>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=f%28x%29%3Df(a)%2B%20%5Cfrac%7Bf'(a)%7D%7B1!%7D(x-a)%2B%20%5Cfrac%7Bf%5E%7B(2)%7D(a)%7D%7B1!%7D(x-a)%5E2%2B...%2B%5Cfrac%7Bf%5E%7B(n)%7D(a)%7D%7Bn!%7D(x-a)%5En%2BR_n(x)%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=f%28x%29%3Df(a)%2B%20%5Cfrac%7Bf'(a)%7D%7B1!%7D(x-a)%2B%20%5Cfrac%7Bf%5E%7B(2)%7D(a)%7D%7B1!%7D(x-a)%5E2%2B...%2B%5Cfrac%7Bf%5E%7B(n)%7D(a)%7D%7Bn!%7D(x-a)%5En%2BR_n(x)%0A" /></a></p><p>泰勒公式简单讲就是用一个多项式函数去逼近一个给定的函数（即尽量使多项式函数图像拟合给定的函数图像），注意，逼近的时候一定是从函数图像上的某个点展开。如果一个非常复杂的函数，想求其某点的值，直接求无法实现，这时候可以使用泰勒公式去近似的求该值。</p>
+<h3 id="梯度下降数学原理">梯度下降数学原理</h3>
+<p>一次线性逼近</p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=f%28x%29%5Capprox%20f(x_0)%2Bf'(x_0)(x-x_0)%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=f%28x%29%5Capprox%20f(x_0)%2Bf'(x_0)(x-x_0)%0A" /></a></p><p>其中， <a target="_blank" rel="noopener" href="https://math.now.sh?inline=x-x_0" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=x-x_0" style="display:inline-block;margin: 0;"/></a> 是微小矢量，他的大小是步进长度<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Ceta" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Ceta" style="display:inline-block;margin: 0;"/></a>，<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Ceta" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Ceta" style="display:inline-block;margin: 0;"/></a>为标量，<a target="_blank" rel="noopener" href="https://math.now.sh?inline=x-x_0" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=x-x_0" style="display:inline-block;margin: 0;"/></a>的单位向量用<a target="_blank" rel="noopener" href="https://math.now.sh?inline=v" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=v" style="display:inline-block;margin: 0;"/></a>表示，则<a target="_blank" rel="noopener" href="https://math.now.sh?inline=x-x_0" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=x-x_0" style="display:inline-block;margin: 0;"/></a>可表示为</p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=x-x_0%20%3D%20%5Ceta%20v%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=x-x_0%20%3D%20%5Ceta%20v%0A" /></a></p><p>需要注意<a target="_blank" rel="noopener" href="https://math.now.sh?inline=x-x_0" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=x-x_0" style="display:inline-block;margin: 0;"/></a>不能太大，否则线性近似就不够准确，一阶泰勒近似也不成立了。替换后表示为</p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=f%28x%29%20%5Capprox%20f(x_0)%2B%20%5Ceta%20v%20f'(x_0)%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=f%28x%29%20%5Capprox%20f(x_0)%2B%20%5Ceta%20v%20f'(x_0)%0A" /></a></p><p>局部下降的目的是希望每次x更新，都能让函数值<a target="_blank" rel="noopener" href="https://math.now.sh?inline=f%28x%29" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f%28x%29" style="display:inline-block;margin: 0;"/></a>变小。就是希望<a target="_blank" rel="noopener" href="https://math.now.sh?inline=f%28x%29%3Cf(x_0)" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f%28x%29%3Cf(x_0)" style="display:inline-block;margin: 0;"/></a></p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=f%28x%29-f(x_0)%5Capprox%20%5Ceta%20vf'(x_0)%3C0%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=f%28x%29-f(x_0)%5Capprox%20%5Ceta%20vf'(x_0)%3C0%0A" /></a></p><p>因为<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Ceta" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Ceta" style="display:inline-block;margin: 0;"/></a>为标量，且一般设定为正值，所以可以忽略</p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=vf'%28x_0%29%3C0%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=vf'%28x_0%29%3C0%0A" /></a></p><p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=v" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=v" style="display:inline-block;margin: 0;"/></a>和<a target="_blank" rel="noopener" href="https://math.now.sh?inline=f'%28x_0%29" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f'%28x_0%29" style="display:inline-block;margin: 0;"/></a>都是向量,<a target="_blank" rel="noopener" href="https://math.now.sh?inline=f'%28x_0%29" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f'%28x_0%29" style="display:inline-block;margin: 0;"/></a>是当前位置的梯度方向,<a target="_blank" rel="noopener" href="https://math.now.sh?inline=v" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=v" style="display:inline-block;margin: 0;"/></a>表示下一步前进的单位向量，根据<a target="_blank" rel="noopener" href="https://math.now.sh?inline=x-x_0%3D%5Ceta%20v" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=x-x_0%3D%5Ceta%20v" style="display:inline-block;margin: 0;"/></a>确定x的值</p>
+<p>知道<a target="_blank" rel="noopener" href="https://math.now.sh?inline=v" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=v" style="display:inline-block;margin: 0;"/></a>是<a target="_blank" rel="noopener" href="https://math.now.sh?inline=f'%28x_0%29" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f'%28x_0%29" style="display:inline-block;margin: 0;"/></a>的反方向后，可直接得到</p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=v%3D-%5Cfrac%7Bf'%28x_0%29%7D%7B%7C%7Cf'(x_0)%7C%7C%7D%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=v%3D-%5Cfrac%7Bf'%28x_0%29%7D%7B%7C%7Cf'(x_0)%7C%7C%7D%0A" /></a></p><p>之所以要除以<a target="_blank" rel="noopener" href="https://math.now.sh?inline=f'%28x_0%29" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f'%28x_0%29" style="display:inline-block;margin: 0;"/></a>的模<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%7C%7Cf'%28x_0%29%7C%7C" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%7C%7Cf'%28x_0%29%7C%7C" style="display:inline-block;margin: 0;"/></a>，是因为<a target="_blank" rel="noopener" href="https://math.now.sh?inline=v" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=v" style="display:inline-block;margin: 0;"/></a>是单位向量。</p>
+<p>代入<a target="_blank" rel="noopener" href="https://math.now.sh?inline=x-x_0%3D%5Ceta%20v" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=x-x_0%3D%5Ceta%20v" style="display:inline-block;margin: 0;"/></a></p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=x%3Dx_0-%5Ceta%20%5Cfrac%7Bf'%28x_0%29%7D%7B%7C%7Cf'(x_0)%7C%7C%7D%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=x%3Dx_0-%5Ceta%20%5Cfrac%7Bf'%28x_0%29%7D%7B%7C%7Cf'(x_0)%7C%7C%7D%0A" /></a></p><p>一般地，因为<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%7C%7Cf'%28x_0%29%7C%7C" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%7C%7Cf'%28x_0%29%7C%7C" style="display:inline-block;margin: 0;"/></a>是标量，可以并入到步进因子<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Ceta" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Ceta" style="display:inline-block;margin: 0;"/></a>中简化为</p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=x%3Dx_0-%5Ceta%20f'%28x_0%29%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=x%3Dx_0-%5Ceta%20f'%28x_0%29%0A" /></a></p></div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-07-10</span>
+            
+                <span>该篇文章被 xander</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/'>
+                            深度学习入门
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
         
             
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/07 
-              </span>
-              <div class="archive-main">
+    
+            <div class="post-footer-pre-next">
                 
-                  <a class="archive-title" href="/2025/07/04/%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/">手写数字识别</a>
-              </div>
-            </li>
-        
-            
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/07 
-              </span>
-              <div class="archive-main">
+
                 
-                  <a class="archive-title" href="/2025/07/07/matplotlib/">matplotlib</a>
-              </div>
-            </li>
-        
-            
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/04 
-              </span>
-              <div class="archive-main">
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/07/07/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/">损失函数</a>
+                    </span>
                 
-                  <a class="archive-title" href="/2025/07/03/%E9%B1%BC%E4%B9%A6%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">鱼书第三章神经网络</a>
-              </div>
-            </li>
+            </div>
+    
         
-            
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/02 
-              </span>
-              <div class="archive-main">
-                
-                  <a class="archive-title" href="/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/">感知机的实现</a>
-              </div>
-            </li>
+    
+
+    
         
-            
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/02 
-              </span>
-              <div class="archive-main">
-                
-                  <a class="archive-title" href="/2025/07/02/numpy%E5%AD%A6%E4%B9%A0/">numpy学习</a>
-              </div>
-            </li>
-        
-            
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/02 
-              </span>
-              <div class="archive-main">
-                
-                  <a class="archive-title" href="/2025/06/30/Windows%E5%B9%B3%E5%8F%B0python%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6px4%E9%A3%9E%E6%8E%A7%EF%BC%881%EF%BC%89/">Windows平台python代码控制px4飞控（1）</a>
-              </div>
-            </li>
-        
-            
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/02 
-              </span>
-              <div class="archive-main">
-                
-                  <a class="archive-title" href="/2025/06/30/%E4%B8%AA%E4%BA%BAWindows%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">个人Windows常用命令</a>
-              </div>
-            </li>
-        
-            
-            <li>
-              <span class="archive-date">&nbsp;&nbsp;&nbsp;2025/07/02 
-              </span>
-              <div class="archive-main">
-                
-                  <a class="archive-title" href="/2025/06/28/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/">博客使用命令</a>
-              </div>
-            </li>
-        
-    </ul>
-  </div> 
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
                     <div class="footer">
     
         <span> 
@@ -607,7 +612,7 @@
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
-               </div>
+                </div>
             
             
                 <!-- 回到顶部的按钮-->  

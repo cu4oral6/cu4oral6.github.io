@@ -6,7 +6,7 @@
   <link href="http://531party.cn/atom.xml" rel="self"/>
   
   <link href="http://531party.cn/"/>
-  <updated>2025-07-07T15:46:22.731Z</updated>
+  <updated>2025-07-12T10:08:42.617Z</updated>
   <id>http://531party.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TaylorSeries</title>
+    <link href="http://531party.cn/2025/07/10/TaylorSeries/"/>
+    <id>http://531party.cn/2025/07/10/TaylorSeries/</id>
+    <published>2025-07-10T03:01:56.000Z</published>
+    <updated>2025-07-12T10:08:42.617Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;Taylor-series&quot;&gt;Taylor series&lt;/h3&gt;
+&lt;h3 id=&quot;泰勒级数&quot;&gt;泰勒级数&lt;/h3&gt;
+&lt;p style=&quot;&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="深度学习入门" scheme="http://531party.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>损失函数</title>
