@@ -28,9 +28,7 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;Taylor-series&quot;&gt;Taylor series&lt;/h3&gt;
-&lt;h3 id=&quot;泰勒级数&quot;&gt;泰勒级数&lt;/h3&gt;
-&lt;p style=&quot;&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;Taylor-series&quot;&gt;&lt;a href=&quot;#Taylor-series&quot; class=&quot;headerlink&quot; title=&quot;Taylor series&quot;&gt;&lt;/a&gt;Taylor</summary>
         
       
     
@@ -53,9 +51,7 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;损失函数&quot;&gt;损失函数&lt;/h3&gt;
-&lt;p&gt;损失函数是表示神经网络性能的“恶劣程度”的指标，即当前的神经网络对监督数据在多大程度上不拟合，在多大程度上不一致。&lt;/p&gt;
-&lt;h4</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;损失函数&quot;&gt;&lt;a href=&quot;#损失函数&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -78,9 +74,7 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;Matplotlib&quot;&gt;Matplotlib&lt;/h3&gt;
-&lt;p&gt;Matplotlib是用于绘制图形的库&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;Matplotlib&quot;&gt;&lt;a href=&quot;#Matplotlib&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -103,8 +97,8 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;&lt;a href=&quot;sample_weight.pkl&quot;&gt;sample_weight.pkl&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;dataset&quot;&gt;dataset&lt;/a&gt;&lt;/p&gt;
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt; &lt;a href=&quot;sample_weight.pkl&quot;&gt;sample_weight.pkl&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;dataset&quot;&gt;dataset&lt;/a&gt; &lt;/p&gt;
 &lt;h4</summary>
         
       
@@ -128,8 +122,7 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;神经网络&quot;&gt;神经网络&lt;/h3&gt;
-&lt;p style=&quot;&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;神经网络&quot;&gt;&lt;a href=&quot;#神经网络&quot; class=&quot;headerlink&quot; title=&quot;神经网络&quot;&gt;&lt;/a&gt;神经网络&lt;/h3&gt;&lt;script type=&quot;math/tex;</summary>
         
       
     
@@ -152,8 +145,7 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;感知机的实现&quot;&gt;感知机的实现&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;img.png&quot; title=&quot;image.png&quot; class=&quot;gallery-item&quot; style=&quot;box-shadow:</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;感知机的实现&quot;&gt;&lt;a href=&quot;#感知机的实现&quot; class=&quot;headerlink&quot; title=&quot;感知机的实现&quot;&gt;&lt;/a&gt;感知机的实现&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;img.png&quot;</summary>
         
       
     
@@ -247,9 +239,7 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h1&gt;博客使用命令记录&lt;/h1&gt;
-&lt;h3 id=&quot;创建一遍新文章&quot;&gt;创建一遍新文章&lt;/h3&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h1 id=&quot;博客使用命令记录&quot;&gt;&lt;a href=&quot;#博客使用命令记录&quot; class=&quot;headerlink&quot; title=&quot;博客使用命令记录&quot;&gt;&lt;/a&gt;博客使用命令记录&lt;/h1&gt;&lt;h3</summary>
         
       
     
