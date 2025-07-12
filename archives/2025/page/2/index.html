@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="TaylorSeries" />
+    <meta name="description" content="" />
     <meta name="hexo-theme-A4" content="v1.9.8" />
     <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
     <title>xander&#39;s blog</title>
@@ -314,10 +314,6 @@
         
         
             
-                <div class="left-toc-container">
-                    <nav id="toc" class="bs-docs-sidebar"></nav>
-                </div>
-            
         
         <div class="paper">
             
@@ -382,96 +378,18 @@
     
 
     
-        
-            
-                <div class="post-main-title" style="text-align: center;">
-                    TaylorSeries
-                </div>
-            
-        
-      
-    
 
-    
-
-        
-            <div class="post-head-meta-center">
-        
-                
-                    <span>最近更新：2025-07-12</span> 
-                
-                
-                    
-                        &nbsp; | &nbsp;
-                    
-                     <span>字数总计：343</span>
-                
-                
-                    
-                        &nbsp; | &nbsp;
-                    
-                    <span>阅读估时：1分钟</span>
-                
-                
-                    
-                        &nbsp; | &nbsp;
-                    
-                    <span id="busuanzi_container_page_pv">
-                        阅读量：<span id="busuanzi_value_page_pv"></span>次
-                    </span>
-                
-            </div>
     
 
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Taylor-series"><span class="post-toc-text">Taylor series</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0"><span class="post-toc-text">泰勒级数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B3%B0%E5%8B%92%E5%AE%9A%E7%90%86"><span class="post-toc-text">泰勒定理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86"><span class="post-toc-text">梯度下降数学原理</span></a></li></ol>
-            
         
-        <div class=".article-gallery"><h3 id="Taylor-series"><a href="#Taylor-series" class="headerlink" title="Taylor series"></a>Taylor series</h3><h3 id="泰勒级数"><a href="#泰勒级数" class="headerlink" title="泰勒级数"></a>泰勒级数</h3><script type="math/tex; mode=display">
-\sum^{\infty}_{n=0}\frac{f^{(n)}(a)}{n!}(x-a)^n</script><p>$n!$表示n的阶乘，而$f^{(n)}(a)$表示函数f在点a处的n阶导数</p>
-<h3 id="泰勒定理"><a href="#泰勒定理" class="headerlink" title="泰勒定理"></a>泰勒定理</h3><script type="math/tex; mode=display">
-f(x)=f(a)+ \frac{f'(a)}{1!}(x-a)+ \frac{f^{(2)}(a)}{1!}(x-a)^2+...+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)</script><p>泰勒公式简单讲就是用一个多项式函数去逼近一个给定的函数（即尽量使多项式函数图像拟合给定的函数图像），注意，逼近的时候一定是从函数图像上的某个点展开。如果一个非常复杂的函数，想求其某点的值，直接求无法实现，这时候可以使用泰勒公式去近似的求该值。</p>
-<h3 id="梯度下降数学原理"><a href="#梯度下降数学原理" class="headerlink" title="梯度下降数学原理"></a>梯度下降数学原理</h3><p>一次线性逼近</p>
-<script type="math/tex; mode=display">
-f(x)\approx f(x_0)+f'(x_0)(x-x_0)</script><p>其中， $x-x_0$ 是微小矢量，他的大小是步进长度$\eta$，$\eta$为标量，$x-x_0$的单位向量用$v$表示，则$x-x_0$可表示为</p>
-<script type="math/tex; mode=display">
-x-x_0 = \eta v</script><p>需要注意$x-x_0$不能太大，否则线性近似就不够准确，一阶泰勒近似也不成立了。替换后表示为</p>
-<script type="math/tex; mode=display">
-f(x) \approx f(x_0)+ \eta v f'(x_0)</script><p>局部下降的目的是希望每次x更新，都能让函数值$f(x)$变小。就是希望$f(x)&lt;f(x_0)$</p>
-<script type="math/tex; mode=display">
-f(x)-f(x_0)\approx \eta vf'(x_0)<0</script><p>因为$\eta$为标量，且一般设定为正值，所以可以忽略</p>
-<script type="math/tex; mode=display">
-vf'(x_0)<0</script><p>$v$和$f’(x_0)$都是向量,$f’(x_0)$是当前位置的梯度方向,$v$表示下一步前进的单位向量，根据$x-x_0=\eta v$确定x的值</p>
-<p>知道$v$是$f’(x_0)$的反方向后，可直接得到</p>
-<script type="math/tex; mode=display">
-v=-\frac{f'(x_0)}{||f'(x_0)||}</script><p>之所以要除以$f’(x_0)$的模$||f’(x_0)||$，是因为$v$是单位向量。</p>
-<p>代入$x-x_0=\eta v$</p>
-<script type="math/tex; mode=display">
-x=x_0-\eta \frac{f'(x_0)}{||f'(x_0)||}</script><p>一般地，因为$||f’(x_0)||$是标量，可以并入到步进因子$\eta$中简化为</p>
-<script type="math/tex; mode=display">
-x=x_0-\eta f'(x_0)</script></div>
+        
     </div>
 
     <div class="post-meta">
         <i>
-        
-            <span>2025-07-10</span>
-            
-                <span>该篇文章被 xander</span>
-            
-            
-                <span>打上标签:
-                    
-                    
-                        <a href='/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/'>
-                            深度学习入门
-                        </a>
-                    
-                </span>
-             
-             
         
         </i>
     </div>
@@ -483,11 +401,11 @@ x=x_0-\eta f'(x_0)</script></div>
     
             <div class="post-footer-pre-next">
                 
-                    <span>上一篇：<a href='/2025/07/10/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/'>数值微分</a></span>
+                    <span>上一篇：<a href='/'></a></span>
                 
 
                 
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/07/07/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/">损失函数</a>
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/"></a>
                     </span>
                 
             </div>

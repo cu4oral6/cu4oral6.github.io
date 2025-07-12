@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="TaylorSeries" />
+    <meta name="description" content="数值微分" />
     <meta name="hexo-theme-A4" content="v1.9.8" />
     <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
     <title>xander&#39;s blog</title>
@@ -385,7 +385,7 @@
         
             
                 <div class="post-main-title" style="text-align: center;">
-                    TaylorSeries
+                    数值微分
                 </div>
             
         
@@ -404,13 +404,13 @@
                     
                         &nbsp; | &nbsp;
                     
-                     <span>字数总计：343</span>
+                     <span>字数总计：450</span>
                 
                 
                     
                         &nbsp; | &nbsp;
                     
-                    <span>阅读估时：1分钟</span>
+                    <span>阅读估时：2分钟</span>
                 
                 
                     
@@ -426,32 +426,50 @@
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Taylor-series"><span class="post-toc-text">Taylor series</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0"><span class="post-toc-text">泰勒级数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B3%B0%E5%8B%92%E5%AE%9A%E7%90%86"><span class="post-toc-text">泰勒定理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86"><span class="post-toc-text">梯度下降数学原理</span></a></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86"><span class="post-toc-text">数值微分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AF%BC%E6%95%B0"><span class="post-toc-text">导数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="post-toc-text">数值微分的例子</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%81%8F%E5%AF%BC%E6%95%B0"><span class="post-toc-text">偏导数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%A1%A5%E5%85%85"><span class="post-toc-text">补充</span></a></li></ol></li></ol>
             
         
-        <div class=".article-gallery"><h3 id="Taylor-series"><a href="#Taylor-series" class="headerlink" title="Taylor series"></a>Taylor series</h3><h3 id="泰勒级数"><a href="#泰勒级数" class="headerlink" title="泰勒级数"></a>泰勒级数</h3><script type="math/tex; mode=display">
-\sum^{\infty}_{n=0}\frac{f^{(n)}(a)}{n!}(x-a)^n</script><p>$n!$表示n的阶乘，而$f^{(n)}(a)$表示函数f在点a处的n阶导数</p>
-<h3 id="泰勒定理"><a href="#泰勒定理" class="headerlink" title="泰勒定理"></a>泰勒定理</h3><script type="math/tex; mode=display">
-f(x)=f(a)+ \frac{f'(a)}{1!}(x-a)+ \frac{f^{(2)}(a)}{1!}(x-a)^2+...+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)</script><p>泰勒公式简单讲就是用一个多项式函数去逼近一个给定的函数（即尽量使多项式函数图像拟合给定的函数图像），注意，逼近的时候一定是从函数图像上的某个点展开。如果一个非常复杂的函数，想求其某点的值，直接求无法实现，这时候可以使用泰勒公式去近似的求该值。</p>
-<h3 id="梯度下降数学原理"><a href="#梯度下降数学原理" class="headerlink" title="梯度下降数学原理"></a>梯度下降数学原理</h3><p>一次线性逼近</p>
-<script type="math/tex; mode=display">
-f(x)\approx f(x_0)+f'(x_0)(x-x_0)</script><p>其中， $x-x_0$ 是微小矢量，他的大小是步进长度$\eta$，$\eta$为标量，$x-x_0$的单位向量用$v$表示，则$x-x_0$可表示为</p>
-<script type="math/tex; mode=display">
-x-x_0 = \eta v</script><p>需要注意$x-x_0$不能太大，否则线性近似就不够准确，一阶泰勒近似也不成立了。替换后表示为</p>
-<script type="math/tex; mode=display">
-f(x) \approx f(x_0)+ \eta v f'(x_0)</script><p>局部下降的目的是希望每次x更新，都能让函数值$f(x)$变小。就是希望$f(x)&lt;f(x_0)$</p>
-<script type="math/tex; mode=display">
-f(x)-f(x_0)\approx \eta vf'(x_0)<0</script><p>因为$\eta$为标量，且一般设定为正值，所以可以忽略</p>
-<script type="math/tex; mode=display">
-vf'(x_0)<0</script><p>$v$和$f’(x_0)$都是向量,$f’(x_0)$是当前位置的梯度方向,$v$表示下一步前进的单位向量，根据$x-x_0=\eta v$确定x的值</p>
-<p>知道$v$是$f’(x_0)$的反方向后，可直接得到</p>
-<script type="math/tex; mode=display">
-v=-\frac{f'(x_0)}{||f'(x_0)||}</script><p>之所以要除以$f’(x_0)$的模$||f’(x_0)||$，是因为$v$是单位向量。</p>
-<p>代入$x-x_0=\eta v$</p>
-<script type="math/tex; mode=display">
-x=x_0-\eta \frac{f'(x_0)}{||f'(x_0)||}</script><p>一般地，因为$||f’(x_0)||$是标量，可以并入到步进因子$\eta$中简化为</p>
-<script type="math/tex; mode=display">
-x=x_0-\eta f'(x_0)</script></div>
+        <div class=".article-gallery"><h3 id="数值微分">数值微分</h3>
+<h4 id="导数">导数</h4>
+<p>导数表示某个瞬间的变化量</p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7Bdf%28x%29%7D%7Bdx%7D%20%3D%20%5Clim_%7Bh%20%5Cto%200%7D%20%5Cfrac%7Bf(x%2Bh)-f(x)%7D%7Bh%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7Bdf%28x%29%7D%7Bdx%7D%20%3D%20%5Clim_%7Bh%20%5Cto%200%7D%20%5Cfrac%7Bf(x%2Bh)-f(x)%7D%7Bh%7D" style="display:inline-block;margin: 0;"/></a></p>
+<p>为了减小误差，使用<strong>中心差分</strong></p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=%5Cfrac%7Bdf%28x%29%7D%7Bdx%7D%20%3D%20%5Clim_%7Bh%20%5Cto%200%7D%20%5Cfrac%7Bf(x%2Bh)-f(x-h)%7D%7B2h%7D%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=%5Cfrac%7Bdf%28x%29%7D%7Bdx%7D%20%3D%20%5Clim_%7Bh%20%5Cto%200%7D%20%5Cfrac%7Bf(x%2Bh)-f(x-h)%7D%7B2h%7D%0A" /></a></p><p>利用微小的差分求导数的过程称为数值微分(numerical differentiation)。基于数学式推导求导数的过程，用“解析性（analytic）”一词，称为解析性求导 。比如，<a target="_blank" rel="noopener" href="https://math.now.sh?inline=y%3Dx%5E2" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=y%3Dx%5E2" style="display:inline-block;margin: 0;"/></a>的导数，可以通过<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7Bdy%7D%7Bdx%7D%3D2x" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7Bdy%7D%7Bdx%7D%3D2x" style="display:inline-block;margin: 0;"/></a>解析性的求解出来。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">numerical_diff</span>(<span class="params">f, x</span>):</span><br><span class="line">    h = <span class="number">1e-4</span></span><br><span class="line">    <span class="keyword">return</span> (f(x + h) - f(x - h)) / (<span class="number">2</span> * h)</span><br></pre></td></tr></table></figure>
+<h4 id="数值微分的例子">数值微分的例子</h4>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=y%3D0.01x%5E2%20%2B%200.1x" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=y%3D0.01x%5E2%20%2B%200.1x" style="display:inline-block;margin: 0;"/></a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">function_1</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.01</span>*x**<span class="number">2</span>+<span class="number">0.1</span>*x</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">20</span> , <span class="number">0.1</span>)</span><br><span class="line">y = function_1(x)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;x&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;f(x)&#x27;</span>)</span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><a href="%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86_3_0.png" title="png" class="gallery-item" style="box-shadow: none;"> <img src="%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86_3_0.png" alt="png"></a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在x=5处的导数</span></span><br><span class="line">numerical_diff(function_1, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>0.1999999999990898
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在x=10处的导数</span></span><br><span class="line">numerical_diff(function_1, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>0.2999999999986347
+</code></pre>
+<p>求切线方程:使用点斜式方程(y - y₀) = k(x - x₀) 来求切线方程，其中(x₀, y₀) 是切点坐标。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">function_2</span>(<span class="params">f,x,x0</span>):</span><br><span class="line">    y0 = f(x0)</span><br><span class="line">    <span class="keyword">return</span> numerical_diff(f, x0)*(x-x0) + y0</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">0.1</span>)</span><br><span class="line">y = function_1(x)</span><br><span class="line">plt.xlabel(<span class="string">&quot;x&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;f(x)&quot;</span>)</span><br><span class="line"></span><br><span class="line">y2 = function_2(function_1, x, <span class="number">5</span>)</span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.plot(x, y2)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><a href="%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86_7_0.png" title="png" class="gallery-item" style="box-shadow: none;"> <img src="%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86_7_0.png" alt="png"></a></p>
+<h4 id="偏导数">偏导数</h4>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=f%28x_0%2C%20x_1%29%20%3D%20x_0%5E2%20%2B%20x_1%5E2" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f%28x_0%2C%20x_1%29%20%3D%20x_0%5E2%20%2B%20x_1%5E2" style="display:inline-block;margin: 0;"/></a></p>
+<p>有多个变量的函数的导数称为偏导数。用数学式表示的话，可以写成<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20f%7D%20%7B%5Cpartial%20x_0%7D%E3%80%81%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x_1%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20f%7D%20%7B%5Cpartial%20x_0%7D%E3%80%81%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x_1%7D" style="display:inline-block;margin: 0;"/></a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 求x0=3, x1=4时，关于x0的偏导数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">function_temp1</span>(<span class="params">x0</span>):</span><br><span class="line">    <span class="keyword">return</span> x0**<span class="number">2</span> + <span class="number">4</span>**<span class="number">2</span></span><br><span class="line"></span><br><span class="line">numerical_diff(function_temp1, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>6.00000000000378
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 求x0=3, x1=4时，关于x1的偏导数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">function_temp2</span>(<span class="params">x1</span>):</span><br><span class="line">    <span class="keyword">return</span> x1**<span class="number">2</span> + <span class="number">3</span>**<span class="number">2</span></span><br><span class="line">numerical_diff(function_temp2, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>7.999999999999119
+</code></pre>
+<h4 id="补充">补充</h4>
+<p>一般微积分说将要找极值或极小值的式子微分等于0找解，找到的不是极大值，就是极小值，是极大还是极小就看二阶微分带入查找来的解，看结果是大于0，还是小于0。<br>
+例子</p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=f%28x%29%3Dx%5E2-10x%2B1" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f%28x%29%3Dx%5E2-10x%2B1" style="display:inline-block;margin: 0;"/></a></p>
+<p>微分</p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=f'%28x%29%3D%20%5Cfrac%7B%5Cpartial%20f(x)%7D%7B%5Cpartial%20x%7D%20%3D%202x-10" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f'%28x%29%3D%20%5Cfrac%7B%5Cpartial%20f(x)%7D%7B%5Cpartial%20x%7D%20%3D%202x-10" style="display:inline-block;margin: 0;"/></a></p>
+<p>微分等于0</p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=f'%28x%29%20%3D%20%20%5Cfrac%7B%5Cpartial%20f(x)%7D%7B%5Cpartial%20x%7D%20%3D%202x-10%20%3D%200%20%5CRightarrow%20x%3D5" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f'%28x%29%20%3D%20%20%5Cfrac%7B%5Cpartial%20f(x)%7D%7B%5Cpartial%20x%7D%20%3D%202x-10%20%3D%200%20%5CRightarrow%20x%3D5" style="display:inline-block;margin: 0;"/></a></p>
+<p>二阶微分</p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=f''%28x%29%20%3D%20%5Cfrac%7B%5Cpartial%20f'(x)%7D%7B%5Cpartial%20x%7D%3D2%20%3E%200" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=f''%28x%29%20%3D%20%5Cfrac%7B%5Cpartial%20f'(x)%7D%7B%5Cpartial%20x%7D%3D2%20%3E%200" style="display:inline-block;margin: 0;"/></a></p>
+<p>所以找到的为极小值，当x=5时，有极小值-24</p>
+</div>
     </div>
 
     <div class="post-meta">
@@ -483,11 +501,9 @@ x=x_0-\eta f'(x_0)</script></div>
     
             <div class="post-footer-pre-next">
                 
-                    <span>上一篇：<a href='/2025/07/10/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/'>数值微分</a></span>
-                
 
                 
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/07/07/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/">损失函数</a>
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/07/10/TaylorSeries/">TaylorSeries</a>
                     </span>
                 
             </div>
