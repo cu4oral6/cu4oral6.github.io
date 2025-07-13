@@ -6,7 +6,7 @@
   <link href="http://531party.cn/atom.xml" rel="self"/>
   
   <link href="http://531party.cn/"/>
-  <updated>2025-07-12T10:16:19.885Z</updated>
+  <updated>2025-07-13T02:52:36.948Z</updated>
   <id>http://531party.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>梯度</title>
+    <link href="http://531party.cn/2025/07/13/%E6%A2%AF%E5%BA%A6/"/>
+    <id>http://531party.cn/2025/07/13/%E6%A2%AF%E5%BA%A6/</id>
+    <published>2025-07-13T02:51:09.000Z</published>
+    <updated>2025-07-13T02:52:36.948Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;梯度&quot;&gt;梯度&lt;/h3&gt;
+&lt;p&gt;我们希望一起计算 x0 和 x1 的偏导数。比如，我们来考虑求 x0 = 3, x1 = 4 时 (x0, x1)的偏导数 。另外，像</summary>
+        
+      
+    
+    
+    
+    
+    <category term="深度学习入门" scheme="http://531party.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>数值微分</title>

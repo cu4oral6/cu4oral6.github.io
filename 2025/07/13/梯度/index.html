@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="梯度" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    梯度
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-07-13</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：724</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：3分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A2%AF%E5%BA%A6"><span class="post-toc-text">梯度</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%A2%AF%E5%BA%A6%E6%B3%95"><span class="post-toc-text">梯度法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6"><span class="post-toc-text">神经网络中的梯度</span></a></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h3 id="梯度">梯度</h3>
+<p>我们希望一起计算 x0 和 x1 的偏导数。比如，我们来考虑求 x0 = 3, x1 = 4 时 (x0, x1)的偏导数 。另外，像 这样的由全部变量的偏导数汇总而成的向量称为梯度 （ gradient ）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">function_2</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> np.<span class="built_in">sum</span>(x**<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">numerical_gradient</span>(<span class="params">f, x</span>):</span><br><span class="line">    h = <span class="number">1e-2</span></span><br><span class="line">    grad = np.zeros_like(x) <span class="comment">#生成和x形状相同的数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(x.size):</span><br><span class="line">        tmp_val = x[idx]</span><br><span class="line">        x[idx] = tmp_val + h</span><br><span class="line">        fxh1 = f(x)</span><br><span class="line"></span><br><span class="line">        x[idx] = tmp_val - h</span><br><span class="line">        fxh2 = f(x)</span><br><span class="line">        grad[idx] = (fxh1 - fxh2) / (<span class="number">2</span> * h)</span><br><span class="line">        x[idx] = tmp_val</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> grad</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numerical_gradient(function_2, np.array([<span class="number">3.0</span>, <span class="number">4.0</span>]))</span><br></pre></td></tr></table></figure>
+<pre><code>array([6., 8.])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numerical_gradient(function_2, np.array([<span class="number">0.0</span>, <span class="number">2.0</span>]))</span><br></pre></td></tr></table></figure>
+<pre><code>array([0., 4.])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numerical_gradient(function_2, np.array([<span class="number">3.0</span>, <span class="number">0.0</span>]))</span><br></pre></td></tr></table></figure>
+<pre><code>array([6., 0.])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="comment"># cf.http://d.hatena.ne.jp/white_wheels/20100327/p3</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_numerical_gradient_no_batch</span>(<span class="params">f, x</span>):</span><br><span class="line">    h = <span class="number">1e-4</span> <span class="comment"># 0.0001</span></span><br><span class="line">    grad = np.zeros_like(x)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(x.size):</span><br><span class="line">        tmp_val = x[idx]</span><br><span class="line">        x[idx] = <span class="built_in">float</span>(tmp_val) + h</span><br><span class="line">        fxh1 = f(x) <span class="comment"># f(x+h)</span></span><br><span class="line"></span><br><span class="line">        x[idx] = tmp_val - h</span><br><span class="line">        fxh2 = f(x) <span class="comment"># f(x-h)</span></span><br><span class="line">        grad[idx] = (fxh1 - fxh2) / (<span class="number">2</span>*h)</span><br><span class="line"></span><br><span class="line">        x[idx] = tmp_val <span class="comment"># 还原值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> grad</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">numerical_gradient</span>(<span class="params">f, X</span>):</span><br><span class="line">    <span class="keyword">if</span> X.ndim == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> _numerical_gradient_no_batch(f, X)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        grad = np.zeros_like(X)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> idx, x <span class="keyword">in</span> <span class="built_in">enumerate</span>(X):</span><br><span class="line">            grad[idx] = _numerical_gradient_no_batch(f, x)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> grad</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">function_2</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">if</span> x.ndim == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> np.<span class="built_in">sum</span>(x**<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> np.<span class="built_in">sum</span>(x**<span class="number">2</span>, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">tangent_line</span>(<span class="params">f, x</span>):</span><br><span class="line">    d = numerical_gradient(f, x)</span><br><span class="line">    <span class="built_in">print</span>(d)</span><br><span class="line">    y = f(x) - d*x</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> t: d*t + y</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    x0 = np.arange(-<span class="number">2</span>, <span class="number">2.5</span>, <span class="number">0.25</span>)</span><br><span class="line">    x1 = np.arange(-<span class="number">2</span>, <span class="number">2.5</span>, <span class="number">0.25</span>)</span><br><span class="line">    X, Y = np.meshgrid(x0, x1)</span><br><span class="line"></span><br><span class="line">    X = X.flatten()</span><br><span class="line">    Y = Y.flatten()</span><br><span class="line"></span><br><span class="line">    grad = numerical_gradient(function_2, np.array([X, Y]) )</span><br><span class="line"></span><br><span class="line">    plt.figure()</span><br><span class="line">    plt.quiver(X, Y, -grad[<span class="number">0</span>], -grad[<span class="number">1</span>],  angles=<span class="string">&quot;xy&quot;</span>,color=<span class="string">&quot;#666666&quot;</span>)<span class="comment">#,headwidth=10,scale=40,color=&quot;#444444&quot;)</span></span><br><span class="line">    plt.xlim([-<span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line">    plt.ylim([-<span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;x0&#x27;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;x1&#x27;</span>)</span><br><span class="line">    plt.grid()</span><br><span class="line">    <span class="comment"># plt.legend()</span></span><br><span class="line">    plt.draw()</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+<p><a href="%E6%A2%AF%E5%BA%A6/%E6%A2%AF%E5%BA%A6_5_0.png" title="png" class="gallery-item" style="box-shadow: none;"> <img src="%E6%A2%AF%E5%BA%A6/%E6%A2%AF%E5%BA%A6_5_0.png" alt="png"></a><br>
+​</p>
+<h4 id="梯度法">梯度法</h4>
+<p>通过不断地沿梯度方向前进，逐渐减小函数值的过程就是梯度法 （ gradient method ）</p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=x_0%20%3D%20x_0-%5Ceta%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x_0%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=x_0%20%3D%20x_0-%5Ceta%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x_0%7D" style="display:inline-block;margin: 0;"/></a></p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=x_1%20%3D%20x_1-%5Ceta%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x_1%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=x_1%20%3D%20x_1-%5Ceta%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x_1%7D" style="display:inline-block;margin: 0;"/></a></p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Ceta" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Ceta" style="display:inline-block;margin: 0;"/></a>表示更新量，在神经网络学习中，称为<strong>学习率(learning rate)</strong>。学习率需要事先确定为某个值，比如 0.01 或 0.001</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">gradient_descent</span>(<span class="params">f, init_x, lr=<span class="number">0.01</span>, step_num=<span class="number">100</span></span>):</span><br><span class="line">    x = init_x</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(step_num):</span><br><span class="line">        grad = numerical_gradient(f, x)</span><br><span class="line">        x -= lr * grad</span><br><span class="line">    <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">function_2</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> x[<span class="number">0</span>]**<span class="number">2</span> + x[<span class="number">1</span>]**<span class="number">2</span></span><br><span class="line"></span><br><span class="line">init_x = np.array([-<span class="number">3.0</span>, <span class="number">4.0</span>])</span><br><span class="line">grad = gradient_descent(function_2, init_x, lr=<span class="number">0.1</span>)</span><br><span class="line"><span class="built_in">print</span>(grad)</span><br></pre></td></tr></table></figure>
+<pre><code>[-6.11110793e-10  8.14814391e-10]
+</code></pre>
+<h4 id="神经网络中的梯度">神经网络中的梯度</h4>
+<p>比如，有一个只有一个形状为2*3的权重为<a target="_blank" rel="noopener" href="https://math.now.sh?inline=W" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=W" style="display:inline-block;margin: 0;"/></a>的神经网络，损失函数用L表示。此时，梯度可以用<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D" style="display:inline-block;margin: 0;"/></a>表示</p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=W%3D%5Cbegin%7Bpmatrix%7D%20%20%20w_%7B11%7D%26%20%20w_%7B12%7D%26%20w_%7B13%7D%5C%5C%20w_%7B21%7D%26%20%20w_%7B22%7D%26%20w_%7B23%7D%20%5Cend%7Bpmatrix%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=W%3D%5Cbegin%7Bpmatrix%7D%20%20%20w_%7B11%7D%26%20%20w_%7B12%7D%26%20w_%7B13%7D%5C%5C%20w_%7B21%7D%26%20%20w_%7B22%7D%26%20w_%7B23%7D%20%5Cend%7Bpmatrix%7D" style="display:inline-block;margin: 0;"/></a></p>
+<p><a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%3D%5Cbegin%7Bpmatrix%7D%20%20%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W11%7D%26%20%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W12%7D%26%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W13%7D%5C%5C%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W21%7D%26%20%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W22%7D%26%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W23%7D%20%5Cend%7Bpmatrix%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%3D%5Cbegin%7Bpmatrix%7D%20%20%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W11%7D%26%20%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W12%7D%26%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W13%7D%5C%5C%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W21%7D%26%20%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W22%7D%26%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W23%7D%20%5Cend%7Bpmatrix%7D" style="display:inline-block;margin: 0;"/></a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> common.functions <span class="keyword">import</span> softmax, cross_entropy_error</span><br><span class="line"><span class="keyword">from</span> common.gradient <span class="keyword">import</span> numerical_gradient</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">simpleNet</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.W = np.random.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="keyword">return</span> np.dot(x, <span class="variable language_">self</span>.W)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">loss</span>(<span class="params">self, x, t</span>):</span><br><span class="line">        z = <span class="variable language_">self</span>.predict(x)</span><br><span class="line">        y = softmax(z)</span><br><span class="line">        <span class="keyword">return</span> cross_entropy_error(y, t)</span><br><span class="line"></span><br><span class="line">net = simpleNet()</span><br><span class="line"><span class="built_in">print</span>(net.W)</span><br><span class="line"></span><br><span class="line">x = np.array([<span class="number">0.6</span>, <span class="number">0.9</span>])</span><br><span class="line">p = net.predict(x)</span><br><span class="line"><span class="built_in">print</span>(p)</span><br><span class="line"><span class="built_in">print</span>(np.argmax(p)) <span class="comment">#最大索引值</span></span><br></pre></td></tr></table></figure>
+<pre><code>[[ 1.73383703  1.68577133 -0.52447694]
+ [ 0.78151631  0.18447717 -0.660322  ]]
+[ 1.74366689  1.17749225 -0.90897597]
+0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t = np.array([<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>]) <span class="comment">#正确解标签</span></span><br><span class="line"><span class="built_in">print</span>(net.loss(x, t))</span><br></pre></td></tr></table></figure>
+<pre><code>0.4935720657714494
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> w: net.loss(x, t)</span><br><span class="line">dW = numerical_gradient(f, net.W)</span><br><span class="line"><span class="built_in">print</span>(dW)</span><br></pre></td></tr></table></figure>
+<pre><code>[[-0.23373485  0.20792608  0.02580877]
+ [-0.35060227  0.31188912  0.03871316]]
+</code></pre>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-07-13</span>
+            
+                <span>该篇文章被 xander</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/'>
+                            深度学习入门
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/07/10/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/">数值微分</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>
