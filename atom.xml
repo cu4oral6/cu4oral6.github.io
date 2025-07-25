@@ -6,7 +6,7 @@
   <link href="http://531party.cn/atom.xml" rel="self"/>
   
   <link href="http://531party.cn/"/>
-  <updated>2025-07-23T01:29:44.358Z</updated>
+  <updated>2025-07-25T10:54:34.840Z</updated>
   <id>http://531party.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习算法的实现</title>
+    <link href="http://531party.cn/2025/07/25/%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://531party.cn/2025/07/25/%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/</id>
+    <published>2025-07-25T10:52:49.000Z</published>
+    <updated>2025-07-25T10:54:34.840Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h4 id=&quot;2层神经网络的类&quot;&gt;&lt;a href=&quot;#2层神经网络的类&quot; class=&quot;headerlink&quot; title=&quot;2层神经网络的类&quot;&gt;&lt;/a&gt;2层神经网络的类&lt;/h4&gt;&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+    <category term="深度学习入门" scheme="http://531party.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac通过Homebrew安装Redis</title>
