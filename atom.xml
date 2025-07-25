@@ -6,7 +6,7 @@
   <link href="http://531party.cn/atom.xml" rel="self"/>
   
   <link href="http://531party.cn/"/>
-  <updated>2025-07-13T02:52:36.948Z</updated>
+  <updated>2025-07-23T01:29:44.358Z</updated>
   <id>http://531party.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac通过Homebrew安装Redis</title>
+    <link href="http://531party.cn/2025/07/23/Mac%E9%80%9A%E8%BF%87Homebrew%E5%AE%89%E8%A3%85Redis/"/>
+    <id>http://531party.cn/2025/07/23/Mac%E9%80%9A%E8%BF%87Homebrew%E5%AE%89%E8%A3%85Redis/</id>
+    <published>2025-07-23T01:19:15.000Z</published>
+    <updated>2025-07-23T01:29:44.358Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h4 id=&quot;安装redis&quot;&gt;安装redis&lt;/h4&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="个人" scheme="http://531party.cn/tags/%E4%B8%AA%E4%BA%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>梯度</title>
