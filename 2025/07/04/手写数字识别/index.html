@@ -429,15 +429,17 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB"><span class="post-toc-text">手写数字识别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E6%8E%A8%E7%90%86%E5%A4%84%E7%90%86"><span class="post-toc-text">神经网络的推理处理</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%89%B9%E5%A4%84%E7%90%86"><span class="post-toc-text">批处理</span></a></li></ol></li></ol>
             
         
-        <div class=".article-gallery"><p> <a href="sample_weight.pkl">sample_weight.pkl</a> </p>
-<p> <a href="dataset">dataset</a> </p>
-<h4 id="手写数字识别"><a href="#手写数字识别" class="headerlink" title="手写数字识别"></a>手写数字识别</h4><p>需要引入dataset文件，因为本书附带源代码数据集下载地址已失效，故引入已下载好的数据集</p>
+        <div class=".article-gallery"><p><a href="sample_weight.pkl">sample_weight.pkl</a></p>
+<p><a href="dataset">dataset</a></p>
+<h4 id="手写数字识别">手写数字识别</h4>
+<p>需要引入dataset文件，因为本书附带源代码数据集下载地址已失效，故引入已下载好的数据集</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir) <span class="comment"># 为了导入父目录中的文件而进行的设定</span></span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line"><span class="comment">#( 训练图像 , 训练标签 )，( 测试图像，测试标签 )</span></span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(flatten=<span class="literal">True</span>,</span><br><span class="line">normalize=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出各个数据的形状</span></span><br><span class="line"><span class="built_in">print</span>(x_train.shape) <span class="comment"># (60000, 784)</span></span><br><span class="line"><span class="built_in">print</span>(t_train.shape) <span class="comment"># (60000,)</span></span><br><span class="line"><span class="built_in">print</span>(x_test.shape) <span class="comment"># (10000, 784)</span></span><br><span class="line"><span class="built_in">print</span>(t_test.shape) <span class="comment"># (10000,)</span></span><br></pre></td></tr></table></figure>
 <pre><code>(60000, 784)
 (60000,)
 (10000, 784)
 (10000,)
-</code></pre><p>读入MNIST数据集</p>
+</code></pre>
+<p>读入MNIST数据集</p>
 <pre><code>Parameters
 ----------
 normalize : 将图像的像素值正规化为0.0~1.0
@@ -449,7 +451,8 @@ flatten : 是否将图像展开为一维数组
 Returns
 -------
 (训练图像, 训练标签), (测试图像, 测试标签)
-</code></pre><p>normalize这种归一化是深度学习中的常见预处理步骤，可以：</p>
+</code></pre>
+<p>normalize这种归一化是深度学习中的常见预处理步骤，可以：</p>
 <p>使不同尺度特征具有可比性</p>
 <p>帮助优化算法更快收敛</p>
 <p>提高数值计算的稳定性</p>
@@ -458,41 +461,58 @@ Returns
 (60000,)
 (10000, 784)
 (10000,)
-</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">img_show</span>(<span class="params">img</span>):</span><br><span class="line">    pil_img = Image.fromarray(np.uint8(img))  <span class="comment">#把保存为 NumPy 数组的图像数据转换为 PIL 用的数据对象</span></span><br><span class="line">    pil_img.show()</span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(flatten=<span class="literal">True</span>,</span><br><span class="line">normalize=<span class="literal">False</span>)</span><br><span class="line">img = x_train[<span class="number">0</span>]</span><br><span class="line">label = t_train[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(label) <span class="comment"># 5</span></span><br><span class="line"><span class="built_in">print</span>(img.shape) <span class="comment"># (784,)</span></span><br><span class="line">img = img.reshape(<span class="number">28</span>, <span class="number">28</span>) <span class="comment"># 把图像的形状变成原来的尺寸</span></span><br><span class="line"><span class="built_in">print</span>(img.shape) <span class="comment"># (28, 28)</span></span><br><span class="line">img_show(img)</span><br><span class="line">plt.imshow(img)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">img_show</span>(<span class="params">img</span>):</span><br><span class="line">    pil_img = Image.fromarray(np.uint8(img))  <span class="comment">#把保存为 NumPy 数组的图像数据转换为 PIL 用的数据对象</span></span><br><span class="line">    pil_img.show()</span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(flatten=<span class="literal">True</span>,</span><br><span class="line">normalize=<span class="literal">False</span>)</span><br><span class="line">img = x_train[<span class="number">0</span>]</span><br><span class="line">label = t_train[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(label) <span class="comment"># 5</span></span><br><span class="line"><span class="built_in">print</span>(img.shape) <span class="comment"># (784,)</span></span><br><span class="line">img = img.reshape(<span class="number">28</span>, <span class="number">28</span>) <span class="comment"># 把图像的形状变成原来的尺寸</span></span><br><span class="line"><span class="built_in">print</span>(img.shape) <span class="comment"># (28, 28)</span></span><br><span class="line">img_show(img)</span><br><span class="line">plt.imshow(img)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <pre><code>5
 (784,)
 (28, 28)
-</code></pre><p><a href="%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB_4_1.png" title="png" class="gallery-item" style="box-shadow: none;"> <img src="%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB_4_1.png" alt="png"></a></p>
-<h5 id="神经网络的推理处理"><a href="#神经网络的推理处理" class="headerlink" title="神经网络的推理处理"></a>神经网络的推理处理</h5><p>对MNIST数据集实现神经网络的推理处理。<br>神经网络的输入层有784个神经元（图像28*28），输出层有10个神经元（数字0-9）。<br>第1个隐藏层有50个神经元，第2个隐藏层有100个神经元。50和100可以设置为任意值。</p>
+</code></pre>
+<p><a href="%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB_4_1.png" title="png" class="gallery-item" style="box-shadow: none;"> <img src="%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB_4_1.png" alt="png"></a></p>
+<h5 id="神经网络的推理处理">神经网络的推理处理</h5>
+<p>对MNIST数据集实现神经网络的推理处理。<br>
+神经网络的输入层有784个神经元（图像28*28），输出层有10个神经元（数字0-9）。<br>
+第1个隐藏层有50个神经元，第2个隐藏层有100个神经元。50和100可以设置为任意值。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sigmoid</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">softmax</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">if</span> a.ndim == <span class="number">2</span>:</span><br><span class="line">        a = a.T</span><br><span class="line">        a = a - np.<span class="built_in">max</span>(a, axis=<span class="number">0</span>)</span><br><span class="line">        y = np.exp(a) / np.<span class="built_in">sum</span>(np.exp(a), axis=<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> y.T</span><br><span class="line"></span><br><span class="line">    c = np.<span class="built_in">max</span>(a)</span><br><span class="line">    exp_a = np.exp(a-c)</span><br><span class="line">    <span class="keyword">return</span> exp_a / np.<span class="built_in">sum</span>(exp_a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    (x_train, t_train), (x_test, t_test) = \</span><br><span class="line">    load_mnist(normalize=<span class="literal">True</span>, flatten=<span class="literal">True</span>, one_hot_label=<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">return</span> x_test, t_test</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">init_network</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;sample_weight.pkl&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        network = pickle.load(f)</span><br><span class="line">    <span class="keyword">return</span> network</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">network, x</span>):</span><br><span class="line">    W1, W2, W3 = network[<span class="string">&#x27;W1&#x27;</span>], network[<span class="string">&#x27;W2&#x27;</span>], network[<span class="string">&#x27;W3&#x27;</span>]</span><br><span class="line">    b1, b2, b3 = network[<span class="string">&#x27;b1&#x27;</span>], network[<span class="string">&#x27;b2&#x27;</span>], network[<span class="string">&#x27;b3&#x27;</span>]</span><br><span class="line">    a1 = np.dot(x, W1) + b1</span><br><span class="line">    z1 = sigmoid(a1)</span><br><span class="line">    a2 = np.dot(z1, W2) + b2</span><br><span class="line">    z2 = sigmoid(a2)</span><br><span class="line">    a3 = np.dot(z2, W3) + b3</span><br><span class="line">    y = softmax(a3)</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line">x, t = get_data()</span><br><span class="line">network = init_network()</span><br><span class="line">accuracy_cnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(x)):</span><br><span class="line">    y = predict(network, x[i])</span><br><span class="line">    p = np.argmax(y) <span class="comment"># 获取概率最高的元素的索引</span></span><br><span class="line">    <span class="keyword">if</span> p == t[i]:</span><br><span class="line">        accuracy_cnt += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Accuracy:&quot;</span> + <span class="built_in">str</span>(<span class="built_in">float</span>(accuracy_cnt) / <span class="built_in">len</span>(x)))</span><br></pre></td></tr></table></figure>
 <pre><code>Accuracy:0.9352
-</code></pre><h5 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出刚才神经网络的各层的权重的形状</span></span><br><span class="line">x, _ = get_data()</span><br><span class="line">network = init_network()</span><br><span class="line">W1, W2, W3 = network[<span class="string">&#x27;W1&#x27;</span>], network[<span class="string">&#x27;W2&#x27;</span>], network[<span class="string">&#x27;W3&#x27;</span>]</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h5 id="批处理">批处理</h5>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出刚才神经网络的各层的权重的形状</span></span><br><span class="line">x, _ = get_data()</span><br><span class="line">network = init_network()</span><br><span class="line">W1, W2, W3 = network[<span class="string">&#x27;W1&#x27;</span>], network[<span class="string">&#x27;W2&#x27;</span>], network[<span class="string">&#x27;W3&#x27;</span>]</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x.shape  <span class="comment">#10000行 784列</span></span><br></pre></td></tr></table></figure>
 <pre><code>(10000, 784)
-</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x[<span class="number">0</span>].shape</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x[<span class="number">0</span>].shape</span><br></pre></td></tr></table></figure>
 <pre><code>(784,)
-</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W1.shape</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W1.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(784, 50)
-</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W2.shape</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W2.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(50, 100)
-</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W3.shape</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W3.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(100, 10)
-</code></pre><p><a href="img.png" class="gallery-item" style="box-shadow: none;"> <img src="img.png" alt=""></a></p>
+</code></pre>
+<p><a href="img.png" class="gallery-item" style="box-shadow: none;"> <img src="img.png" alt=""></a></p>
 <p>我们想用 predict()函数一次性打包处理 100 张图像。为此，可以把 x 的形状改为 100 × 784，将100 张图像打包作为输入数据。</p>
 <p><a href="img_1.png" class="gallery-item" style="box-shadow: none;"> <img src="img_1.png" alt=""></a></p>
-<p>输 入 数 据 的 形 状 为 100 × 784，输 出 数 据 的 形 状 为100 × 10。这表示输入的 100 张图像的结果被一次性输出了。比如，x[0]和y[0]中保存了第 0 张图像及其推理结果，x[1]和 y[1]中保存了第 1 张图像及其推理结果，等等。<br>这种打包式输入数据称为<strong>批(batch)</strong></p>
+<p>输 入 数 据 的 形 状 为 100 × 784，输 出 数 据 的 形 状 为100 × 10。这表示输入的 100 张图像的结果被一次性输出了。比如，x[0]和y[0]中保存了第 0 张图像及其推理结果，x[1]和 y[1]中保存了第 1 张图像及其推理结果，等等。<br>
+这种打包式输入数据称为<strong>批(batch)</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x, t = get_data()</span><br><span class="line">network = init_network()</span><br><span class="line">batch_size = <span class="number">100</span> <span class="comment"># 批数量</span></span><br><span class="line">accuracy_cnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(x), batch_size):</span><br><span class="line">    x_batch = x[i:i+batch_size]</span><br><span class="line">    y_batch = predict(network, x_batch)</span><br><span class="line">    p = np.argmax(y_batch, axis=<span class="number">1</span>)</span><br><span class="line">    accuracy_cnt += np.<span class="built_in">sum</span>(p == t[i:i+batch_size])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Accuracy:&quot;</span> + <span class="built_in">str</span>(<span class="built_in">float</span>(accuracy_cnt) / <span class="built_in">len</span>(x)))</span><br></pre></td></tr></table></figure>
 <pre><code>Accuracy:0.9352
-</code></pre><p>argmax()获取值最大的元素的索引，参数 axis=1,这指定了在 100 × 10 的数组中，沿着第 1 维方向（以第 1 维为轴）找到值最大的元素的索引（第 0 维对应第 1 个维度）</p>
+</code></pre>
+<p>argmax()获取值最大的元素的索引，参数 axis=1,这指定了在 100 × 10 的数组中，沿着第 1 维方向（以第 1 维为轴）找到值最大的元素的索引（第 0 维对应第 1 个维度）</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">16</span>,<span class="number">3</span>],[<span class="number">5</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>],[<span class="number">12</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>],[<span class="number">13</span>,<span class="number">14</span>,<span class="number">3</span>,<span class="number">16</span>]])</span><br><span class="line">y = np.argmax(x,axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure>
 <pre><code>[2 1 0 3]
-</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">y = np.argmax(x,axis=<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">y = np.argmax(x,axis=<span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure>
 <pre><code>[3 3 0 3]
-</code></pre><p>在 NumPy 数组之间使用比较运算符（==）生成由 True/False构成的布尔型数组，并计算 True的个数</p>
+</code></pre>
+<p>在 NumPy 数组之间使用比较运算符（==）生成由 True/False构成的布尔型数组，并计算 True的个数</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">y = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">t = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(y==t)</span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">sum</span>(y==t))</span><br></pre></td></tr></table></figure>
 <pre><code>[ True  True False  True]
 3
-</code></pre></div>
+</code></pre>
+</div>
     </div>
 
     <div class="post-meta">
