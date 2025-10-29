@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="与学习相关的技巧" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    与学习相关的技巧
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-10-29</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：8分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%8E%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="post-toc-text">与学习相关的技巧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E6%95%B0%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="post-toc-text">参数的更新</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#SGD"><span class="post-toc-text">SGD</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#SGD%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="post-toc-text">SGD的缺点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Momentum"><span class="post-toc-text">Momentum</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#AdaGrad"><span class="post-toc-text">AdaGrad</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Adam"><span class="post-toc-text">Adam</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9D%83%E9%87%8D%E7%9A%84%E5%88%9D%E5%A7%8B%E5%80%BC"><span class="post-toc-text">权重的初始值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%8F%AF%E4%BB%A5%E5%B0%86%E6%9D%83%E9%87%8D%E5%88%9D%E5%A7%8B%E5%80%BC%E8%AE%BE%E4%B8%BA0%E5%90%97"><span class="post-toc-text">可以将权重初始值设为0吗</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E9%9A%90%E8%97%8F%E5%B1%82%E7%9A%84%E6%BF%80%E6%B4%BB%E5%80%BC%E7%9A%84%E5%88%86%E5%B8%83"><span class="post-toc-text">隐藏层的激活值的分布</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ReLU%E7%9A%84%E6%9D%83%E9%87%8D%E5%88%9D%E5%A7%8B%E5%80%BC"><span class="post-toc-text">ReLU的权重初始值</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Batch-Normalization"><span class="post-toc-text">Batch Normalization</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="post-toc-text">正则化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%9D%83%E5%80%BC%E8%A1%B0%E5%87%8F"><span class="post-toc-text">权值衰减</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Dropout"><span class="post-toc-text">Dropout</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%B6%85%E5%8F%82%E6%95%B0%E7%9A%84%E9%AA%8C%E8%AF%81"><span class="post-toc-text">超参数的验证</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E9%AA%8C%E8%AF%81%E6%95%B0%E6%8D%AE"><span class="post-toc-text">验证数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E8%B6%85%E5%8F%82%E6%95%B0%E7%9A%84%E6%9C%80%E4%BC%98%E5%8C%96"><span class="post-toc-text">超参数的最优化</span></a></li></ol></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h3 id="与学习相关的技巧">与学习相关的技巧</h3>
+<h4 id="参数的更新">参数的更新</h4>
+<p>神经网络的学习的目的是找到使损失函数的值尽可能小的参数。解决这个问题的过程称为最优化 （ optimization ）。</p>
+<h5 id="SGD">SGD</h5>
+<p>使用参数的梯度，沿梯度方向更新参数，并重复这个步骤多次，从而逐渐靠<br>
+近最优参数，这个过程称为随机梯度下降法 （ stochastic gradient descent ），<br>
+简称 <em>SGD</em></p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=W%20%5Cgets%20W%20-%20%5Ceta%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%20%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=W%20%5Cgets%20W%20-%20%5Ceta%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%20%0A" /></a></p><p>需要更新的权重参数记为W，把损失函数关于W的梯度记为<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D" style="display:inline-block;margin: 0;"/></a>。<br>
+η 表示学习率，实际上会取 0.01 或 0.001 这些事先决定好的值.式子中的←表示用右边的值更新左边的值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SGD</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, lr=<span class="number">0.01</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.lr = lr</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">update</span>(<span class="params">self, params, grads</span>):</span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> params.keys():</span><br><span class="line">            params[key] -= <span class="variable language_">self</span>.lr * grads[key]</span><br><span class="line"></span><br><span class="line">optimizer = SGD()</span><br><span class="line">params = &#123;<span class="string">&#x27;W1&#x27;</span>: np.array([[<span class="number">1.0</span>, <span class="number">2.0</span>], [<span class="number">3.0</span>, <span class="number">4.0</span>]])&#125;</span><br><span class="line">grads = &#123;<span class="string">&#x27;W1&#x27;</span>: np.array([[<span class="number">0.1</span>, <span class="number">0.1</span>], [<span class="number">0.1</span>, <span class="number">0.1</span>]])&#125;</span><br><span class="line"><span class="built_in">print</span>(params[<span class="string">&#x27;W1&#x27;</span>])</span><br><span class="line">optimizer.update(params, grads)</span><br><span class="line"><span class="built_in">print</span>(params[<span class="string">&#x27;W1&#x27;</span>])</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>[[1. 2.]
+ [3. 4.]]
+[[0.999 1.999]
+ [2.999 3.999]]
+</code></pre>
+<h5 id="SGD的缺点">SGD的缺点</h5>
+<p>SGD 的缺点在于它使用相同的学习率更新所有参数。实际上，不同参数的更新幅度往往不同。如果函数的形状非均向（ anisotropic ），比如呈延伸状，搜索<br>
+的路径就会非常低效。</p>
+<h5 id="Momentum">Momentum</h5>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=%5Cupsilon%20%5Cgets%20%5Calpha%20%5Cupsilon%20-%20%20%5Ceta%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=%5Cupsilon%20%5Cgets%20%5Calpha%20%5Cupsilon%20-%20%20%5Ceta%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%0A" /></a></p><p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=W%20%5Cgets%20W%20%2B%20%5Cupsilon%20%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=W%20%5Cgets%20W%20%2B%20%5Cupsilon%20%0A" /></a></p><p>W 表示要更新的权重参数， 表示损失函数关于 W 的梯度，η 表示学习率。这里新出现了一个变量 v，对应物理上的速度。</p>
+<p>αv 这一项。在物体不受任何力时，该项承担使物体逐渐减速的任务（ α 设定为 0.9 之类的值），对应物理上的地面摩擦或空气阻力。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Momentum</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, lr=<span class="number">0.01</span>, momentum=<span class="number">0.9</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.lr = lr</span><br><span class="line">        <span class="variable language_">self</span>.momentum = momentum</span><br><span class="line">        <span class="variable language_">self</span>.v = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">update</span>(<span class="params">self, params, grads</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.v <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="variable language_">self</span>.v = &#123;&#125;</span><br><span class="line">            <span class="keyword">for</span> key, val <span class="keyword">in</span> params.items():</span><br><span class="line">                <span class="variable language_">self</span>.v[key] = np.zeros_like(val)</span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> params.keys():</span><br><span class="line">            <span class="variable language_">self</span>.v[key] = <span class="variable language_">self</span>.momentum*<span class="variable language_">self</span>.v[key] - <span class="variable language_">self</span>.lr*grads[key]</span><br><span class="line">            params[key] += <span class="variable language_">self</span>.v[key]</span><br></pre></td></tr></table></figure>
+<h5 id="AdaGrad">AdaGrad</h5>
+<p>学习率衰减 （ learning rate decay ）的方法，即随着学习的进行，使学习率逐渐减小。</p>
+<p>AdaGrad 会为参数的每个元素适当地调整学习率，与此同时进行学习（ AdaGrad 的 Ada 来自英文单词 Adaptive，即“适当的”的意思）。</p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=h%20%5Cgets%20h%20%2B%20%5Cleft%28%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%20%5Cright%29%5E2%20%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=h%20%5Cgets%20h%20%2B%20%5Cleft%28%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%20%5Cright%29%5E2%20%0A" /></a></p><p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=W%20%5Cgets%20W%20-%20%5Ceta%20%5Cfrac%7B1%7D%7B%5Csqrt%7Bh%7D%20%2B%20%5Cepsilon%7D%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%20%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=W%20%5Cgets%20W%20-%20%5Ceta%20%5Cfrac%7B1%7D%7B%5Csqrt%7Bh%7D%20%2B%20%5Cepsilon%7D%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20W%7D%20%0A" /></a></p><p>W 表示要更新的权重参数， <a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20L%7D%20%7B%5Cpartial%20W%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B%5Cpartial%20L%7D%20%7B%5Cpartial%20W%7D" style="display:inline-block;margin: 0;"/></a>表示损失函数关于 W 的梯度，η 表示学习率。这里新出现了变量 h,它保存了以前的所有梯度值的平方和在更新参数时，通过乘以 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B1%7D%7Bh%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B1%7D%7Bh%7D" style="display:inline-block;margin: 0;"/></a>，就可以调整学习的尺度。这意味着，参数的元素中变动较大（被大幅更新）的元素的学习率将变小。也就是说，可以按参数的元素进行学习率衰减，使变动大的参数的学习率逐渐减小。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">AdaGrad</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, lr=<span class="number">0.01</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.lr = lr</span><br><span class="line">        <span class="variable language_">self</span>.h = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">update</span>(<span class="params">self, params, grads</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.h <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="variable language_">self</span>.h = &#123;&#125;</span><br><span class="line">            <span class="keyword">for</span> key, val <span class="keyword">in</span> params.items():</span><br><span class="line">                <span class="variable language_">self</span>.h[key] = np.zeros_like(val)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> params.keys():</span><br><span class="line">            <span class="variable language_">self</span>.h[key] += grads[key] * grads[key]</span><br><span class="line">            params[key] -= <span class="variable language_">self</span>.lr * grads[key] / (np.sqrt(<span class="variable language_">self</span>.h[key]) + <span class="number">1e-7</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="Adam">Adam</h5>
+<p>Adam 是 2015 年提出的新方法。它的理论有些复杂，直观地讲，就是融合了 Momentum 和 AdaGrad 的方法。通过组合前面两个方法的优点，有望实现参数空间的高效搜索。此外，进行超参数的“偏置校正”也是 Adam 的特征。</p>
+<blockquote>
+<p>SGD 或者 Adam 为经常使用的方法</p>
+</blockquote>
+<h4 id="权重的初始值">权重的初始值</h4>
+<h5 id="可以将权重初始值设为0吗">可以将权重初始值设为0吗</h5>
+<p>为了防止“权重均一化”（严格地讲，是为了瓦解权重的对称结构），必须随机生成初始值。</p>
+<h5 id="隐藏层的激活值的分布">隐藏层的激活值的分布</h5>
+<p>在深度神经网络中，随着层数的增加，隐藏层的激活值（神经元的输出值）的分布会发生变化。如果分布过于集中在某个范围内，可能会导致梯度消失或梯度爆炸的问题，从而影响学习效果。因此，选择合适的权重初始值对于保持激活值的分布稳定非常重要。</p>
+<h5 id="ReLU的权重初始值">ReLU的权重初始值</h5>
+<p>对于使用ReLU激活函数的神经网络，常用的权重初始化方法是He初始化（He initialization）。这种方法考虑了ReLU的特性，能够有效地保持激活值的方差。</p>
+<blockquote>
+<p>在神经网络的学习中，权重初始值非常重要。很多时候权重初始<br>
+值的设定关系到神经网络的学习能否成功。权重初始值的重要性容易被忽视，<br>
+而任何事情的开始（初始值）总是关键的</p>
+</blockquote>
+<h4 id="Batch-Normalization">Batch Normalization</h4>
+<p>为了使各层拥有适当的广度，“强制性”地调整激活值的分布<br>
+会怎样呢？实际上，Batch Normalization[11] 方法就是基于这个想法而产生的。</p>
+<p>Batch Normalization 的基本思想是在每一层的激活值上进行归一化处理，使其均值为0，方差为1。这样可以减轻内部协变量偏移（internal covariate shift）的问题，从而加速训练过程并提高模型的性能。</p>
+<h4 id="正则化">正则化</h4>
+<h5 id="权值衰减">权值衰减</h5>
+<p>权值衰减是一直以来经常被使用的一种抑制过拟合的方法。该方法通过<br>
+在学习的过程中对大的权重进行惩罚，来抑制过拟合。很多过拟合原本就是<br>
+因为权重参数取值过大才发生的。</p>
+<p>为损失函数加上权重的平方范数（ L2 范数）。这样一来，就可以抑制权重变大。<br>
+用符号表示的话，如果将权重记为 W，L2 范数的权值衰减就是<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" style="display:inline-block;margin: 0;"/></a> ，然<br>
+后将这个<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" style="display:inline-block;margin: 0;"/></a> 加到损失函数上。这里，λ 是控制正则化强度的超参数。λ<br>
+设置得越大，对大的权重施加的惩罚就越重。此外， <a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" style="display:inline-block;margin: 0;"/></a>开头的<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D" style="display:inline-block;margin: 0;"/></a> 是用于<br>
+将 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" style="display:inline-block;margin: 0;"/></a>的求导结果变成 λW 的调整用常量。<br>
+对于所有权重，权值衰减方法都会为损失函数加上<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cfrac%7B1%7D%7B2%7D%5Clambda%20W%5E2" style="display:inline-block;margin: 0;"/></a> 。因此，在求权<br>
+重梯度的计算中，要为之前的误差反向传播法的结果加上正则化项的导数λW。</p>
+<h5 id="Dropout">Dropout</h5>
+<p>如果网络的模型变得很复杂，只用权值衰减就难以应对了。在这种情<br>
+况下，我们经常会使用 Dropout 方法。</p>
+<p>Dropout 是一种在学习的过程中随机删除神经元的方法。训练时，随机<br>
+选出隐藏层的神经元，然后将其删除。被删除的神经元不再进行信号的传递<br>
+<a href="img.png" title="image.png" class="gallery-item" style="box-shadow: none;"> <img src="img.png" alt="image.png"></a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Dropout</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, dropout_ratio=<span class="number">0.5</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.dropout_ratio = dropout_ratio</span><br><span class="line">        <span class="variable language_">self</span>.mask = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, train_flg=<span class="literal">True</span></span>):</span><br><span class="line">        <span class="keyword">if</span> train_flg:</span><br><span class="line">            <span class="variable language_">self</span>.mask = np.random.rand(*x.shape) &gt; <span class="variable language_">self</span>.dropout_ratio</span><br><span class="line">            <span class="keyword">return</span> x * <span class="variable language_">self</span>.mask</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> x * (<span class="number">1.0</span> - <span class="variable language_">self</span>.dropout_ratio)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">backward</span>(<span class="params">self, dout</span>):</span><br><span class="line">        <span class="keyword">return</span> dout * <span class="variable language_">self</span>.mask</span><br></pre></td></tr></table></figure>
+<p>这里的要点是，每次正向传播时，self.mask中都会以 False的形式保<br>
+存要删除的神经元。self.mask会随机生成和 x形状相同的数组，并将值比<br>
+dropout_ratio大的元素设为 True。反向传播时的行为和 ReLU 相同。也就是说，<br>
+正向传播时传递了信号的神经元，反向传播时按原样传递信号；正向传播时没有传递信号的神经元，反向传播时信号将停在那里。</p>
+<h4 id="超参数的验证">超参数的验证</h4>
+<p>超参数是指，比如各层的神经元数量、batch 大小、参<br>
+数更新时的学习率或权值衰减等。如果这些超参数没有设置合适的值，模型<br>
+的性能就会很差。虽然超参数的取值非常重要，但是在决定超参数的过程中<br>
+一般会伴随很多的试错。</p>
+<h5 id="验证数据">验证数据</h5>
+<p>调整超参数时，必须使用超参数专用的确认数据。用于调整超参<br>
+数的数据，一般称为验证数据 （ validation data ）。</p>
+<blockquote>
+<p>训练数据用于参数（权重和偏置）的学习，验证数据用于超参数的性能评估。为了确认泛化能力，要在最后使用（比较理想的是只用一次）测试数据。</p>
+</blockquote>
+<h5 id="超参数的最优化">超参数的最优化</h5>
+<p>步骤0</p>
+<p>设定超参数的范围。</p>
+<p>步骤1</p>
+<p>从设定的超参数范围中随机采样。</p>
+<p>步骤2</p>
+<p>使用步骤 1 中采样到的超参数的值进行学习，通过验证数据评估识别精<br>
+度（但是要将 epoch 设置得很小）。</p>
+<p>步骤3</p>
+<p>重复步骤 1 和步骤 2 （ 100 次等），根据它们的识别精度的结果，缩小超参<br>
+数的范围。</p>
+<p>反复进行上述操作，不断缩小超参数的范围，在缩小到一定程度时，从<br>
+该范围中选出一个超参数的值。</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-10-29</span>
+            
+                <span>该篇文章被 xander</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/'>
+                            深度学习入门
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/10/29/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/">反向传播法</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>
