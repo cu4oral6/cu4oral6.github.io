@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="卷积神经网络" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    卷积神经网络
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-11-03</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：1.2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：4分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="post-toc-text">卷积神经网络</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8D%B7%E7%A7%AF%E5%B1%82"><span class="post-toc-text">卷积层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="post-toc-text">全连接层存在的问题</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%8D%B7%E7%A7%AF%E8%BF%90%E7%AE%97"><span class="post-toc-text">卷积运算</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%A1%AB%E5%85%85"><span class="post-toc-text">填充</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%AD%A5%E5%B9%85"><span class="post-toc-text">步幅</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%AF%B9%E4%BA%8E%E5%A1%AB%E5%85%85%E5%92%8C%E6%AD%A5%E5%B9%85%EF%BC%8C%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E8%BE%93%E5%87%BA%E5%A4%A7%E5%B0%8F%E3%80%82"><span class="post-toc-text">对于填充和步幅，如何计算输出大小。</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3%E7%BB%B4%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8D%B7%E7%A7%AF%E8%BF%90%E7%AE%97"><span class="post-toc-text">3维数据的卷积运算</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%B1%A0%E5%8C%96%E5%B1%82"><span class="post-toc-text">池化层</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8D%B7%E7%A7%AF%E5%B1%82%E5%92%8C%E6%B1%A0%E5%8C%96%E5%B1%82%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="post-toc-text">卷积层和池化层的实现</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CNN%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="post-toc-text">CNN的实现</span></a></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h3 id="卷积神经网络">卷积神经网络</h3>
+<h4 id="卷积层">卷积层</h4>
+<h5 id="全连接层存在的问题">全连接层存在的问题</h5>
+<p>全连接层会忽视形状，将全部的输入数据作为相同的神经元<br>
+（同一维度的神经元）处理，所以无法利用与形状相关的信息。</p>
+<p>卷积层可以保持形状不变。当输入数据是图像时，卷积层会以 3 维<br>
+数据的形式接收输入数据，并同样以 3 维数据的形式输出至下一层。</p>
+<p>CNN 中，有 时 将 卷 积 层 的 输 入 输 出 数 据 称 为 特 征 图 （ feature<br>
+map ）。其中，卷积层的输入数据称为输入特征图 （ input feature map ），输出<br>
+数据称为输出特征图 （ output feature map ）。</p>
+<h5 id="卷积运算">卷积运算</h5>
+<p>卷积层进行的处理就是卷积运算。卷积运算相当于图像处理中的“滤波<br>
+器运算”。对于输入数据，卷积运算以一定间隔滑动滤波器的窗口并应用。这里所<br>
+说的窗口是指图中灰色的 3 × 3 的部分。如图所示，将各个位置上滤<br>
+波器的元素和输入的对应元素相乘，然后再求和（有时将这个计算称为乘积<br>
+累加运算 ）。然后，将这个结果保存到输出的对应位置。将这个过程在所有<br>
+位置都进行一遍，就可以得到卷积运算的输出。在全连接的神经网络中，除了权重参数，还存在偏置。<br>
+<a href="img.png" title="image.png" class="gallery-item" style="box-shadow: none;"> <img src="img.png" alt="image.png"></a></p>
+<p><a href="img_1.png" title="image.png" class="gallery-item" style="box-shadow: none;"> <img src="img_1.png" alt="image.png"></a></p>
+<h5 id="填充">填充</h5>
+<p>在进行卷积层的处理之前，有时要向输入数据的周围填入固定的数据（比<br>
+如 0 等），这称为填充 （ padding ），是卷积运算中经常会用到的处理。</p>
+<p>在图 7-6 的例子中，对大小为 (4, 4) 的输入数据应用了幅度为 1 的填充。“幅<br>
+度为 1 的填充”是指用幅度为 1 像素的 0 填充周围。</p>
+<p><a href="img_2.png" title="image.png" class="gallery-item" style="box-shadow: none;"> <img src="img_2.png" alt="image.png"></a></p>
+<h5 id="步幅">步幅</h5>
+<p>应用滤波器的位置间隔称为步幅 （ stride ）。之前的例子中步幅都是 1，如<br>
+果将步幅设为 2，则如图 7-7 所示，应用滤波器的窗口的间隔变为 2 个元素。<br>
+<a href="img_3.png" title="image.png" class="gallery-item" style="box-shadow: none;"> <img src="img_3.png" alt="image.png"></a></p>
+<h6 id="对于填充和步幅，如何计算输出大小。">对于填充和步幅，如何计算输出大小。</h6>
+<p>假设输入大小为 (H, W)，滤波器大小为 (FH, FW)，输出大小为<br>
+(OH, OW)，填充为 P，步幅为 S。</p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=OH%20%3D%20%5Cfrac%7BH%20%2B%202P%20-%20FH%7D%7BS%7D%20%2B%201%20%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=OH%20%3D%20%5Cfrac%7BH%20%2B%202P%20-%20FH%7D%7BS%7D%20%2B%201%20%0A" /></a></p><p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=OW%20%3D%20%5Cfrac%7BW%20%2B%202P%20-%20FW%7D%7BS%7D%20%2B%201%20%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=OW%20%3D%20%5Cfrac%7BW%20%2B%202P%20-%20FW%7D%7BS%7D%20%2B%201%20%0A" /></a></p><p>当值无法除尽时，有时会向最接近的整数四舍五入，不进行<br>
+报错而继续运行。</p>
+<h5 id="3维数据的卷积运算">3维数据的卷积运算</h5>
+<p>图像是 3 维数据，除了高、长方向之外，还需要处理通道方向。通道方向上有多个特征图时，会按通道进行输入数据和滤波器的卷积运算，并将结果相加，从而得到输出。<br>
+<a href="img_4.png" title="image.png" class="gallery-item" style="box-shadow: none;"> <img src="img_4.png" alt="image.png"></a></p>
+<h4 id="池化层">池化层</h4>
+<p>池化是缩小高、长方向上的空间的运算。比如，如图 7-14 所示，进行将<br>
+2 × 2 的区域集约成 1 个元素的处理，缩小空间大小。<br>
+<a href="img_5.png" title="image.png" class="gallery-item" style="box-shadow: none;"> <img src="img_5.png" alt="image.png"></a><br>
+“Max<br>
+池化”是获取最大值的运算，“2 × 2”表示目标区域的大小。如图所示，从<br>
+2 × 2 的区域中取出最大的元素。此外，这个例子中将步幅设为了 2，所以<br>
+2 × 2 的窗口的移动间隔为 2 个元素。另外，一般来说，池化的窗口大小会<br>
+和步幅设定成相同的值。比如，3 × 3 的窗口的步幅会设为 3，4 × 4 的窗口<br>
+的步幅会设为 4 等。除了 Max 池化之外，还有 Average 池化等。</p>
+<h4 id="卷积层和池化层的实现">卷积层和池化层的实现</h4>
+<p>在使用 PyTorch 的情况下，了解卷积层和池化层的基本原理足够了。</p>
+<h4 id="CNN的实现">CNN的实现</h4>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SimpleConvNet</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(SimpleConvNet, <span class="variable language_">self</span>).__init__()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 定义卷积层1</span></span><br><span class="line">        <span class="variable language_">self</span>.conv1 = nn.Conv2d(in_channels=<span class="number">3</span>, out_channels=<span class="number">32</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>)  <span class="comment"># 假设输入是3通道图像</span></span><br><span class="line">        <span class="comment"># 定义卷积层2</span></span><br><span class="line">        <span class="variable language_">self</span>.conv2 = nn.Conv2d(in_channels=<span class="number">32</span>, out_channels=<span class="number">64</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>)  <span class="comment"># 假设后续卷积层是64通道</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 定义全连接层1</span></span><br><span class="line">        <span class="variable language_">self</span>.fc1 = nn.Linear(<span class="number">64</span> * <span class="number">8</span> * <span class="number">8</span>, <span class="number">128</span>)  <span class="comment"># 假设图片尺寸经过池化后为8x8</span></span><br><span class="line">        <span class="comment"># 定义全连接层2</span></span><br><span class="line">        <span class="variable language_">self</span>.fc2 = nn.Linear(<span class="number">128</span>, <span class="number">10</span>)  <span class="comment"># 假设最终是10个类别的分类</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="comment"># 卷积层1 + ReLU + 池化</span></span><br><span class="line">        x = F.relu(<span class="variable language_">self</span>.conv1(x))</span><br><span class="line">        x = F.max_pool2d(x, <span class="number">2</span>, <span class="number">2</span>)  <span class="comment"># 2x2池化</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 卷积层2 + ReLU + 池化</span></span><br><span class="line">        x = F.relu(<span class="variable language_">self</span>.conv2(x))</span><br><span class="line">        x = F.max_pool2d(x, <span class="number">2</span>, <span class="number">2</span>)  <span class="comment"># 2x2池化</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 展平</span></span><br><span class="line">        x = x.view(x.size(<span class="number">0</span>), -<span class="number">1</span>)  <span class="comment"># 将多维的输入展平为1维</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 全连接层1 + ReLU</span></span><br><span class="line">        x = F.relu(<span class="variable language_">self</span>.fc1(x))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 全连接层2</span></span><br><span class="line">        x = <span class="variable language_">self</span>.fc2(x)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Softmax激活，得到概率分布</span></span><br><span class="line">        x = F.softmax(x, dim=<span class="number">1</span>)  <span class="comment"># dim=1表示按列进行softmax，适用于分类任务</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试网络结构</span></span><br><span class="line">model = SimpleConvNet()</span><br><span class="line"><span class="built_in">print</span>(model)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>SimpleConvNet(
+  (conv1): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (fc1): Linear(in_features=4096, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+</code></pre>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-11-03</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/11/02/%E5%89%AA%E6%98%A0%E6%8A%80%E5%B7%A7%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">剪映技巧个人笔记</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>
