@@ -6,7 +6,7 @@
   <link href="http://531party.cn/atom.xml" rel="self"/>
   
   <link href="http://531party.cn/"/>
-  <updated>2025-11-03T05:54:11.697Z</updated>
+  <updated>2026-01-23T06:36:07.008Z</updated>
   <id>http://531party.cn/</id>
   
   <author>
@@ -15,6 +15,172 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>neo4j折腾记录</title>
+    <link href="http://531party.cn/2026/01/23/neo4j%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/>
+    <id>http://531party.cn/2026/01/23/neo4j%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</id>
+    <published>2026-01-23T03:02:37.000Z</published>
+    <updated>2026-01-23T06:36:07.008Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;组内服务器neo4j&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vllm部署（python虚拟环境方式）</title>
+    <link href="http://531party.cn/2026/01/17/vllm%E9%83%A8%E7%BD%B2%EF%BC%88python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E6%96%B9%E5%BC%8F%EF%BC%89/"/>
+    <id>http://531party.cn/2026/01/17/vllm%E9%83%A8%E7%BD%B2%EF%BC%88python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E6%96%B9%E5%BC%8F%EF%BC%89/</id>
+    <published>2026-01-16T23:43:47.000Z</published>
+    <updated>2026-01-16T23:56:00.569Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;二组&lt;/p&gt;
+&lt;p&gt;1.创建虚拟环境&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>milvus作业</title>
+    <link href="http://531party.cn/2026/01/16/milvus%E4%BD%9C%E4%B8%9A/"/>
+    <id>http://531party.cn/2026/01/16/milvus%E4%BD%9C%E4%B8%9A/</id>
+    <published>2026-01-16T12:57:22.000Z</published>
+    <updated>2026-01-17T04:57:14.597Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;作者：徐天&lt;/p&gt;
+&lt;h3 id=&quot;第一部分：代码调试与基础（必做）&quot;&gt;第一部分：代码调试与基础（必做）&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1.1 部署 milvus 数据库 standalone</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LMM 下盲解混方法综述：端元数估计、端元提取、丰度反演与常用约束/先验</title>
+    <link href="http://531party.cn/2025/12/22/LMM-%E4%B8%8B%E7%9B%B2%E8%A7%A3%E6%B7%B7%E6%96%B9%E6%B3%95%E7%BB%BC%E8%BF%B0%EF%BC%9A%E7%AB%AF%E5%85%83%E6%95%B0%E4%BC%B0%E8%AE%A1%E3%80%81%E7%AB%AF%E5%85%83%E6%8F%90%E5%8F%96%E3%80%81%E4%B8%B0%E5%BA%A6%E5%8F%8D%E6%BC%94%E4%B8%8E%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F-%E5%85%88%E9%AA%8C/"/>
+    <id>http://531party.cn/2025/12/22/LMM-%E4%B8%8B%E7%9B%B2%E8%A7%A3%E6%B7%B7%E6%96%B9%E6%B3%95%E7%BB%BC%E8%BF%B0%EF%BC%9A%E7%AB%AF%E5%85%83%E6%95%B0%E4%BC%B0%E8%AE%A1%E3%80%81%E7%AB%AF%E5%85%83%E6%8F%90%E5%8F%96%E3%80%81%E4%B8%B0%E5%BA%A6%E5%8F%8D%E6%BC%94%E4%B8%8E%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F-%E5%85%88%E9%AA%8C/</id>
+    <published>2025-12-22T06:09:47.000Z</published>
+    <updated>2025-12-25T08:49:39.023Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h4 id=&quot;引用论文怎么找&quot;&gt;引用论文怎么找&lt;/h4&gt;
+&lt;p&gt;第一层：先抓“地图”论文（1–3 篇），用它们帮你扩到 30+&lt;/p&gt;
+&lt;p&gt;先用 2 篇综述把候选池扩到 80–150 篇，再筛到 35–50</summary>
+        
+      
+    
+    
+    
+    
+    <category term="高光谱解混" scheme="http://531party.cn/tags/%E9%AB%98%E5%85%89%E8%B0%B1%E8%A7%A3%E6%B7%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>超分算法面试</title>
+    <link href="http://531party.cn/2025/12/18/%E8%B6%85%E5%88%86%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/"/>
+    <id>http://531party.cn/2025/12/18/%E8%B6%85%E5%88%86%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/</id>
+    <published>2025-12-18T08:24:32.000Z</published>
+    <updated>2025-12-19T03:55:10.404Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;老师您好，目前是中国海洋大学农业工程与信息技术专业的硕士一年级。&lt;br&gt;
+我本科和之前的工作经历偏工程开发，主要做过后端和系统项目，但在研究生阶段我开始明确往 AI 算法，尤其是图像处理方向</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="http://531party.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HU杂记</title>
+    <link href="http://531party.cn/2025/12/16/HU%E6%9D%82%E8%AE%B0/"/>
+    <id>http://531party.cn/2025/12/16/HU%E6%9D%82%E8%AE%B0/</id>
+    <published>2025-12-16T13:46:24.000Z</published>
+    <updated>2025-12-17T14:35:23.587Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;能用自己的话讲清楚：&lt;strong&gt;LMM = 端元线性组合 + 丰度约束（非负、和为1）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;abundances should satisfy two physical</summary>
+        
+      
+    
+    
+    
+    
+    <category term="高光谱图像" scheme="http://531party.cn/tags/%E9%AB%98%E5%85%89%E8%B0%B1%E5%9B%BE%E5%83%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高光谱图像笔记</title>
+    <link href="http://531party.cn/2025/11/03/%E9%AB%98%E5%85%89%E8%B0%B1%E5%9B%BE%E5%83%8F%E7%AC%94%E8%AE%B0/"/>
+    <id>http://531party.cn/2025/11/03/%E9%AB%98%E5%85%89%E8%B0%B1%E5%9B%BE%E5%83%8F%E7%AC%94%E8%AE%B0/</id>
+    <published>2025-11-03T11:04:15.000Z</published>
+    <updated>2025-11-03T11:07:42.174Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;线性光谱混合模型&lt;/p&gt;
+&lt;p&gt;（Linear Spectral Mixture Model， LSMM）&lt;/p&gt;
+&lt;p&gt;非线性光谱混合模型(Nonlinear Spectral Mixture Models,</summary>
+        
+      
+    
+    
+    
+    
+    <category term="高光谱图像" scheme="http://531party.cn/tags/%E9%AB%98%E5%85%89%E8%B0%B1%E5%9B%BE%E5%83%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>卷积神经网络</title>
@@ -317,180 +483,6 @@
         
     <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;梯度&quot;&gt;梯度&lt;/h3&gt;
 &lt;p&gt;我们希望一起计算 x0 和 x1 的偏导数。比如，我们来考虑求 x0 = 3, x1 = 4 时 (x0, x1)的偏导数 。另外，像</summary>
-        
-      
-    
-    
-    
-    
-    <category term="深度学习入门" scheme="http://531party.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数值微分</title>
-    <link href="http://531party.cn/2025/07/10/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/"/>
-    <id>http://531party.cn/2025/07/10/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/</id>
-    <published>2025-07-10T10:09:55.000Z</published>
-    <updated>2025-07-12T10:16:19.885Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;数值微分&quot;&gt;数值微分&lt;/h3&gt;
-&lt;h4 id=&quot;导数&quot;&gt;导数&lt;/h4&gt;
-&lt;p&gt;导数表示某个瞬间的变化量&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="深度学习入门" scheme="http://531party.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TaylorSeries</title>
-    <link href="http://531party.cn/2025/07/10/TaylorSeries/"/>
-    <id>http://531party.cn/2025/07/10/TaylorSeries/</id>
-    <published>2025-07-10T03:01:56.000Z</published>
-    <updated>2025-10-25T03:38:26.896Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;Taylor-series&quot;&gt;Taylor series&lt;/h3&gt;
-&lt;h3 id=&quot;泰勒级数&quot;&gt;泰勒级数&lt;/h3&gt;
-&lt;p style=&quot;&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="深度学习入门" scheme="http://531party.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>损失函数</title>
-    <link href="http://531party.cn/2025/07/07/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
-    <id>http://531party.cn/2025/07/07/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</id>
-    <published>2025-07-07T15:44:05.000Z</published>
-    <updated>2025-07-07T15:46:22.731Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;损失函数&quot;&gt;损失函数&lt;/h3&gt;
-&lt;p&gt;损失函数是表示神经网络性能的“恶劣程度”的指标，即当前的神经网络对监督数据在多大程度上不拟合，在多大程度上不一致。&lt;/p&gt;
-&lt;h4</summary>
-        
-      
-    
-    
-    
-    
-    <category term="深度学习入门" scheme="http://531party.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>matplotlib</title>
-    <link href="http://531party.cn/2025/07/07/matplotlib/"/>
-    <id>http://531party.cn/2025/07/07/matplotlib/</id>
-    <published>2025-07-07T07:49:18.000Z</published>
-    <updated>2025-07-07T07:51:47.033Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;Matplotlib&quot;&gt;Matplotlib&lt;/h3&gt;
-&lt;p&gt;Matplotlib是用于绘制图形的库&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    
-    <category term="python" scheme="http://531party.cn/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>手写数字识别</title>
-    <link href="http://531party.cn/2025/07/04/%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/"/>
-    <id>http://531party.cn/2025/07/04/%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</id>
-    <published>2025-07-04T08:59:16.000Z</published>
-    <updated>2025-07-07T15:45:31.151Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;&lt;a href=&quot;sample_weight.pkl&quot;&gt;sample_weight.pkl&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;dataset&quot;&gt;dataset&lt;/a&gt;&lt;/p&gt;
-&lt;h4</summary>
-        
-      
-    
-    
-    
-    
-    <category term="深度学习入门" scheme="http://531party.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>鱼书第三章神经网络</title>
-    <link href="http://531party.cn/2025/07/03/%E9%B1%BC%E4%B9%A6%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    <id>http://531party.cn/2025/07/03/%E9%B1%BC%E4%B9%A6%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</id>
-    <published>2025-07-03T08:11:12.000Z</published>
-    <updated>2025-07-04T01:08:03.976Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;神经网络&quot;&gt;神经网络&lt;/h3&gt;
-&lt;p style=&quot;&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="深度学习入门" scheme="http://531party.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>感知机的实现</title>
-    <link href="http://531party.cn/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://531party.cn/2025/07/02/%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0/</id>
-    <published>2025-07-02T03:13:52.000Z</published>
-    <updated>2025-07-02T07:19:56.001Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;感知机的实现&quot;&gt;感知机的实现&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;img.png&quot; title=&quot;image.png&quot; class=&quot;gallery-item&quot; style=&quot;box-shadow:</summary>
         
       
     

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="LMM 下盲解混方法综述：端元数估计、端元提取、丰度反演与常用约束/先验" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    LMM 下盲解混方法综述：端元数估计、端元提取、丰度反演与常用约束/先验
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-12-25</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.4k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：8分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%BC%95%E7%94%A8%E8%AE%BA%E6%96%87%E6%80%8E%E4%B9%88%E6%89%BE"><span class="post-toc-text">引用论文怎么找</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-%E8%AF%BB%E6%96%87%E7%8C%AE%E5%81%9A%E2%80%9C%E6%96%87%E7%8C%AE%E5%8D%A1%E7%89%87%E2%80%9D%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E6%8A%84%E6%91%98%E8%A6%81"><span class="post-toc-text">4.1 读文献做“文献卡片”，而不是抄摘要</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-%E6%AD%A3%E6%96%87%E5%86%99%E4%BD%9C%E8%A7%84%E5%88%99%EF%BC%88%E8%AE%A9%E6%9F%A5%E9%87%8D%E7%8E%87%E8%87%AA%E7%84%B6%E4%B8%8B%E9%99%8D%EF%BC%89"><span class="post-toc-text">4.2 正文写作规则（让查重率自然下降）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%B1%E5%90%8C%E8%A7%84%E5%88%99%EF%BC%9A%E6%AF%8F%E7%AF%87%E5%8F%AA%E8%AF%BB%E8%BF%99-5-%E4%B8%AA%E4%BD%8D%E7%BD%AE%EF%BC%88%E5%88%AB%E4%BB%8E%E5%A4%B4%E5%95%83%EF%BC%89"><span class="post-toc-text">共同规则：每篇只读这 5 个位置（别从头啃）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%94%A8-4-%E7%AF%87%E2%80%9C%E4%BB%A3%E8%A1%A8%E8%AE%BA%E6%96%87%E2%80%9D%E7%90%86%E8%A7%A3%E5%9B%9B%E4%B8%AA%E6%A8%A1%E5%9D%97%EF%BC%88%E6%AF%8F%E7%AF%871%E5%B0%8F%E6%97%B6%EF%BC%89"><span class="post-toc-text">用 4 篇“代表论文”理解四个模块（每篇1小时）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-%E2%80%9C%E4%BD%93%E7%A7%AF%E2%80%9D%E6%80%8E%E4%B9%88%E5%AE%9A%E4%B9%89%EF%BC%88%E7%9F%A5%E9%81%93%E6%98%AF%E5%93%AA%E4%B8%AA%E9%87%8F%E5%8D%B3%E5%8F%AF%EF%BC%89"><span class="post-toc-text">1) “体积”怎么定义（知道是哪个量即可）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-%E4%B8%BA%E4%BA%86%E5%8F%AF%E8%A7%A3%EF%BC%8C%E4%BB%96%E4%BB%AC%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88%E6%9D%BE%E5%BC%9B-%E6%AD%A3%E5%88%99%EF%BC%9F"><span class="post-toc-text">2) 为了可解，他们做了什么松弛&#x2F;正则？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%85%A2-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%95%8F%E6%84%9F%EF%BC%88%E5%86%99%E8%AE%A8%E8%AE%BA%E5%8F%AF%E7%94%A8%E7%B4%A0%E6%9D%90%EF%BC%89"><span class="post-toc-text">3) 为什么会慢 &#x2F; 为什么敏感（写讨论可用素材）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-6-%E8%A1%8C%E5%8D%A1%E7%89%87%E6%A8%A1%E6%9D%BF%EF%BC%88%E6%8C%89%E4%BD%A0%E7%BB%99%E7%9A%84%E8%A6%81%E7%B4%A0%EF%BC%89"><span class="post-toc-text">4) 6 行卡片模板（按你给的要素）</span></a>
+            
+        
+        <div class=".article-gallery"><h4 id="引用论文怎么找">引用论文怎么找</h4>
+<p>第一层：先抓“地图”论文（1–3 篇），用它们帮你扩到 30+</p>
+<p>先用 2 篇综述把候选池扩到 80–150 篇，再筛到 35–50 篇，最后正文引用 30–45 篇。</p>
+<p>第二层：关键词“定向打捞”（直接捞你要的：端元数 + 端元 + 丰度 + 约束）</p>
+<p>第三层：雪球法（你拿到 10 篇“很像你主题”的论文后，引用自然&gt;30） 对每篇核心论文做两件事： Backward：看它参考文献里最接近你主题的 5–10 篇 Forward：看 “Cited by” 里最新的 5–10 篇（通常能抓到 2024–2025） 雪球法特别适合你这种“老师规定引用数量”的场景：不靠“凑”，靠谱系自然增长。</p>
+<h3 id="4-1-读文献做“文献卡片”，而不是抄摘要">4.1 读文献做“文献卡片”，而不是抄摘要</h3>
+<p>每读一篇，只写 6 行（强制短）：</p>
+<ol>
+<li>这篇解决流程里的哪一步？（端元数/端元/丰度/约束/求解器）</li>
+<li>关键假设（纯像元？最小体积？空间平滑？）</li>
+<li>数学目标函数长什么样（写出关键项即可）</li>
+<li>用了什么优化方法（交替、ADMM、乘法更新、unrolling）</li>
+<li>数据集 &amp; 指标（做了哪些实验）</li>
+<li>你觉得它的<strong>局限</strong>是什么（这句最体现“你在思考”，也最不容易查重撞车）</li>
+</ol>
+<h3 id="4-2-正文写作规则（让查重率自然下降）">4.2 正文写作规则（让查重率自然下降）</h3>
+<ul>
+<li><strong>不要翻译摘要</strong>（翻译也会高重复）</li>
+<li>每段写完问自己：这一段有没有“我自己的判断句”？至少要有 1 句</li>
+<li>同一类方法（比如 TV 正则丰度）不要“一篇一段”，要“多篇一起总结 + 对比差异”</li>
+<li>图表用你自己画（流程图、分类表），重复率会明显更好看</li>
+</ul>
+<p>桶 A：端元数估计（3–5 篇）</p>
+<p>桶 B：端元提取（纯像元几何法）（6–8 篇）</p>
+<p>桶 C：端元提取（无纯像元/最小体积）（6–8 篇）</p>
+<p>桶 D：丰度估计与约束（TV/图正则/低秩/稀疏等）（6–8 篇）</p>
+<p>桶 E：联合估计（NMF/张量分解/新框架）（6–8 篇）</p>
+<p>稀疏回归 Sparse regression-based</p>
+<p>几何法 Geometric methods</p>
+<p>统计法 Statistical methods</p>
+<p>前三类方法通常包括先确定端元，然后通过最小二乘拟合或类似技术估算丰度。然而，这种方法需要先验知识，而在实际场景中，这些先验知识并不总是可得或易于获取的。这些局限性促使了更复杂的方法的发展，这些方法能够同时估算端元和丰度，而无需大量的先验知识。</p>
+<p>基于深度非负矩阵分解  methods based on deep nonnegative matrix factorization (DNMF) 22</p>
+<p>自编码器 autoencoder (AE)</p>
+<p>分类逻辑：几何法、统计法、稀疏回归、NMF、空间上下文等</p>
+<h2 id="共同规则：每篇只读这-5-个位置（别从头啃）">共同规则：每篇只读这 5 个位置（别从头啃）</h2>
+<ol>
+<li>Abstract</li>
+<li>Introduction（尤其是 problem statement）</li>
+<li>Model / Problem formulation（公式+约束）</li>
+<li>Method（抓核心步骤/目标函数/求解器）</li>
+<li>Experiments + Conclusion（指标、数据集、优缺点）</li>
+</ol>
+<h3 id="用-4-篇“代表论文”理解四个模块（每篇1小时）">用 4 篇“代表论文”理解四个模块（每篇1小时）</h3>
+<p>你不用看 30 篇才开始写。先用代表作“建立直觉”，之后再扩文献池。</p>
+<ul>
+<li>
+<p><strong>端元数/维数估计</strong>：HySime 或 HFC/NWHFC（选一个先懂）</p>
+<p>输入：观测光谱矩阵 <strong>Y=[y1,…,yN]</strong>，并计算样本相关矩阵 <strong>R̂y=YYᵀ/N</strong>（算法内部先用多元回归估计噪声，再得到 <strong>R̂n</strong>）。<br>
+输出：估计的<strong>信号子空间 X̂=span([e_{î1},…,e_{îk̂}])</strong> 以及其维数 <strong>k̂</strong>；在<strong>线性混合 x=Ms</strong> 下，子空间维数通常对应端元数 <strong>p</strong>。<br>
+核心思想：用 MMSE 权衡“<strong>信号投影误差功率(随k增大而减小)</strong>”与“<strong>噪声投影功率(随k增大而增大)</strong>”，最小化 <strong>mse(k)=tr(Uk⊥R̂y)+2tr(UkR̂n)+c</strong> 来选子空间。<br>
+关键假设/需要的估计量：加性噪声模型 <strong>y=x+n</strong> 且信号在低维子空间；噪声近似 <strong>n~N(0,R̂n)</strong>；需要估计 <strong>R̂n</strong>（由跨谱带多元回归残差得到）与 <strong>R̂x</strong>（由 y−ξ̂ 构造）。<br>
+优点：无监督、全自动（不需调参），显式利用噪声统计；实验中整体表现达到/优于当时 SOTA（如 NWHFC/HFC），且计算上可通过一次矩阵求逆加速噪声估计。<br>
+局限：性能依赖噪声估计质量——其回归噪声估计“依赖相邻谱带高度相关”的经验；当相关性弱/噪声估计不准时会影响 k̂ 判定；在低 SNR 时也更易出现欠估/过估（论文指出欠估时投影误差项占主导、过估时噪声项占主导）。</p>
+</li>
+<li>
+<p><strong>端元提取（纯像元几何派）</strong>：VCA 或 N-FINDR（选一个先懂）</p>
+</li>
+</ul>
+<p><strong>他们怎么把问题变成“找顶点/找最大体积”？（一句话）</strong><br>
+在线性混合模型下，降维后像元点云落在由端元张成的单纯形（或其投影）里、端元就是单纯形顶点，所以端元提取等价于在点云上找这些“顶点”（VCA找极值投影、N-FINDR找最大体积单纯形）。</p>
+<p><strong>纯像元假设在哪里用到？</strong></p>
+<ul>
+<li>用来保证：每个端元的“顶点”在观测数据里确实由某个像元实现（至少一个纯像元/近纯像元）。</li>
+<li>在VCA里直接体现在“取投影极值像元当新端元”：作者明确说极值只对应纯像元。</li>
+</ul>
+<p><strong>噪声/无纯像元时会发生什么？</strong></p>
+<ul>
+<li><strong>有噪声</strong>：极值点更容易被噪声扰动，整体精度随SNR下降而变差；并且文中还指出某些归一化/重标定会在低SNR时放大噪声，因此低SNR时改用PCA投影更稳。</li>
+<li><strong>无纯像元</strong>：这类“找顶点/最大体积”的算法会出现<strong>整体且几乎不可逆的性能下限</strong>——作者实验结论是：缺纯像元带来的变差通常比低SNR更严重（表现“ uniformly worse ”）。</li>
+</ul>
+<p><strong>6 行卡片模板</strong><br>
+输入：降维后的数据（以及端元数 p）<br>
+输出：端元矩阵 M<br>
+核心思想：找单纯形顶点 / 最大体积<br>
+关键假设：存在（近似）纯像元<br>
+优点：快、直观<br>
+局限：纯像元不足、噪声敏感</p>
+<ul>
+<li><strong>端元提取（无纯像元最小体积派）</strong>：SISAL 或 MVES（二选一）</li>
+</ul>
+<h3 id="1-“体积”怎么定义（知道是哪个量即可）">1) “体积”怎么定义（知道是哪个量即可）</h3>
+<p>在他们把数据先降到 **p 维子空间（令 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=l%3Dp" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=l%3Dp" style="display:inline-block;margin: 0;"/></a>，使 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=M" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=M" style="display:inline-block;margin: 0;"/></a> 为方阵）**之后，<strong>由端元矩阵 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=M" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=M" style="display:inline-block;margin: 0;"/></a> 的列向量生成的单纯形体积与 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=%7C%5Cdet%28M%29%7C" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%7C%5Cdet%28M%29%7C" style="display:inline-block;margin: 0;"/></a> 成正比</strong>，所以最小体积就是最小化 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=%7C%5Cdet%28M%29%7C" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%7C%5Cdet%28M%29%7C" style="display:inline-block;margin: 0;"/></a>。<br>
+等价地，他们用 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=Q%3DM%5E%7B-1%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=Q%3DM%5E%7B-1%7D" style="display:inline-block;margin: 0;"/></a> 把问题改写成最小化 <strong><a target="_blank" rel="noopener" href="https://math.now.sh?inline=-%5Clog%7C%5Cdet%28Q%29%7C" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=-%5Clog%7C%5Cdet%28Q%29%7C" style="display:inline-block;margin: 0;"/></a></strong>。</p>
+<hr>
+<h3 id="2-为了可解，他们做了什么松弛-正则？">2) 为了可解，他们做了什么松弛/正则？</h3>
+<p><strong>关键松弛：把“非负硬约束”改成 hinge 型软约束（正则项）</strong><br>
+原来是要求 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=QY%20%5Csucceq%200" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=QY%20%5Csucceq%200" style="display:inline-block;margin: 0;"/></a>（所有元素非负）；他们改成在目标里加一项</p>
+<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=%5Clambda%20%5C%7CQY%5C%7C_h%2C%5Cquad%20%5C%7CX%5C%7C_h%3D%5Csum_%7Bij%7D%20h%28X_%7Bij%7D%29%2C%5C%20h(x)%3D%5Cmax%5C%7B-x%2C0%5C%7D%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=%5Clambda%20%5C%7CQY%5C%7C_h%2C%5Cquad%20%5C%7CX%5C%7C_h%3D%5Csum_%7Bij%7D%20h%28X_%7Bij%7D%29%2C%5C%20h(x)%3D%5Cmax%5C%7B-x%2C0%5C%7D%0A" /></a></p><p>也就是<strong>只惩罚负值（负得越多罚得越多）</strong>，<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Clambda" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Clambda" style="display:inline-block;margin: 0;"/></a> 控制软约束强度。<br>
+并且他们指出：<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Clambda" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Clambda" style="display:inline-block;margin: 0;"/></a> 足够大时会“逼近”硬约束版本。</p>
+<p><strong>为了进一步可解：把非凸问题做成“序列凸子问题 + 增广拉格朗日求解”</strong></p>
+<ul>
+<li>他们明确指出原问题 <strong>非凸且困难</strong>（因为 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=-%5Clog%7C%5Cdet%28Q%29%7C" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=-%5Clog%7C%5Cdet%28Q%29%7C" style="display:inline-block;margin: 0;"/></a> 的 Hessian 有正有负）。</li>
+<li>用“下降序列”的思路，把目标中的那部分做 <strong>二次近似</strong>，每步解一个严格凸的子问题。</li>
+<li>对子问题用 <strong>变量分裂 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=Aq%3Dz" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=Aq%3Dz" style="display:inline-block;margin: 0;"/></a></strong>，再用 <strong>增广拉格朗日/交替最小化（Alternating Split AL）</strong> 来做。</li>
+</ul>
+<hr>
+<h3 id="3-为什么会慢-为什么敏感（写讨论可用素材）">3) 为什么会慢 / 为什么敏感（写讨论可用素材）</h3>
+<p><strong>慢的根因（方法论层面）</strong></p>
+<ul>
+<li>“最小体积外接单纯形”在这里本质上是 <strong>非凸优化</strong>，一般只能求“较好次优解”，天然就可能迭代多、算得重。</li>
+<li>同类方法（MVES/MVSA）在端元数或样本数较大时会非常慢/爆内存：作者明确说它们在 <strong>&gt;10 个端元、&gt;5000 像元</strong>就很吃力。</li>
+<li>实验里也给了“慢到不可用”的现象：例如 MVES 在 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=p%5Cge%2010" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=p%5Cge%2010" style="display:inline-block;margin: 0;"/></a> “takes hours”，MVSA 在 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=p%5Cge%2012" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=p%5Cge%2012" style="display:inline-block;margin: 0;"/></a> 内存耗尽。</li>
+</ul>
+<p><strong>敏感的来源（工程层面：局部最优 + 超参/初始化）</strong></p>
+<ul>
+<li><strong>非凸 ⇒ 依赖初始化/容易陷入局部极小</strong>：他们用 VCA 来做初始化（q0 = VCA(Y)），本身就暗示了对初始化的依赖。</li>
+<li><strong>软约束强度 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Clambda" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Clambda" style="display:inline-block;margin: 0;"/></a></strong> 很关键：<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Clambda" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Clambda" style="display:inline-block;margin: 0;"/></a> 太小会允许更多负值（单纯形可能“漏出”可行域），太大又回到接近硬约束、数值更“紧”。</li>
+<li>求解器还引入 <strong><a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cmu%2C%5Ctau" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cmu%2C%5Ctau" style="display:inline-block;margin: 0;"/></a></strong> 等参数；论文实验给了一个可用设置，但也承认“可能远非最优”。</li>
+</ul>
+<p><strong>他们如何缓解（可写优点/讨论）</strong></p>
+<ul>
+<li>hinge 软约束带来：对噪声/离群点/差初始化更鲁棒，并且把 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=n%5Ctimes%20p" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=n%5Ctimes%20p" style="display:inline-block;margin: 0;"/></a> 的硬约束“搬进正则项”更利于大规模。</li>
+<li>交替 Split-AL 每步都很轻（阈值/近端 + 固定规模矩阵运算），作者强调计算很“light”。</li>
+<li>给出整体复杂度近似 <strong><a target="_blank" rel="noopener" href="https://math.now.sh?inline=O%28np%29" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=O%28np%29" style="display:inline-block;margin: 0;"/></a></strong>。</li>
+</ul>
+<hr>
+<h3 id="4-6-行卡片模板（按你给的要素）">4) 6 行卡片模板（按你给的要素）</h3>
+<p>输入：降维数据 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=Y%5Cin%5Cmathbb%7BR%7D%5E%7Bp%5Ctimes%20n%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=Y%5Cin%5Cmathbb%7BR%7D%5E%7Bp%5Ctimes%20n%7D" style="display:inline-block;margin: 0;"/></a> + 端元数 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=p" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=p" style="display:inline-block;margin: 0;"/></a><br>
+输出：端元矩阵 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=M%5Cin%5Cmathbb%7BR%7D%5E%7Bp%5Ctimes%20p%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=M%5Cin%5Cmathbb%7BR%7D%5E%7Bp%5Ctimes%20p%7D" style="display:inline-block;margin: 0;"/></a>（或其逆 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=Q%3DM%5E%7B-1%7D" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=Q%3DM%5E%7B-1%7D" style="display:inline-block;margin: 0;"/></a>）<br>
+核心思想：最小体积外接单纯形（无纯像元场景），体积 <a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Cpropto%7C%5Cdet%28M%29%7C" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Cpropto%7C%5Cdet%28M%29%7C" style="display:inline-block;margin: 0;"/></a><br>
+求解器：变量分裂 + 增广拉格朗日（交替 Split-AL / 类 ADMM）<br>
+优点：把非负约束做成 hinge 软约束，鲁棒且更适合无纯像元<br>
+局限：非凸（局部最优），<a target="_blank" rel="noopener" href="https://math.now.sh?inline=%5Clambda%2C%5Cmu%2C%5Ctau" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?inline=%5Clambda%2C%5Cmu%2C%5Ctau" style="display:inline-block;margin: 0;"/></a> 等超参/初始化敏感，计算量随规模仍增长</p>
+<ul>
+<li><strong>丰度估计（基线）</strong>：FCLS（约束最小二乘，后面所有方法都可以拿它当对照）</li>
+</ul>
+<blockquote>
+<p>你把这四个模块各懂一个代表方法，就能写“整体流程”的主干了。</p>
+</blockquote>
+<p>高光谱图像介绍</p>
+<p>[3] T. M. Lillesand, R. W. Kiefer, and J. W. Chipman, Remote Sensing and Image Interpretation, 5th ed. Hoboken, NJ: Wiley, 2004.</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-12-22</span>
+            
+                <span>该篇文章被 xander</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E9%AB%98%E5%85%89%E8%B0%B1%E8%A7%A3%E6%B7%B7/'>
+                            高光谱解混
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2026/01/16/milvus%E4%BD%9C%E4%B8%9A/'>milvus作业</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/12/18/%E8%B6%85%E5%88%86%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/">超分算法面试</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>
