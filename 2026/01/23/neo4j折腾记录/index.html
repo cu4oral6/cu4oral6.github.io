@@ -404,13 +404,13 @@
                     
                         &nbsp; | &nbsp;
                     
-                     <span>字数总计：302</span>
+                     <span>字数总计：758</span>
                 
                 
                     
                         &nbsp; | &nbsp;
                     
-                    <span>阅读估时：1分钟</span>
+                    <span>阅读估时：3分钟</span>
                 
                 
                     
@@ -426,66 +426,84 @@
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Neo4j-%E9%87%8C-%E6%B2%A1%E6%9C%89%E2%80%9C%E6%95%B0%E6%8D%AE%E8%A1%A8%E2%80%9D%E8%BF%99%E4%B8%AA%E6%A6%82%E5%BF%B5"><span class="post-toc-text">Neo4j 里 没有“数据表”这个概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="post-toc-text">关系型数据库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Neo4j%EF%BC%88%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%89"><span class="post-toc-text">Neo4j（图数据库）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Neo4j-Cypher-%E8%AF%AD%E6%B3%95%E9%80%9F%E6%88%90"><span class="post-toc-text">Neo4j &#x2F; Cypher 语法速成</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1%EF%B8%8F%E2%83%A3-%E8%8A%82%E7%82%B9%EF%BC%88Node%EF%BC%89"><span class="post-toc-text">1️⃣ 节点（Node）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2%EF%B8%8F%E2%83%A3-%E5%85%B3%E7%B3%BB%EF%BC%88Relationship%EF%BC%89"><span class="post-toc-text">2️⃣ 关系（Relationship）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3%EF%B8%8F%E2%83%A3-MATCH%EF%BC%88%E6%9F%A5%E6%95%B0%E6%8D%AE%EF%BC%8C%E2%89%88-SELECT%EF%BC%89"><span class="post-toc-text">3️⃣ MATCH（查数据，≈ SELECT）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4%EF%B8%8F%E2%83%A3-CREATE%EF%BC%88%E5%BB%BA%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="post-toc-text">4️⃣ CREATE（建数据）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5%EF%B8%8F%E2%83%A3-MERGE%EF%BC%88%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81%F0%9F%94%A5%EF%BC%89"><span class="post-toc-text">5️⃣ MERGE（非常重要🔥）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6%EF%B8%8F%E2%83%A3-WHERE%EF%BC%88%E6%9D%A1%E4%BB%B6%E8%BF%87%E6%BB%A4%EF%BC%89"><span class="post-toc-text">6️⃣ WHERE（条件过滤）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7%EF%B8%8F%E2%83%A3-DELETE-REMOVE"><span class="post-toc-text">7️⃣ DELETE &#x2F; REMOVE</span></a></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Neo4j-%E9%87%8C-%E6%B2%A1%E6%9C%89%E2%80%9C%E6%95%B0%E6%8D%AE%E8%A1%A8%E2%80%9D%E8%BF%99%E4%B8%AA%E6%A6%82%E5%BF%B5"><span class="post-toc-text">Neo4j 里 没有“数据表”这个概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="post-toc-text">关系型数据库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Neo4j%EF%BC%88%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%89"><span class="post-toc-text">Neo4j（图数据库）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Neo4j-Cypher-%E8%AF%AD%E6%B3%95%E9%80%9F%E6%88%90"><span class="post-toc-text">Neo4j &#x2F; Cypher 语法速成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1%EF%B8%8F%E2%83%A3-%E8%8A%82%E7%82%B9%EF%BC%88Node%EF%BC%89"><span class="post-toc-text">1️⃣ 节点（Node）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2%EF%B8%8F%E2%83%A3-%E5%85%B3%E7%B3%BB%EF%BC%88Relationship%EF%BC%89"><span class="post-toc-text">2️⃣ 关系（Relationship）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3%EF%B8%8F%E2%83%A3-MATCH%EF%BC%88%E6%9F%A5%E6%95%B0%E6%8D%AE%EF%BC%8C%E2%89%88-SELECT%EF%BC%89"><span class="post-toc-text">3️⃣ MATCH（查数据，≈ SELECT）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4%EF%B8%8F%E2%83%A3-CREATE%EF%BC%88%E5%BB%BA%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="post-toc-text">4️⃣ CREATE（建数据）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5%EF%B8%8F%E2%83%A3-MERGE%EF%BC%88%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81%F0%9F%94%A5%EF%BC%89"><span class="post-toc-text">5️⃣ MERGE（非常重要🔥）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6%EF%B8%8F%E2%83%A3-WHERE%EF%BC%88%E6%9D%A1%E4%BB%B6%E8%BF%87%E6%BB%A4%EF%BC%89"><span class="post-toc-text">6️⃣ WHERE（条件过滤）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7%EF%B8%8F%E2%83%A3-DELETE-REMOVE"><span class="post-toc-text">7️⃣ DELETE &#x2F; REMOVE</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#neo4j%E6%95%B0%E6%8D%AE%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="post-toc-text">neo4j数据构建流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B"><span class="post-toc-text">一、总体流程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E5%B0%8F%E8%AF%B4%E5%88%87chunk"><span class="post-toc-text">二、小说切chunk</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E7%AC%AC%E4%B8%80%E9%81%8D%E6%A8%A1%E5%9E%8B%E6%8A%BD%E5%8F%96%EF%BC%88%E5%AE%9E%E4%BD%93%E8%A1%A8%EF%BC%89"><span class="post-toc-text">三、第一遍模型抽取（实体表）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E4%BD%93%E5%BD%92%E5%B9%B6"><span class="post-toc-text">四、实体归并</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%94%E3%80%81%E7%AC%AC%E4%BA%8C%E9%81%8D%E6%A8%A1%E5%9E%8B%E6%8A%BD%E5%8F%96"><span class="post-toc-text">五、第二遍模型抽取</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%BE%93%E5%85%A5%E7%BB%99%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="post-toc-text">输入给模型的东西</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%A2%AB%E5%BC%BA%E5%88%B6%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="post-toc-text">模型被强制要求：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8A%BD%E5%8F%96%E5%86%85%E5%AE%B9"><span class="post-toc-text">抽取内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B"><span class="post-toc-text">输出示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%AD%E3%80%81%E7%BB%93%E6%9E%84%E6%B8%85%E6%B4%97%E4%B8%8E%E8%90%BD%E5%BA%93"><span class="post-toc-text">六、结构清洗与落库</span></a></li></ol></li></ol>
             
         
         <div class=".article-gallery"><p>组内服务器neo4j</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># ---------------------- Neo4j 连接配置（保持你的原有配置） ----------------------</span><br><span class="line">NEO4J_URI = &quot;bolt://115.191.22.228:8019/&quot;</span><br><span class="line">NEO4J_USER = &quot;neo4j&quot;</span><br><span class="line">NEO4J_PASSWORD = &quot;123456aa&quot; </span><br></pre></td></tr></table></figure>
 <p>管理地址</p>
 <p><a target="_blank" rel="noopener" href="http://115.191.22.228:8020/browser/">http://115.191.22.228:8020/browser/</a></p>
-<p>NEO4J_URI = “bolt://115.191.22.228:8019/”</p>
-<p>NEO4J_USER = “neo4j”<br>
-NEO4J_PASSWORD = “123456aa”</p>
+<p>NEO4J_URI = “bolt://115.191.22.228:8019/“</p>
+<p>NEO4J_USER = “neo4j”<br>NEO4J_PASSWORD = “123456aa” </p>
 <p>sudo systemctl restart neo4j</p>
-<h3 id="Neo4j-里-没有“数据表”这个概念">Neo4j 里 <strong>没有“数据表”这个概念</strong></h3>
-<h4 id="关系型数据库">关系型数据库</h4>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数据库</span><br><span class="line"> └── 表</span><br><span class="line">      └── 行</span><br></pre></td></tr></table></figure>
-<h4 id="Neo4j（图数据库）">Neo4j（图数据库）</h4>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数据库</span><br><span class="line"> ├── 节点 (Node)</span><br><span class="line"> │     └── 标签 (Label)</span><br><span class="line"> │           └── 属性 (Property)</span><br><span class="line"> └── 关系 (Relationship)</span><br></pre></td></tr></table></figure>
+<h3 id="Neo4j-里-没有“数据表”这个概念"><a href="#Neo4j-里-没有“数据表”这个概念" class="headerlink" title="Neo4j 里 没有“数据表”这个概念"></a>Neo4j 里 <strong>没有“数据表”这个概念</strong></h3><h4 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数据库</span><br><span class="line"> └── 表</span><br><span class="line">      └── 行</span><br></pre></td></tr></table></figure>
+<h4 id="Neo4j（图数据库）"><a href="#Neo4j（图数据库）" class="headerlink" title="Neo4j（图数据库）"></a>Neo4j（图数据库）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数据库</span><br><span class="line"> ├── 节点 (Node)</span><br><span class="line"> │     └── 标签 (Label)</span><br><span class="line"> │           └── 属性 (Property)</span><br><span class="line"> └── 关系 (Relationship)</span><br></pre></td></tr></table></figure>
 <p>👉 <strong>Neo4j 里：</strong></p>
 <ul>
 <li><strong>节点标签（Label）≈ 表</strong></li>
 <li><strong>节点 ≈ 表中的一行</strong></li>
 <li><strong>属性 ≈ 字段</strong></li>
 </ul>
-<h3 id="Neo4j-Cypher-语法速成">Neo4j / Cypher 语法速成</h3>
-<h3 id="1️⃣-节点（Node）">1️⃣ 节点（Node）</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(n)</span><br></pre></td></tr></table></figure>
+<h3 id="Neo4j-Cypher-语法速成"><a href="#Neo4j-Cypher-语法速成" class="headerlink" title="Neo4j / Cypher 语法速成"></a>Neo4j / Cypher 语法速成</h3><h4 id="1️⃣-节点（Node）"><a href="#1️⃣-节点（Node）" class="headerlink" title="1️⃣ 节点（Node）"></a>1️⃣ 节点（Node）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(n)</span><br></pre></td></tr></table></figure>
 <p>有标签的节点：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(n:User)</span><br></pre></td></tr></table></figure>
 <p>带属性：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(n:User &#123;name: &quot;张三&quot;, age: 25&#125;)</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="2️⃣-关系（Relationship）">2️⃣ 关系（Relationship）</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(n)-[:FRIEND]-&gt;(m)</span><br></pre></td></tr></table></figure>
+<h4 id="2️⃣-关系（Relationship）"><a href="#2️⃣-关系（Relationship）" class="headerlink" title="2️⃣ 关系（Relationship）"></a>2️⃣ 关系（Relationship）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(n)-[:FRIEND]-&gt;(m)</span><br></pre></td></tr></table></figure>
 <p>无方向（很少用）：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(n)-[:FRIEND]-(m)</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="3️⃣-MATCH（查数据，≈-SELECT）">3️⃣ MATCH（查数据，≈ SELECT）</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATCH (n:User)</span><br><span class="line">RETURN n;</span><br></pre></td></tr></table></figure>
+<h4 id="3️⃣-MATCH（查数据，≈-SELECT）"><a href="#3️⃣-MATCH（查数据，≈-SELECT）" class="headerlink" title="3️⃣ MATCH（查数据，≈ SELECT）"></a>3️⃣ MATCH（查数据，≈ SELECT）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATCH (n:User)</span><br><span class="line">RETURN n;</span><br></pre></td></tr></table></figure>
 <p>带条件：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATCH (n:User &#123;name: &quot;张三&quot;&#125;)</span><br><span class="line">RETURN n;</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="4️⃣-CREATE（建数据）">4️⃣ CREATE（建数据）</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE (:User &#123;name: &quot;王五&quot;, age: 28&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="4️⃣-CREATE（建数据）"><a href="#4️⃣-CREATE（建数据）" class="headerlink" title="4️⃣ CREATE（建数据）"></a>4️⃣ CREATE（建数据）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE (:User &#123;name: &quot;王五&quot;, age: 28&#125;);</span><br></pre></td></tr></table></figure>
 <p>建关系：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE (a)-[:FRIEND]-&gt;(b);</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="5️⃣-MERGE（非常重要🔥）">5️⃣ MERGE（非常重要🔥）</h3>
-<blockquote>
+<h4 id="5️⃣-MERGE（非常重要🔥）"><a href="#5️⃣-MERGE（非常重要🔥）" class="headerlink" title="5️⃣ MERGE（非常重要🔥）"></a>5️⃣ MERGE（非常重要🔥）</h4><blockquote>
 <p><strong>存在就用，不存在就创建</strong></p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MERGE (u:User &#123;name: &quot;张三&quot;&#125;);</span><br></pre></td></tr></table></figure>
 <p>👉 防止重复数据，<strong>生产环境必用</strong></p>
 <hr>
-<h3 id="6️⃣-WHERE（条件过滤）">6️⃣ WHERE（条件过滤）</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATCH (u:User)</span><br><span class="line">WHERE u.age &gt; 25</span><br><span class="line">RETURN u.name, u.age;</span><br></pre></td></tr></table></figure>
+<h4 id="6️⃣-WHERE（条件过滤）"><a href="#6️⃣-WHERE（条件过滤）" class="headerlink" title="6️⃣ WHERE（条件过滤）"></a>6️⃣ WHERE（条件过滤）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATCH (u:User)</span><br><span class="line">WHERE u.age &gt; 25</span><br><span class="line">RETURN u.name, u.age;</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="7️⃣-DELETE-REMOVE">7️⃣ DELETE / REMOVE</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATCH (u:User &#123;name: &quot;王五&quot;&#125;)</span><br><span class="line">DELETE u;</span><br></pre></td></tr></table></figure>
+<h4 id="7️⃣-DELETE-REMOVE"><a href="#7️⃣-DELETE-REMOVE" class="headerlink" title="7️⃣ DELETE / REMOVE"></a>7️⃣ DELETE / REMOVE</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATCH (u:User &#123;name: &quot;王五&quot;&#125;)</span><br><span class="line">DELETE u;</span><br></pre></td></tr></table></figure>
 <p>删节点 + 关系：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DETACH DELETE u;</span><br></pre></td></tr></table></figure>
-</div>
+<h3 id="neo4j数据构建流程"><a href="#neo4j数据构建流程" class="headerlink" title="neo4j数据构建流程"></a>neo4j数据构建流程</h3><h4 id="一、总体流程"><a href="#一、总体流程" class="headerlink" title="一、总体流程"></a>一、总体流程</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">原始小说文本</span><br><span class="line">   ↓（程序切分，不用模型）</span><br><span class="line">Chunk（带编号）</span><br><span class="line">   ↓（大模型）</span><br><span class="line">结构化抽取（实体表）</span><br><span class="line">   ↓（程序）</span><br><span class="line">实体归并</span><br><span class="line">   ↓（大模型）</span><br><span class="line">结构化抽取（关系表）</span><br><span class="line">   ↓（程序）</span><br><span class="line">去重 / 合并 / 校验</span><br><span class="line">   ↓（程序）</span><br><span class="line">CSV / Cypher</span><br><span class="line">   ↓</span><br><span class="line">Neo4j</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="二、小说切chunk"><a href="#二、小说切chunk" class="headerlink" title="二、小说切chunk"></a>二、小说切chunk</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;book_id&quot;: &quot;novel_001&quot;,</span><br><span class="line">  &quot;chapter_id&quot;: &quot;ch01&quot;,</span><br><span class="line">  &quot;chunk_id&quot;: &quot;ch01_c003&quot;,</span><br><span class="line">  &quot;text&quot;: &quot;......&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="三、第一遍模型抽取（实体表）"><a href="#三、第一遍模型抽取（实体表）" class="headerlink" title="三、第一遍模型抽取（实体表）"></a>三、第一遍模型抽取（实体表）</h4><p>❌ <strong>不要抽关系</strong><br> ❌ <strong>不要抽事件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;chunk_id&quot;: &quot;ch01_c003&quot;,</span><br><span class="line">  &quot;entities&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;temp_id&quot;: &quot;CHAR_TMP_1&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;Character&quot;,</span><br><span class="line">      &quot;name&quot;: &quot;林平之&quot;,</span><br><span class="line">      &quot;aliases&quot;: [&quot;少镖头&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>为什么要分两步？</p>
+<ul>
+<li>防止模型在“关系抽取”阶段发明不存在的人</li>
+<li>后面可以做 <strong>实体去重 / 别名合并</strong></li>
+</ul>
+<h4 id="四、实体归并"><a href="#四、实体归并" class="headerlink" title="四、实体归并"></a>四、实体归并</h4><p>这是 图谱质量的关键一步</p>
+<p>你要做的事 建一个 全书实体表</p>
+<p>规则：</p>
+<p>同名 → 优先合并</p>
+<p>别名出现 → 加入 aliases</p>
+<p>有歧义 → 新建实体 + needs_review=true</p>
+<p>输出 json 复制代码 { “id”: “CHAR_LIN_PINGZHI_001”, “name”: “林平之”, “aliases”: [“少镖头”], “first_seen”: “ch01_c003” } 👉 这一步 90% 用规则就够 👉 模型 可选 用于“是否同一人”的辅助判断（不是必须）</p>
+<h4 id="五、第二遍模型抽取"><a href="#五、第二遍模型抽取" class="headerlink" title="五、第二遍模型抽取"></a>五、第二遍模型抽取</h4><h3 id="输入给模型的东西"><a href="#输入给模型的东西" class="headerlink" title="输入给模型的东西"></a>输入给模型的东西</h3><ol>
+<li>当前 chunk 原文</li>
+<li><strong>该章节 / 前若干 chunk 的实体表（已归并）</strong></li>
+</ol>
+<h3 id="模型被强制要求："><a href="#模型被强制要求：" class="headerlink" title="模型被强制要求："></a>模型被强制要求：</h3><ul>
+<li>只能使用给定实体 ID</li>
+<li>不得创造新人物</li>
+<li>每条关系 / 事件必须有 evidence</li>
+</ul>
+<h3 id="抽取内容"><a href="#抽取内容" class="headerlink" title="抽取内容"></a>抽取内容</h3><ul>
+<li>Event（事件）</li>
+<li>关系（人物–组织 / 人–物 / 人–人）</li>
+</ul>
+<h3 id="输出示例"><a href="#输出示例" class="headerlink" title="输出示例"></a>输出示例</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;events&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;id&quot;: &quot;EVT_HUNT_001&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;Hunting&quot;,</span><br><span class="line">      &quot;participants&quot;: [</span><br><span class="line">        &#123;&quot;entity_id&quot;: &quot;CHAR_LIN_PINGZHI_001&quot;, &quot;role&quot;: &quot;猎手&quot;&#125;</span><br><span class="line">      ],</span><br><span class="line">      &quot;locations&quot;: [&quot;LOC_WOODS_001&quot;],</span><br><span class="line">      &quot;evidence&quot;: &quot;纵马上了山坡，放起猎鹰...&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="六、结构清洗与落库"><a href="#六、结构清洗与落库" class="headerlink" title="六、结构清洗与落库"></a>六、结构清洗与落库</h4></div>
     </div>
 
     <div class="post-meta">
