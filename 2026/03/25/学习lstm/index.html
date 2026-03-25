@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="Pure-Endmember Confidence Guided Local Mixture-of-Experts for Cross-Scene Hyperspectral Unmixing" />
+    <meta name="description" content="学习lstm" />
     <meta name="hexo-theme-A4" content="v1.9.8" />
     <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
     <title>xander&#39;s blog</title>
@@ -385,7 +385,7 @@
         
             
                 <div class="post-main-title" style="text-align: center;">
-                    Pure-Endmember Confidence Guided Local Mixture-of-Experts for Cross-Scene Hyperspectral Unmixing
+                    学习lstm
                 </div>
             
         
@@ -398,19 +398,19 @@
             <div class="post-head-meta-center">
         
                 
-                    <span>最近更新：2026-03-20</span> 
+                    <span>最近更新：2026-03-25</span> 
                 
                 
                     
                         &nbsp; | &nbsp;
                     
-                     <span>字数总计：0</span>
+                     <span>字数总计：518</span>
                 
                 
                     
                         &nbsp; | &nbsp;
                     
-                    <span>阅读估时：1分钟</span>
+                    <span>阅读估时：2分钟</span>
                 
                 
                     
@@ -429,13 +429,14 @@
                 
             
         
-        <div class=".article-gallery"></div>
+        <div class=".article-gallery"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import random</span><br><span class="line"></span><br><span class="line">import torch</span><br><span class="line">import torch.nn as nn</span><br><span class="line">from torch.utils.data import DataLoader, Dataset</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def set_seed(seed=42):</span><br><span class="line">    random.seed(seed)</span><br><span class="line">    torch.manual_seed(seed)</span><br><span class="line">    if torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed(seed)</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line"></span><br><span class="line">    torch.backends.cudnn.deterministic = True</span><br><span class="line">    torch.backends.cudnn.benchmark = False</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">set_seed(42)</span><br><span class="line"></span><br><span class="line"># ===== 1.准备数据 ======</span><br><span class="line">texts = [</span><br><span class="line">    &quot;我喜欢苹果&quot;,</span><br><span class="line">    &quot;我讨厌香蕉&quot;,</span><br><span class="line">    &quot;我喜欢橘子&quot;,</span><br><span class="line">    &quot;我讨厌葡萄&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"># 做字符级别的分词</span><br><span class="line">vocab = set(&quot;&quot;.join(texts))</span><br><span class="line">chars = sorted(list(vocab))</span><br><span class="line">strtoindex = &#123;ch: i for i, ch in enumerate(chars)&#125;</span><br><span class="line">indextostr = &#123;i: ch for ch, i in strtoindex.items()&#125;</span><br><span class="line"></span><br><span class="line">vocab_size = len(vocab)</span><br><span class="line">device = torch.device(&quot;cuda&quot; if torch.cuda.is_available() else &quot;cpu&quot;)</span><br><span class="line"></span><br><span class="line">print(&quot;字符表:&quot;, chars)</span><br><span class="line">print(&quot;字符到索引:&quot;, strtoindex)</span><br><span class="line">print(&quot;索引到字符:&quot;, indextostr)</span><br><span class="line">print(&quot;词汇表大小:&quot;, vocab_size)</span><br><span class="line">print(&quot;当前设备:&quot;, device)</span><br><span class="line"></span><br><span class="line"># 把每句话拆成(输入序列, 目标序列)的形式</span><br><span class="line"># 例如 &quot;我喜欢苹果&quot; -&gt; 输入: &quot;我喜欢苹&quot;, 目标: &quot;喜欢苹果&quot;</span><br><span class="line">class CharDataset(Dataset):</span><br><span class="line">    def __init__(self, texts, strtoindex):</span><br><span class="line">        super().__init__()</span><br><span class="line">        self.samples = []</span><br><span class="line">        for text in texts:</span><br><span class="line">            x = [strtoindex[ch] for ch in text[:-1]]</span><br><span class="line">            y = [strtoindex[ch] for ch in text[1:]]</span><br><span class="line">            self.samples.append((</span><br><span class="line">                torch.tensor(x, dtype=torch.long),</span><br><span class="line">                torch.tensor(y, dtype=torch.long)</span><br><span class="line">            ))</span><br><span class="line">    </span><br><span class="line">    def __len__(self):</span><br><span class="line">        return len(self.samples)</span><br><span class="line">    </span><br><span class="line">    def __getitem__(self, index):</span><br><span class="line">        return self.samples[index]</span><br><span class="line">    </span><br><span class="line">dataset = CharDataset(texts, strtoindex)</span><br><span class="line">generator = torch.Generator().manual_seed(42)</span><br><span class="line">loader = DataLoader(dataset, batch_size=2, shuffle=True, generator=generator)</span><br><span class="line"></span><br><span class="line"># ===== 2.定义最小LSTM模型 ======</span><br><span class="line">class SimpleLSTM(nn.Module):</span><br><span class="line">    def __init__(self, vocab_size, embed_dim=16, hidden_dim=32):</span><br><span class="line">        super().__init__()</span><br><span class="line">        self.embedding = nn.Embedding(vocab_size, embed_dim)</span><br><span class="line">        self.lstm = nn.LSTM(</span><br><span class="line">            input_size=embed_dim,</span><br><span class="line">            hidden_size=hidden_dim,</span><br><span class="line">            batch_first=True</span><br><span class="line">        )</span><br><span class="line">        self.fc = nn.Linear(hidden_dim, vocab_size)</span><br><span class="line"></span><br><span class="line">    def forward(self, x):</span><br><span class="line">        x = self.embedding(x)</span><br><span class="line">        out, _ = self.lstm(x)</span><br><span class="line">        logits = self.fc(out)</span><br><span class="line">        return logits</span><br><span class="line">    </span><br><span class="line">model = SimpleLSTM(vocab_size).to(device)</span><br><span class="line">criterion = nn.CrossEntropyLoss()</span><br><span class="line">optimizer = torch.optim.Adam(model.parameters(), lr=0.01)</span><br><span class="line"></span><br><span class="line"># ===== 3.训练 ======</span><br><span class="line">for epoch in range(200):</span><br><span class="line">    total_loss = 0</span><br><span class="line">    for x, y in loader:</span><br><span class="line">        x = x.to(device)</span><br><span class="line">        y = y.to(device)</span><br><span class="line">        logits = model(x)</span><br><span class="line"></span><br><span class="line">        loss = criterion(</span><br><span class="line">            logits.reshape(-1, vocab_size),</span><br><span class="line">            y.reshape(-1)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line">        total_loss += loss.item()</span><br><span class="line"></span><br><span class="line">    if (epoch + 1) % 20 == 0:</span><br><span class="line">        print(f&quot;Epoch &#123;epoch+1&#125;, loss = &#123;total_loss:.4f&#125;&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># ===== 4.测试 ======</span><br><span class="line">def generate(model, prefix, max_new_chars=3):</span><br><span class="line">    model.eval()</span><br><span class="line">    result = list(prefix)</span><br><span class="line"></span><br><span class="line">    for _ in range(max_new_chars):</span><br><span class="line">        x = torch.tensor(</span><br><span class="line">            [[strtoindex[ch] for ch in result]],</span><br><span class="line">            dtype=torch.long,</span><br><span class="line">            device=device</span><br><span class="line">        )</span><br><span class="line">        with torch.no_grad():</span><br><span class="line">            logits = model(x)</span><br><span class="line">        last_token_logits = logits[0, -1]</span><br><span class="line">        next_id = torch.argmax(last_token_logits).item()</span><br><span class="line">        next_char = indextostr[next_id]</span><br><span class="line">        result.append(next_char)</span><br><span class="line"></span><br><span class="line">    return &quot;&quot;.join(result)</span><br><span class="line"></span><br><span class="line">print(generate(model, &quot;我讨厌&quot;))</span><br><span class="line">print(generate(model, &quot;我喜&quot;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</div>
     </div>
 
     <div class="post-meta">
         <i>
         
-            <span>2026-03-20</span>
+            <span>2026-03-25</span>
             
             
              
