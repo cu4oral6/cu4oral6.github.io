@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2026-07-01</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：4.9k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：18分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                
+            
+        
+        <div class=".article-gallery"><p><strong>一、考试题型与复习优先级</strong></p>
+<p>• **题型与分值：**不定项选择题共20分，每题5分，多选、错选不得分，漏选得分；简答与计算题共40分，每题10分；编程与论述题共40分。</p>
+<p>• **最高优先级：**物联网概念、常规物联网/广义物联网、物联网系统构建步骤、信息输出形式、RS-232/RS-485、通信协议、Modbus指令、设备交互软件流程。</p>
+<p>• **编程题重点：**C# SerialPort 串口初始化、发送命令、等待/接收数据、解析数据、关闭串口。</p>
+<p>• **计算题重点：**线性变换 y = kx + b；用两个端点求 k、b，再代入输入量换算输出量。</p>
+<p><strong>二、物联网基本概念</strong></p>
+<p>• **物联网分类：**可分为常规物联网和广义物联网。</p>
+<p>• **常规物联网：**通过传感设备，按约定协议，把任何物体与互联网相连接，进行信息交换和通信，以实现对物体的智能化识别、定位、跟踪、监控和管理的一种网络。</p>
+<p>• **广义物联网：**指泛在系统之间的数据互联互通，也可理解为物物相连的互联网。</p>
+<p><strong>物联网体系结构</strong></p>
+<p>智传备用存服群</p>
+<p>智能设备层</p>
+<p>数据传输层</p>
+<p>设备交互层</p>
+<p>节点应用层</p>
+<p>数据存储层</p>
+<p>智能服务层</p>
+<p>群组应用层</p>
+<p><strong>三、物联网系统构建的基本步骤</strong></p>
+<ol>
+<li>智能设备选择：按照需求选择合适的智能传感设备，尽可能使用成熟的智能传感设备，因为该步骤的目的是获得所需数据。</li>
+<li>智能设备互连：将智能设备与计算机连接，可以有线连接或无线连接。</li>
+<li>设备交互软件编程：智能设备与计算机通常不能直接交互，需要在计算机端编写设备交互软件，使计算机端与智能设备端建立通信并正常交互；计算机端按协议发送请求命令，并接收智能设备的传感数据。</li>
+<li>应用软件开发：实现对监测对象传感数据的数据存储、数据分析和数据检索。</li>
+<li>应用软件互联：构建物联网系统时，需要实现多个应用软件之间的互联，避免形成信息孤岛。</li>
+</ol>
+<p><strong>可背诵版</strong>系统构建步骤按“选设备—连设备—写交互软件—开发应用—应用互联”记忆。设备交互软件的核心任务：按协议发命令、接收传感数据、解析并交给上层应用。</p>
+<p><strong>四、物联网信息的输出形式</strong></p>
+<p>• **模拟量输出：**输出连续变化的信号量，可分为标准电压输出、标准电流输出和非标准模拟量输出。</p>
+<p>• **开关量输出：**输出“是/否”“有/无”等离散状态，如火焰传感器。</p>
+<p>• **通信接口输出：**包括串行接口输出、并行接口输出、有线网络接口输出和无线网络接口输出。</p>
+<p>• <strong>选择题线索：</strong>“目前传感设备主要输出方式”可选模拟量输出、开关量输出、通信接口输出；“脉冲或调制输出”不是课件中列出的主要输出方式。</p>
+<p><strong>五、通信接口与数据采集器</strong></p>
+<p><strong>1. 数据采集器</strong></p>
+<p>• **定义与作用：**数据采集器（如 GM10）用于收集传感器或传感设备采集的模拟量或开关量数据。</p>
+<p>• **转换过程：**通过 A/D 转换器，把模拟量或开关量转换为可被计算机接收的信息形式。</p>
+<p><strong>2. 网口 / USB 转串口</strong></p>
+<p>• 如果计算机不具备 RS-232 或 RS-485 串口，可用网口/USB 转串口进行扩展。</p>
+<p><strong>3. RS-232 与 RS-485 对比</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>项目</strong></th>
+<th><strong>RS-232</strong></th>
+<th><strong>RS-485</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通信方式</td>
+<td>点对点异步通信标准</td>
+<td>差分总线型通信标准</td>
+</tr>
+<tr>
+<td>物理层特点</td>
+<td>单端信号传输</td>
+<td>平衡/差分传输，抗干扰能力较强</td>
+</tr>
+<tr>
+<td>连接能力</td>
+<td>通常实现 1 个主设备与 1 个从设备通信</td>
+<td>支持多点互连</td>
+</tr>
+<tr>
+<td>负载数量</td>
+<td>不适合多点总线</td>
+<td>标准驱动芯片可一条总线连接 32 个单位负载，增强型可达 128 个甚至更多</td>
+</tr>
+</tbody>
+</table>
+<p>RS-232接口特性：RS-232是点对点异步通信标准，物理层采用单端信号传输，只能实现1个主设备与11个从设备之间的通信。</p>
+<p>RS-485接口特性：RS-485是差分总线型通信标准，采用平衡传输方式，支持多点互联。标准RS-485驱动芯片可在一条总线上挂接32个单位负载，增强型芯片可达128个甚至更多。</p>
+<p><strong>六、通信协议与数据获取流程</strong></p>
+<p>• **通信协议：**通信协议是计算机和传感设备之间信息交互过程和信息交互格式的约定。</p>
+<p>• **协议核心：**规定命令格式、数据格式、返回格式、校验方式、结束符、解析方法。</p>
+<p><strong>1. 设备交互软件运行流程</strong></p>
+<ol>
+<li>开始。</li>
+<li>初始化通信接口。</li>
+<li>发送获取数据命令。</li>
+<li>等待一定时长。</li>
+<li>获取返回数据。</li>
+<li>解析返回数据。</li>
+<li>结束。</li>
+</ol>
+<p><strong>2. 计算机端发送数据获取命令</strong></p>
+<p>• 根据传感设备说明书中约定的通信协议，通过程序向选定的计算机接口发送数据获取命令。</p>
+<p>• 计算机接口把命令发送到接口连接的传感设备。</p>
+<p>• 传感设备收到命令后进行校验；校验无误后，把相应传感数据通过接口返回给计算机。</p>
+<p>• 软件发送命令前通常要按协议要求形成校验码，并把校验码包含在发送命令中。</p>
+<p><strong>3. 数据接收与解析</strong></p>
+<p>• 传感设备收到命令后，不一定立即返回数据，通常要经过一定准备时间；不同传感设备等待时间不同，可能从几毫秒到几百毫秒不等。</p>
+<p>• 为了提高通信效率，也可采用中断或事件触发方式进行数据采集：计算机收到传感数据后产生中断或触发事件，通知数据采集软件读取数据。</p>
+<p>• 最后按协议格式解析返回数据，得到真正的物理量或状态量。</p>
+<p><strong>七、典型通信协议帧</strong></p>
+<p><strong>1. 字符串型通信协议</strong></p>
+<p>• 命令发送端采用关键字发送命令，如查询命令可写成类似“FData,0”的字符串。</p>
+<p>• 字符串中的大写字母通常表示关键字；小写字母在实际传输过程中被替换为真实数据。</p>
+<p>• 示例格式：EAc<crlf>、DATE_yy/mm/dd<crlf>、TIME_hh:mm:ss.mmm<crlf>。</p>
+<p>• ASCII 记忆：A = 0x41，B = 0x42，C = 0x43，回车 CR = 0x0D，换行 LF = 0x0A；若要求“ABC 并以回车换行结束”，字节序列为 41 42 43 0D 0A。</p>
+<p><strong>2. 多字节型通信协议：Modbus 示例</strong></p>
+<p>以数据查询为例，命令发送端采用 8 字节 16 进制传输：</p>
+<table>
+<thead>
+<tr>
+<th><strong>字节/字段</strong></th>
+<th><strong>示例</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>地址</td>
+<td>01</td>
+<td>数据采集器或从站地址</td>
+</tr>
+<tr>
+<td>功能码</td>
+<td>04</td>
+<td>表示查询命令/读输入寄存器</td>
+</tr>
+<tr>
+<td>寄存器起始地址</td>
+<td>00 00</td>
+<td>从第一个寄存器开始读取数据</td>
+</tr>
+<tr>
+<td>读取寄存器数量</td>
+<td>00 04</td>
+<td>读取 4 个寄存器；温湿度值占用多个寄存器</td>
+</tr>
+<tr>
+<td>CRC 校验</td>
+<td>F1 C9</td>
+<td>对前面字节进行 CRC 校验</td>
+</tr>
+</tbody>
+</table>
+<p>返回数据格式示例：01 04 06 00 30 00 00 00 CE 00 F7 34 77。</p>
+<p>• 01：地址；04：功能码；06：返回数据字节长度。</p>
+<p>• 中间数据字节表示状态、传感器数值或寄存器值，需要按设备说明书解析。</p>
+<p>• 最后两个字节一般为 CRC 校验，用于验证返回帧是否传输正确。</p>
+<p><strong>八、校验方法：求和校验与 CRC 校验</strong></p>
+<p><strong>1. 求和校验</strong></p>
+<ol>
+<li>把数据划分为若干个数据单元。</li>
+<li>逐个求和，生成校验字符或校验字节。</li>
+<li>把计算结果附加在数据消息后发送。</li>
+<li>接收方按同样方法重新计算求和结果。</li>
+<li>比较接收方计算结果与发送方附加的校验值是否一致。</li>
+</ol>
+<p>• **局限：**求和校验能发现部分错误，但如果不同位的变化刚好让总和不变，就可能无法检出错误。</p>
+<p><strong>2. CRC 校验</strong></p>
+<p>• 发送方和接收方约定生成多项式。</p>
+<p>• 发送方在待发送数据后补若干 0，然后用生成多项式做模 2 除法。</p>
+<p>• 把得到的余数作为 CRC 校验码附加在数据后。</p>
+<p>• 接收方使用相同多项式对接收到的数据重新计算；余数符合要求则认为数据正确，否则认为出错。</p>
+<p>• CRC 比简单求和校验检错能力更强，是 Modbus 等协议中常见的校验方式。</p>
+<p><strong>九、C# 串口编程模板</strong></p>
+<p><strong>1. 初始化通信接口</strong></p>
+<p>• 对使用的计算机接口进行初始化。</p>
+<p>• 串行通信接口需要指定串口编号、波特率、数据位长度、停止位长度和校验方式。</p>
+<p>• 这些通信参数必须与传感设备的通信参数一致。</p>
+<p><strong>2. 代码模板：SerialPort</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">WT310 串口类完整代码</span><br><span class="line">串口开启、主函数调用</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.IO.Ports;</span><br><span class="line"></span><br><span class="line">namespace 安控控制</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            SerialPortTest port = new SerialPortTest();</span><br><span class="line">            for (int i = 0; i &lt; 20; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                port.Send();</span><br><span class="line">                port.Receive();</span><br><span class="line">            &#125;</span><br><span class="line">            port.Close();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        class SerialPortTest</span><br><span class="line">        &#123;</span><br><span class="line">            SerialPort port;</span><br><span class="line">            public SerialPortTest()</span><br><span class="line">            &#123;</span><br><span class="line">                port = new SerialPort(&quot;COM1&quot;);</span><br><span class="line">                port.BaudRate = 9600;</span><br><span class="line">                try</span><br><span class="line">                &#123;</span><br><span class="line">                    port.Open();</span><br><span class="line">                &#125;</span><br><span class="line">                catch (Exception)</span><br><span class="line">                &#123;</span><br><span class="line">                    Console.WriteLine(&quot;打开COM口失败&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">命令发送函数</span><br><span class="line">48: public void Send()</span><br><span class="line">49: &#123;</span><br><span class="line">50: byte[] command =</span><br><span class="line">51: Encoding.UTF8.GetBytes(&quot;NUMeric:NORMALValue?\r\n&quot;);</span><br><span class="line">52: port.Write(command, 0, command.Length);</span><br><span class="line">53: &#125;</span><br><span class="line"></span><br><span class="line">数据接收函数</span><br><span class="line">38: public void Receive()</span><br><span class="line">39: &#123;</span><br><span class="line">40: System.Threading.Thread.Sleep(1000);</span><br><span class="line">41: if (port != null)</span><br><span class="line">42: int n = port.BytesToRead;</span><br><span class="line">43: byte[] byteReceive = new byte[n];</span><br><span class="line">44: port.Read(byteReceive, 0, n);</span><br><span class="line">45: string strReceive =</span><br><span class="line">46: Encoding.UTF8.GetString(byteReceive, 0, n);</span><br><span class="line">47: &#125;</span><br><span class="line"></span><br><span class="line">串口关闭函数</span><br><span class="line">53: public void Close()</span><br><span class="line">54: &#123;</span><br><span class="line">55: if (port != null &amp;&amp; port.IsOpen)</span><br><span class="line">56: &#123;</span><br><span class="line">57: port.Close();</span><br><span class="line">58: port.Dispose();</span><br><span class="line">59: &#125;</span><br><span class="line">60: &#125;</span><br><span class="line"></span><br><span class="line">KL-W6000 串口类完整代码</span><br><span class="line">48: public void Send()</span><br><span class="line">49: &#123;</span><br><span class="line">50: byte[] b = new byte[8];</span><br><span class="line">51: b[0] = 0x01;</span><br><span class="line">52: b[1] = 0x04;</span><br><span class="line">53: b[2] = 0x00;</span><br><span class="line">54: b[3] = 0x00;</span><br><span class="line">55: b[4] = 0x00;</span><br><span class="line">56: b[5] = 0x04;</span><br><span class="line">57: b[6] = 0xF1;</span><br><span class="line">58: b[7] = 0xC9;</span><br><span class="line">59: port.Write(b, 0, 8);</span><br><span class="line">60: &#125;</span><br><span class="line"></span><br><span class="line">接收函数</span><br><span class="line">35: public void Receive()</span><br><span class="line">36: &#123;</span><br><span class="line">37: System.Threading.Thread.Sleep(1000);</span><br><span class="line">38: if (port != null)</span><br><span class="line">39: &#123;</span><br><span class="line">40: int n = port.BytesToRead;</span><br><span class="line">41: byte[] byteReceive = new byte[n];</span><br><span class="line">42: port.Read(byteReceive, 0, n);</span><br><span class="line">43: string strReceive =</span><br><span class="line">44: BitConverter.ToString(byteReceive, 0,</span><br><span class="line">45: byteReceive.Length).Replace(&quot;-&quot;, &quot;&quot;);</span><br><span class="line">46: &#125;</span><br><span class="line">47: &#125;</span><br><span class="line"></span><br><span class="line">关闭函数</span><br><span class="line">61: public void Close()</span><br><span class="line">62: &#123;</span><br><span class="line">63: if (port != null &amp;&amp; port.IsOpen)</span><br><span class="line">64: &#123;</span><br><span class="line">65: port.Close();</span><br><span class="line">66: port.Dispose();</span><br><span class="line">67: &#125;</span><br><span class="line">68: &#125;</span><br></pre></td></tr></table></figure>
+<p>WT310 是<strong>字符串指令串口通信</strong>，使用 UTF8 编码文本发送读取；</p>
+<p>KL-W6000 是<strong>十六进制字节协议</strong>，下发固定 8 字节 Modbus 类报文，接收后转 16 进制字符串；</p>
+<p><strong>编程题答题套路</strong>先说明串口参数必须与设备一致；再写 Open/Send/Receive/Close 四个函数；最后说明接收后要按通信协议解析数据。Modbus 命令一般用 byte[] 按 16 进制发送；字符串协议一般用 Encoding.UTF8.GetBytes(“命令\r\n”) 转成字节发送。</p>
+<p><strong>十、节点应用软件功能模块</strong></p>
+<p>节点应用软件用于完成数据采集、显示、存储、查询、分析和用户控制等功能。课件中出现的功能模块可按下表记忆：</p>
+<table>
+<thead>
+<tr>
+<th><strong>模块</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>元数据录入模块</td>
+<td>围绕监测对象录入描述监测对象和监测过程有关的数据。</td>
+</tr>
+<tr>
+<td>传感器设置模块</td>
+<td>对每次测试使用的传感器进行选择和命名。</td>
+</tr>
+<tr>
+<td>监测单元导航模块</td>
+<td>在不同监测单元/传感设备之间切换，便于查看不同传感设备的数据。</td>
+</tr>
+<tr>
+<td>数据列表模块</td>
+<td>把同一监测对象的各个传感数据以列表方式显示，方便查看。</td>
+</tr>
+<tr>
+<td>曲线显示模块</td>
+<td>把同一监测对象的传感数据绘制成曲线，并具有放大、缩小、移动、标注等功能。</td>
+</tr>
+<tr>
+<td>查询输出模块</td>
+<td>包括综合查询、数据导出和曲线打印；可按时间段、监测对象或信息类型检索、筛选和浏览。</td>
+</tr>
+<tr>
+<td>统计分析模块</td>
+<td>提供平均值、方差、最大值、最小值等数学统计功能，可按实际需求调整。</td>
+</tr>
+<tr>
+<td>数据管理模块</td>
+<td>统一管理传感数据，对外提供数据获取接口；从设备交互软件读取采集数据，添加到系统并缓存、存储处理。</td>
+</tr>
+<tr>
+<td>主控模块</td>
+<td>与用户交互的主要界面，综合把控各功能模块之间的联系。</td>
+</tr>
+<tr>
+<td>其他功能设置</td>
+<td>与系统参数、显示设置或辅助功能相关。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>十一、计算题模板：线性量程换算</strong></p>
+<p>常见题型：已知传感器/变送器输入量 x 与输出量 y 之间为线性关系，给定两个端点，求输入或输出。</p>
+<p>• 设线性关系为 y = kx + b。</p>
+<p>• 把两个已知端点 (x1, y1)、(x2, y2) 代入，得到两条方程。</p>
+<p>• 先求 k = (y2 - y1) / (x2 - x1)，再求 b = y1 - kx1。</p>
+<p>• 将题目给出的 x 或 y 代入公式，求未知量。</p>
+<p>• 课堂题线索：涉及温度量程、输出电流 4～20 mA 等，答案示例中使用 y = kx + b。</p>
+<p><strong>示例模板</strong>已知 0℃ 对应 4mA，100℃ 对应 20mA：k = (20-4)/(100-0)=0.16，b=4，所以 y=0.16x+4。若输出 12mA，则 12=0.16x+4，x=50℃。实际考试按题目给出的端点替换即可。</p>
+<p><strong>十二、可直接背诵的简答题答案</strong></p>
+<p><strong>1. 简述物联网的概念。</strong></p>
+<p>答：物联网是通过传感设备，按照约定协议，把物体与互联网连接起来，实现信息交换和通信，从而完成智能识别、定位、跟踪、监控和管理的网络。广义上，物联网强调泛在系统之间的数据互联互通。</p>
+<p><strong>2. 简述物联网系统构建的基本步骤。</strong></p>
+<p>答：依次为智能设备选择、智能设备互连、设备交互软件编程、应用软件开发、应用软件互联。核心逻辑是先获得数据，再连接设备，再编写协议交互程序，最后完成数据存储、分析、检索和系统互联。</p>
+<p><strong>3. 简述物联网信息的输出形式。</strong></p>
+<p>答：主要包括模拟量输出、开关量输出和通信接口输出。模拟量输出为连续变化的信号；开关量输出为是/否、有/无等离散状态；通信接口输出包括串行、并行、有线网络和无线网络接口输出。</p>
+<p><strong>4. 简述 RS-232 与 RS-485 的区别。</strong></p>
+<p>答：RS-232 是点对点异步通信标准，采用单端信号传输，通常只能实现一个主设备与一个从设备通信；RS-485 是差分总线型通信标准，采用平衡传输方式，支持多点互连，抗干扰能力较强，标准芯片可连接 32 个单位负载，增强型可更多。</p>
+<p><strong>5. 什么是通信协议？</strong></p>
+<p>答：通信协议是计算机与传感设备之间信息交互过程和信息交互格式的约定，规定命令格式、返回数据格式、校验方式、结束符和解析方法。</p>
+<p><strong>6. 简述设备交互软件运行流程。</strong></p>
+<p>答：流程为：开始、初始化通信接口、发送获取数据命令、等待一定时长、获取返回数据、解析返回数据、结束。</p>
+<p><strong>7. 简述数据管理模块的作用。</strong></p>
+<p>答：数据管理模块统一管理传感数据，并向外提供获取数据的接口；它从设备交互软件读取采集数据，加入系统中并进行缓存和存储处理。</p>
+<p><strong>8. 简述主控模块的作用。</strong></p>
+<p>答：主控模块是与用户交互的主要界面，用户通过控制页面使用各功能，主控模块综合把控各功能模块之间的联系。</p>
+<p>1物联网基本概念</p>
+<p>常规物联网：将传感器设备，按照约定的协议，与互联网连接，进行数据交换，以实现对物体的智能识别、定位、监控和管理的网络</p>
+<p>广义物联网：泛在系统的互联互通，物物相连的网络。</p>
+<p>2物联网的体系结构</p>
+<p>智传备用存服群</p>
+<p>智能设备层、数据传输层、设备交互层、节点应用层、数据存储层、智能服务层、群组应用层</p>
+<p>物联网系统构建基本步骤</p>
+<p>智能设备选择：根据需要选择合适的传感设备，尽量选择成熟稳定的设备</p>
+<p>智能设备连接：将设备与计算机进行连接，-可以选择有线连接或者无线连接-</p>
+<p>设备交互软件编程：计算机无法与智能设备直接交互，需要在计算机端编写交互软件</p>
+<p>应用软件开发：-实现对监测对象传感数据的数据存储、数据分析、数据检索-</p>
+<p>-应用软件互联-：应用软件之间互联互通，避免信息孤岛</p>
+<p>3物联网信息输出形式</p>
+<p>模拟量输出：连续变化的信号量</p>
+<p>开关量输出：输出是或否</p>
+<p>通信接口输出：串行接口输出、并行接口输出、有线网络接口输出、无线网络接口输出</p>
+<p>4物联网通信与通信接口</p>
+<p>通信接口：</p>
+<p>数据采集器：收集传感器或传感设备采集的模拟量或开关量数据，通过A/D转换转换成计算机可以接收的信息形式</p>
+<p>网口/USB转串口：当计算机没有485或232串口时，用转接临时扩充</p>
+<p>5串口特性</p>
+<p>rs-232接口：单点异步传输标准，采用单端信号传输，只能有一个主设备和一个从设备通信</p>
+<p>rs-485接口：差分总线型传输标准，采用平衡传输方式，支持多点互联</p>
+<p>什么是通信协议：一种对计算机和传感设备之间信息交互过程和信息交互格式的约定</p>
+<p>6设备交互软件编程</p>
+<p>开始、初始化通信接口、发送获取数据命令、等待定长、获取返回数据、解析返回数据、结束</p>
+<p>7节点应用软件</p>
+<p>元数据录入模块：-用于描述监测对象及监测过程有关的数据称为元数据，元数据录入模块用于实现元数据的录入功能-</p>
+<p>传感设备设置模块：对每次测试使用的传感器进行选择和命名</p>
+<p>其他设置模块：</p>
+<p>-监测单元导航模块-：不同监测单元之间传感数据是相互独立的，需要有一个模块能够切换监测单元</p>
+<p>数据列表模块：同一监测对象的各个传感数据以列表显示</p>
+<p>曲线展示模块：将同一监测对象的所有传感数据绘制成曲线</p>
+<p>查询输出模块：能够根据查询条件查询并导出</p>
+<p>数据分析模块：对传感数据进行分析，包括平均值、方差、最大最小值等</p>
+<p>数据存储管理模块：统一管理传感数据，并向外提供获取数据的接口</p>
+<p>主控模块：与用户交互的主界面，用户通过控制页面使用各个功能，主控模块会综合把控各个功能模块之间的联系</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2026-06-29</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2026/07/05/M2S2Net/'>M2S2Net</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/06/29/%E5%83%8F%E7%B4%A0%E8%9B%8B%E7%B3%95%E9%A2%84%E8%AE%BE/">像素蛋糕预设</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>

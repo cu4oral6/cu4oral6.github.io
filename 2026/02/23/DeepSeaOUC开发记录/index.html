@@ -398,7 +398,7 @@
             <div class="post-head-meta-center">
         
                 
-                    <span>最近更新：2026-03-07</span> 
+                    <span>最近更新：2026-04-09</span> 
                 
                 
                     
@@ -435,7 +435,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">  --name logto \</span><br><span class="line">  -p 3001:3001 \</span><br><span class="line">  -p 3002:3002 \</span><br><span class="line">  -e TRUST_PROXY_HEADER=1 \</span><br><span class="line">  -e DB_URL=postgresql://admin:123456@100.68.129.231:5432/logto \</span><br><span class="line">  ghcr.io/logto-io/logto:latest</span><br></pre></td></tr></table></figure>
 <p>redis</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name redis \</span><br><span class="line">  -p 6380:6379 \</span><br><span class="line">  -v /data/redis:/data \</span><br><span class="line">  redis:7 \</span><br><span class="line">  redis-server --requirepass 123457 --appendonly yes</span><br></pre></td></tr></table></figure>
-<p>export https_proxy=<a target="_blank" rel="noopener" href="http://127.0.0.1:7890">http://127.0.0.1:7890</a> http_proxy=<a target="_blank" rel="noopener" href="http://127.0.0.1:7890">http://127.0.0.1:7890</a> all_proxy=socks5://127.0.0.1:7890</p>
+<p>export https_proxy=socks5://47.116.76.73:16007 http_proxy=socks5://47.116.76.73:16007 all_proxy=socks5://47.116.76.73:16007</p>
 </div>
     </div>
 

@@ -4,10 +4,10 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="学习lstm" />
+    <meta name="description" content="we_work" />
     <meta name="hexo-theme-A4" content="v1.9.8" />
     <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
-    <title>xander&#39;s blog</title>
+    <title>xander&#39;s blog</title><meta name="robots" content="noindex">
 
     
         
@@ -385,7 +385,7 @@
         
             
                 <div class="post-main-title" style="text-align: center;">
-                    学习lstm
+                    we_work
                 </div>
             
         
@@ -398,19 +398,19 @@
             <div class="post-head-meta-center">
         
                 
-                    <span>最近更新：2026-03-25</span> 
+                    <span>最近更新：2026-05-03</span> 
                 
                 
                     
                         &nbsp; | &nbsp;
                     
-                     <span>字数总计：518</span>
+                     <span>字数总计：986</span>
                 
                 
                     
                         &nbsp; | &nbsp;
                     
-                    <span>阅读估时：2分钟</span>
+                    <span>阅读估时：4分钟</span>
                 
                 
                     
@@ -429,14 +429,73 @@
                 
             
         
-        <div class=".article-gallery"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import random</span><br><span class="line"></span><br><span class="line">import torch</span><br><span class="line">import torch.nn as nn</span><br><span class="line">from torch.utils.data import DataLoader, Dataset</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def set_seed(seed=42):</span><br><span class="line">    random.seed(seed)</span><br><span class="line">    torch.manual_seed(seed)</span><br><span class="line">    if torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed(seed)</span><br><span class="line">        torch.cuda.manual_seed_all(seed)</span><br><span class="line"></span><br><span class="line">    torch.backends.cudnn.deterministic = True</span><br><span class="line">    torch.backends.cudnn.benchmark = False</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">set_seed(42)</span><br><span class="line"></span><br><span class="line"># ===== 1.准备数据 ======</span><br><span class="line">texts = [</span><br><span class="line">    &quot;我喜欢苹果&quot;,</span><br><span class="line">    &quot;我讨厌香蕉&quot;,</span><br><span class="line">    &quot;我喜欢橘子&quot;,</span><br><span class="line">    &quot;我讨厌葡萄&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"># 做字符级别的分词</span><br><span class="line">vocab = set(&quot;&quot;.join(texts))</span><br><span class="line">chars = sorted(list(vocab))</span><br><span class="line">strtoindex = &#123;ch: i for i, ch in enumerate(chars)&#125;</span><br><span class="line">indextostr = &#123;i: ch for ch, i in strtoindex.items()&#125;</span><br><span class="line"></span><br><span class="line">vocab_size = len(vocab)</span><br><span class="line">device = torch.device(&quot;cuda&quot; if torch.cuda.is_available() else &quot;cpu&quot;)</span><br><span class="line"></span><br><span class="line">print(&quot;字符表:&quot;, chars)</span><br><span class="line">print(&quot;字符到索引:&quot;, strtoindex)</span><br><span class="line">print(&quot;索引到字符:&quot;, indextostr)</span><br><span class="line">print(&quot;词汇表大小:&quot;, vocab_size)</span><br><span class="line">print(&quot;当前设备:&quot;, device)</span><br><span class="line"></span><br><span class="line"># 把每句话拆成(输入序列, 目标序列)的形式</span><br><span class="line"># 例如 &quot;我喜欢苹果&quot; -&gt; 输入: &quot;我喜欢苹&quot;, 目标: &quot;喜欢苹果&quot;</span><br><span class="line">class CharDataset(Dataset):</span><br><span class="line">    def __init__(self, texts, strtoindex):</span><br><span class="line">        super().__init__()</span><br><span class="line">        self.samples = []</span><br><span class="line">        for text in texts:</span><br><span class="line">            x = [strtoindex[ch] for ch in text[:-1]]</span><br><span class="line">            y = [strtoindex[ch] for ch in text[1:]]</span><br><span class="line">            self.samples.append((</span><br><span class="line">                torch.tensor(x, dtype=torch.long),</span><br><span class="line">                torch.tensor(y, dtype=torch.long)</span><br><span class="line">            ))</span><br><span class="line">    </span><br><span class="line">    def __len__(self):</span><br><span class="line">        return len(self.samples)</span><br><span class="line">    </span><br><span class="line">    def __getitem__(self, index):</span><br><span class="line">        return self.samples[index]</span><br><span class="line">    </span><br><span class="line">dataset = CharDataset(texts, strtoindex)</span><br><span class="line">generator = torch.Generator().manual_seed(42)</span><br><span class="line">loader = DataLoader(dataset, batch_size=2, shuffle=True, generator=generator)</span><br><span class="line"></span><br><span class="line"># ===== 2.定义最小LSTM模型 ======</span><br><span class="line">class SimpleLSTM(nn.Module):</span><br><span class="line">    def __init__(self, vocab_size, embed_dim=16, hidden_dim=32):</span><br><span class="line">        super().__init__()</span><br><span class="line">        self.embedding = nn.Embedding(vocab_size, embed_dim)</span><br><span class="line">        self.lstm = nn.LSTM(</span><br><span class="line">            input_size=embed_dim,</span><br><span class="line">            hidden_size=hidden_dim,</span><br><span class="line">            batch_first=True</span><br><span class="line">        )</span><br><span class="line">        self.fc = nn.Linear(hidden_dim, vocab_size)</span><br><span class="line"></span><br><span class="line">    def forward(self, x):</span><br><span class="line">        x = self.embedding(x)</span><br><span class="line">        out, _ = self.lstm(x)</span><br><span class="line">        logits = self.fc(out)</span><br><span class="line">        return logits</span><br><span class="line">    </span><br><span class="line">model = SimpleLSTM(vocab_size).to(device)</span><br><span class="line">criterion = nn.CrossEntropyLoss()</span><br><span class="line">optimizer = torch.optim.Adam(model.parameters(), lr=0.01)</span><br><span class="line"></span><br><span class="line"># ===== 3.训练 ======</span><br><span class="line">for epoch in range(200):</span><br><span class="line">    total_loss = 0</span><br><span class="line">    for x, y in loader:</span><br><span class="line">        x = x.to(device)</span><br><span class="line">        y = y.to(device)</span><br><span class="line">        logits = model(x)</span><br><span class="line"></span><br><span class="line">        loss = criterion(</span><br><span class="line">            logits.reshape(-1, vocab_size),</span><br><span class="line">            y.reshape(-1)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line">        total_loss += loss.item()</span><br><span class="line"></span><br><span class="line">    if (epoch + 1) % 20 == 0:</span><br><span class="line">        print(f&quot;Epoch &#123;epoch+1&#125;, loss = &#123;total_loss:.4f&#125;&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># ===== 4.测试 ======</span><br><span class="line">def generate(model, prefix, max_new_chars=3):</span><br><span class="line">    model.eval()</span><br><span class="line">    result = list(prefix)</span><br><span class="line"></span><br><span class="line">    for _ in range(max_new_chars):</span><br><span class="line">        x = torch.tensor(</span><br><span class="line">            [[strtoindex[ch] for ch in result]],</span><br><span class="line">            dtype=torch.long,</span><br><span class="line">            device=device</span><br><span class="line">        )</span><br><span class="line">        with torch.no_grad():</span><br><span class="line">            logits = model(x)</span><br><span class="line">        last_token_logits = logits[0, -1]</span><br><span class="line">        next_id = torch.argmax(last_token_logits).item()</span><br><span class="line">        next_char = indextostr[next_id]</span><br><span class="line">        result.append(next_char)</span><br><span class="line"></span><br><span class="line">    return &quot;&quot;.join(result)</span><br><span class="line"></span><br><span class="line">print(generate(model, &quot;我讨厌&quot;))</span><br><span class="line">print(generate(model, &quot;我喜&quot;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</div>
+        <div class=".article-gallery"><p>![image-20260429111915443](/Users/xander/Library/Application Support/typora-user-images/image-20260429111915443.png)</p>
+<p><a href="/Users/xander/Downloads/a2cfef91-02c5-4e31-80ec-1fa402e11740.png" title="a2cfef91-02c5-4e31-80ec-1fa402e11740" class="gallery-item" style="box-shadow: none;"> <img src="/Users/xander/Downloads/a2cfef91-02c5-4e31-80ec-1fa402e11740.png" alt="a2cfef91-02c5-4e31-80ec-1fa402e11740"></a></p>
+<p><a href="/Users/xander/Downloads/2ca294f4-5a3e-488d-b1fe-b76658900532.png" title="2ca294f4-5a3e-488d-b1fe-b76658900532" class="gallery-item" style="box-shadow: none;"> <img src="/Users/xander/Downloads/2ca294f4-5a3e-488d-b1fe-b76658900532.png" alt="2ca294f4-5a3e-488d-b1fe-b76658900532"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">高光谱解混网络（整体）</span><br><span class="line">│</span><br><span class="line">├── 1. 输入</span><br><span class="line">│   ├── 输入数据：3×3 patch</span><br><span class="line">│   ├── 输入形状：[B, 9, 198]</span><br><span class="line">│   └── 含义：</span><br><span class="line">│       ├── B：batch size</span><br><span class="line">│       ├── 9：3×3 邻域像素</span><br><span class="line">│       └── 198：光谱波段数</span><br><span class="line">│</span><br><span class="line">├── 2. 编码器 Q_net（丰度预测）</span><br><span class="line">│   │</span><br><span class="line">│   ├── 2.1 输入整理</span><br><span class="line">│   │   ├── reshape：[B, 9, 198] → [B, 3, 3, 198]</span><br><span class="line">│   │   ├── 丢弃最后 2 个波段：[B, 3, 3, 198] → [B, 3, 3, 196]</span><br><span class="line">│   │   └── residual = x（残差保存）</span><br><span class="line">│   │</span><br><span class="line">│   ├── 2.2 双分支特征提取</span><br><span class="line">│   │   │</span><br><span class="line">│   │   ├── 分支 A：频域分支 FFCM</span><br><span class="line">│   │   │   ├── 输入：[B, 196, 3, 3]</span><br><span class="line">│   │   │   ├── Fused_Fourier_Conv_Mixer</span><br><span class="line">│   │   │   │   ├── 局部卷积分支（depthwise conv）</span><br><span class="line">│   │   │   │   ├── 频域融合分支（Freq_Fusion）</span><br><span class="line">│   │   │   │   │   └── FourierUnit</span><br><span class="line">│   │   │   │   │       ├── rfft2：空间域 → 频域</span><br><span class="line">│   │   │   │   │       ├── 实部/虚部拼接</span><br><span class="line">│   │   │   │   │       ├── 1×1 Conv + BN + ReLU</span><br><span class="line">│   │   │   │   │       └── irfft2：频域 → 空间域</span><br><span class="line">│   │   │   │   └── 输出频域增强特征</span><br><span class="line">│   │   │   └── 输出 x1</span><br><span class="line">│   │   │</span><br><span class="line">│   │   └── 分支 B：空间 Mamba 分支</span><br><span class="line">│   │       ├── 输入：[B, 196, 3, 3]</span><br><span class="line">│   │       ├── VSSBlock</span><br><span class="line">│   │       │   ├── LayerNorm</span><br><span class="line">│   │       │   ├── SS2D / Selective Scan</span><br><span class="line">│   │       │   ├── DropPath</span><br><span class="line">│   │       │   ├── 残差连接</span><br><span class="line">│   │       │   └── FFN / MLP</span><br><span class="line">│   │       └── 输出 x2</span><br><span class="line">│   │</span><br><span class="line">│   ├── 2.3 双分支融合</span><br><span class="line">│   │   ├── x = SELU(x1 + x2) + residual</span><br><span class="line">│   │   └── 得到空频融合特征</span><br><span class="line">│   │</span><br><span class="line">│   ├── 2.4 门控增强</span><br><span class="line">│   │   ├── Linear：主分支特征</span><br><span class="line">│   │   ├── Linear + GELU：门控分支</span><br><span class="line">│   │   ├── gated * gates</span><br><span class="line">│   │   ├── ReLU</span><br><span class="line">│   │   └── 再加 residual</span><br><span class="line">│   │</span><br><span class="line">│   ├── 2.5 序列建模（GRU）</span><br><span class="line">│   │   ├── reshape：[B, 3, 3, 196] → [B, 9, 196]</span><br><span class="line">│   │   ├── 第一层 GRU</span><br><span class="line">│   │   │   ├── 输入维度：196</span><br><span class="line">│   │   │   └── 输出维度：4（端元数）</span><br><span class="line">│   │   │</span><br><span class="line">│   │   ├── 选取十字邻域位置</span><br><span class="line">│   │   │   ├── 位置索引：1, 3, 4, 5, 7</span><br><span class="line">│   │   │   └── 即：上、左、中、右、下</span><br><span class="line">│   │   │</span><br><span class="line">│   │   ├── 第二层 GRU</span><br><span class="line">│   │   │   └── 对十字邻域进一步聚合</span><br><span class="line">│   │   │</span><br><span class="line">│   │   ├── 取最后时刻输出</span><br><span class="line">│   │   ├── BranchNorm</span><br><span class="line">│   │   ├── ReLU</span><br><span class="line">│   │   └── sum2one</span><br><span class="line">│   │       └── 输出丰度 abundance：[B, 4]</span><br><span class="line">│   │</span><br><span class="line">│   └── 2.6 编码器输出</span><br><span class="line">│       └── 丰度向量 abundance</span><br><span class="line">│</span><br><span class="line">├── 3. 解码器 P_net（光谱重建）</span><br><span class="line">│   ├── 输入：abundance [B, 4]</span><br><span class="line">│   ├── Linear(4 → 198, bias=False)</span><br><span class="line">│   ├── 本质：端元矩阵</span><br><span class="line">│   └── 输出：重建光谱 recon [B, 198]</span><br><span class="line">│</span><br><span class="line">├── 4. 损失函数</span><br><span class="line">│   ├── 重建损失</span><br><span class="line">│   │   └── spectral_reconstruction_loss</span><br><span class="line">│   │       ├── SAD（光谱角距离）</span><br><span class="line">│   │       └── 稀疏约束（abundance 稀疏）</span><br><span class="line">│   │</span><br><span class="line">│   ├── 可选监督项</span><br><span class="line">│   │   ├── abundance_loss（丰度监督）</span><br><span class="line">│   │   └── target_recon_loss（目标重建监督）</span><br><span class="line">│   │</span><br><span class="line">│   └── 总损失</span><br><span class="line">│       └── recon_loss + abundance_weight * abundance_loss + target_recon_weight * target_recon_loss</span><br><span class="line">│</span><br><span class="line">├── 5. 训练辅助</span><br><span class="line">│   ├── DMAXD 初始化端元</span><br><span class="line">│   ├── 端元排列匹配（best permutation）</span><br><span class="line">│   ├── 评价指标</span><br><span class="line">│   │   ├── RMSE</span><br><span class="line">│   │   └── SAD</span><br><span class="line">│   └── 保存丰度图 / 端元曲线图</span><br><span class="line">│</span><br><span class="line">└── 6. 网络主线总结</span><br><span class="line">    └── 输入 patch</span><br><span class="line">        → 空频双分支编码</span><br><span class="line">        → GRU 聚合</span><br><span class="line">        → 丰度估计</span><br><span class="line">        → 线性解码重建光谱</span><br><span class="line">        → 用重建误差训练</span><br></pre></td></tr></table></figure>
+<p>[ ] 1. 数据 shape：[B, 9, 198] 是怎么来的<br>
+[ ] 2. 为什么 reshape 成 [B, 3, 3, 198]<br>
+[ ] 3. 为什么丢弃最后 2 个波段<br>
+[ ] 4. Q_net 的输入输出是什么<br>
+[ ] 5. P_net 为什么等价于端元矩阵<br>
+[ ] 6. FFCM 是什么<br>
+[ ] 7. FourierUnit 是什么<br>
+[ ] 8. Freq_Fusion 是什么<br>
+[ ] 9. VSSBlock 是什么<br>
+[ ] 10. SS2D 为什么要四方向扫描<br>
+[ ] 11. GRU 为什么要处理 9 个 patch 位置<br>
+[ ] 12. 为什么只选 1,3,4,5,7 五个位置<br>
+[ ] 13. sum2one 是什么<br>
+[ ] 14. SAD loss 是什么<br>
+[ ] 15. sparse loss 是什么<br>
+[ ] 16. DMAXD 初始化是什么意思<br>
+[ ] 17. best_endmember_match 为什么要排列匹配<br>
+[ ] 18. draw_results 怎么画丰度图</p>
+<p>效果有提升</p>
+<p>python main_UNMambaLinear_UR_SSSG.py</p>
+<p>python main_UNMambaLinear_UR_GAGF.py</p>
+<p>Epoch: 977/1000 | lr: 0.000328 | loss: 0.0337 | SAD: 0.0588 | RMSE: 0.08984<br>
+Epoch: 978/1000 | lr: 0.000328 | loss: 0.0336 | SAD: 0.0588 | RMSE: 0.09068</p>
+<p>main_UNMambaLinear_JR_GAGF.py</p>
+<p>Epoch: 347/700 | lr: 0.001435 | loss: 0.0480 | SAD: 0.0459 | RMSE: 0.04911<br>
+Epoch: 348/700 | lr: 0.001435 | loss: 0.0480 | SAD: 0.0459 | RMSE: 0.04907</p>
+<p>python main_UNMambaLinear_UR_CAMAS.py</p>
+<p>Epoch: 528/700 | lr: 0.000941 | loss: 0.0351 | SAD: 0.0533 | RMSE: 0.08386</p>
+<p>Epoch: 529/700 | lr: 0.000941 | loss: 0.0351 | SAD: 0.0532 | RMSE: 0.08473<br>
+Epoch: 530/700 | lr: 0.000941 | loss: 0.0864 | SAD: 0.0533 | RMSE: 0.18432</p>
+<ul>
+<li>
+<p>main_UNMambaLinear_JR_CAMAS.py</p>
+</li>
+<li>
+<p>Epoch: 311/500 | lr: 0.001594 | loss: 0.0504 | SAD: 0.0372 | RMSE: 0.03937<br>
+Epoch: 312/500 | lr: 0.001594 | loss: 0.0500 | SAD: 0.0372 | RMSE: 0.04119</p>
+</li>
+<li>
+<p>Epoch: 312/500 | lr: 0.001594 | loss: 0.0496 | SAD: 0.0374 | RMSE: 0.04156<br>
+Epoch: 313/500 | lr: 0.001594 | loss: 0.0498 | SAD: 0.0374 | RMSE: 0.04037</p>
+<p>Epoch: 357/700 | lr: 0.001435 | loss: 0.0470 | SAD: 0.0394 | RMSE: 0.04234<br>
+Epoch: 358/700 | lr: 0.001435 | loss: 0.0469 | SAD: 0.0395 | RMSE: 0.04130</p>
+</li>
+</ul>
+<p>python main_UNMambaLinear_UR_SLDPE.py</p>
+<p>Epoch: 527/600 | lr: 0.000941 | loss: 0.0353 | SAD: 0.0541 | RMSE: 0.08792<br>
+Epoch: 528/600 | lr: 0.000941 | loss: 0.0352 | SAD: 0.0541 | RMSE: 0.08715<br>
+Epoch: 529/600 | lr: 0.000941 | loss: 0.0352 | SAD: 0.0541 | RMSE: 0.08649<br>
+Epoch: 530/600 | lr: 0.000941 | loss: 0.0838 | SAD: 0.0543 | RMSE: 0.18475</p>
+<ul>
+<li>main_UNMambaLinear_JR_SLDPE.py</li>
+</ul>
+<p>Epoch: 330/650 | lr: 0.001435 | loss: 0.0488 | SAD: 0.0402 | RMSE: 0.05207<br>
+Epoch: 331/650 | lr: 0.001435 | loss: 0.0493 | SAD: 0.0402 | RMSE: 0.05330<br>
+Epoch: 332/650 | lr: 0.001435 | loss: 0.0488 | SAD: 0.0402 | RMSE: 0.05222</p>
+</div><!-- flag of hidden posts -->
     </div>
 
     <div class="post-meta">
         <i>
         
-            <span>2026-03-25</span>
+            <span>2026-04-28</span>
             
             
              
@@ -451,12 +510,7 @@
     
             <div class="post-footer-pre-next">
                 
-                    <span>上一篇：<a href='/2026/06/12/%E5%8F%A3%E8%AF%AD%E7%BB%83%E4%B9%A0/'>口语练习</a></span>
-                
 
-                
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/03/07/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%B0%E5%BD%95/">实验室服务器记录</a>
-                    </span>
                 
             </div>
     
