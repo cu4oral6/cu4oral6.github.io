@@ -6,7 +6,7 @@
   <link href="http://531party.cn/atom.xml" rel="self"/>
   
   <link href="http://531party.cn/"/>
-  <updated>2026-07-14T16:48:21.363Z</updated>
+  <updated>2026-08-05T06:29:39.831Z</updated>
   <id>http://531party.cn/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习issaacSim1</title>
+    <link href="http://531party.cn/2026/08/05/%E5%AD%A6%E4%B9%A0issaacSim1/"/>
+    <id>http://531party.cn/2026/08/05/%E5%AD%A6%E4%B9%A0issaacSim1/</id>
+    <published>2026-08-05T06:29:39.000Z</published>
+    <updated>2026-08-05T06:29:39.831Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MuJoCo 学习笔记 1</title>
+    <link href="http://531party.cn/2026/08/04/mujoco%E5%AD%A6%E4%B9%A01/"/>
+    <id>http://531party.cn/2026/08/04/mujoco%E5%AD%A6%E4%B9%A01/</id>
+    <published>2026-08-04T07:44:42.000Z</published>
+    <updated>2026-08-05T06:28:20.675Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h1&gt;理解 MuJoCo 的运行逻辑&lt;/h1&gt;
+&lt;h2 id=&quot;学习目标&quot;&gt;学习目标&lt;/h2&gt;
+&lt;p&gt;弄清楚 MuJoCo 中从模型定义到状态更新的完整流程：&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>海边拍照</title>
@@ -427,53 +472,6 @@
     
     
     <category term="高光谱图像" scheme="http://531party.cn/tags/%E9%AB%98%E5%85%89%E8%B0%B1%E5%9B%BE%E5%83%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>卷积神经网络</title>
-    <link href="http://531party.cn/2025/11/03/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    <id>http://531party.cn/2025/11/03/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</id>
-    <published>2025-11-03T05:53:31.000Z</published>
-    <updated>2025-11-03T05:54:11.697Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;卷积神经网络&quot;&gt;卷积神经网络&lt;/h3&gt;
-&lt;h4 id=&quot;卷积层&quot;&gt;卷积层&lt;/h4&gt;
-&lt;h5</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>剪映技巧个人笔记</title>
-    <link href="http://531party.cn/2025/11/02/%E5%89%AA%E6%98%A0%E6%8A%80%E5%B7%A7%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
-    <id>http://531party.cn/2025/11/02/%E5%89%AA%E6%98%A0%E6%8A%80%E5%B7%A7%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</id>
-    <published>2025-11-02T14:56:06.000Z</published>
-    <updated>2025-11-02T15:07:33.513Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;提升画面质感——人像、防抖、清晰度&quot;&gt;提升画面质感——人像、防抖、清晰度&lt;/h3&gt;
-&lt;h4</summary>
-        
-      
-    
-    
-    
-    
-    <category term="视频剪辑" scheme="http://531party.cn/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
   </entry>
   
