@@ -404,7 +404,7 @@
                     
                         &nbsp; | &nbsp;
                     
-                     <span>字数总计：2.5k</span>
+                     <span>字数总计：2.7k</span>
                 
                 
                     
@@ -426,14 +426,12 @@
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">理解 MuJoCo 的运行逻辑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87"><span class="post-toc-text">学习目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BF%85%E5%AD%A6%E6%A6%82%E5%BF%B5"><span class="post-toc-text">必学概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%98%E6%96%B9%E8%B5%84%E6%96%99"><span class="post-toc-text">官方资料</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-XML-%E7%9A%84%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84"><span class="post-toc-text">1. XML 的整体结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-%E4%B8%BB%E8%A6%81%E6%A0%87%E7%AD%BE"><span class="post-toc-text">1.1 主要标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-STL-%E6%96%87%E4%BB%B6"><span class="post-toc-text">1.2 STL 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-Actuator%EF%BC%88%E6%89%A7%E8%A1%8C%E5%99%A8%EF%BC%89"><span class="post-toc-text">1.3 Actuator（执行器）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%90%E8%A1%8C%E9%93%BE%E8%B7%AF"><span class="post-toc-text">运行链路</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Position-actuator-%E7%9A%84%E7%AE%80%E5%8C%96%E6%A8%A1%E5%9E%8B"><span class="post-toc-text">Position actuator 的简化模型</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-MjModel"><span class="post-toc-text">2. MjModel</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-MjData"><span class="post-toc-text">3. MjData</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-data-ctrl"><span class="post-toc-text">4. data.ctrl</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-ctrl-%E7%9A%84%E6%95%B0%E5%80%BC%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="post-toc-text">4.1 ctrl 的数值是什么意思？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-motor-%EF%BC%9A%E5%8A%9B%E6%88%96%E5%8A%9B%E7%9F%A9%E6%8E%A7%E5%88%B6"><span class="post-toc-text">4.2 &lt;motor&gt;：力或力矩控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-position-%EF%BC%9A%E7%9B%AE%E6%A0%87%E4%BD%8D%E7%BD%AE%E6%8E%A7%E5%88%B6"><span class="post-toc-text">4.3 &lt;position&gt;：目标位置控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4-velocity-%EF%BC%9A%E7%9B%AE%E6%A0%87%E9%80%9F%E5%BA%A6%E6%8E%A7%E5%88%B6"><span class="post-toc-text">4.4 &lt;velocity&gt;：目标速度控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-ctrlrange-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="post-toc-text">4.5 ctrlrange 是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-6-ctrlrange-%E5%92%8C-forcerange-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="post-toc-text">4.6 ctrlrange 和 forcerange 的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-mj-step"><span class="post-toc-text">5. mj_step()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-mj-step-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="post-toc-text">5.1 mj_step() 是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-ctrl-%E4%B8%8D%E4%BC%9A%E7%9B%B4%E6%8E%A5%E4%BF%AE%E6%94%B9-qpos"><span class="post-toc-text">5.2 ctrl 不会直接修改 qpos</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-qacc-%E6%98%AF%E6%80%8E%E6%A0%B7%E7%AE%97%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%9F"><span class="post-toc-text">5.3 qacc 是怎样算出来的？</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0%E5%B0%8F%E7%BB%93"><span class="post-toc-text">6. 状态更新小结</span></a></li></ol></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%90%86%E8%A7%A3-MuJoCo-%E7%9A%84%E8%BF%90%E8%A1%8C%E9%80%BB%E8%BE%91"><span class="post-toc-text">理解 MuJoCo 的运行逻辑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87"><span class="post-toc-text">学习目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BF%85%E5%AD%A6%E6%A6%82%E5%BF%B5"><span class="post-toc-text">必学概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%98%E6%96%B9%E8%B5%84%E6%96%99"><span class="post-toc-text">官方资料</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-XML-%E7%9A%84%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84"><span class="post-toc-text">1. XML 的整体结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-%E4%B8%BB%E8%A6%81%E6%A0%87%E7%AD%BE"><span class="post-toc-text">1.1 主要标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-STL-%E6%96%87%E4%BB%B6"><span class="post-toc-text">1.2 STL 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-Actuator%EF%BC%88%E6%89%A7%E8%A1%8C%E5%99%A8%EF%BC%89"><span class="post-toc-text">1.3 Actuator（执行器）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%90%E8%A1%8C%E9%93%BE%E8%B7%AF"><span class="post-toc-text">运行链路</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Position-actuator-%E7%9A%84%E7%AE%80%E5%8C%96%E6%A8%A1%E5%9E%8B"><span class="post-toc-text">Position actuator 的简化模型</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-MjModel"><span class="post-toc-text">2. MjModel</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-MjData"><span class="post-toc-text">3. MjData</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-data-ctrl"><span class="post-toc-text">4. data.ctrl</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-ctrl-%E7%9A%84%E6%95%B0%E5%80%BC%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="post-toc-text">4.1 ctrl 的数值是什么意思？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-lt-motor-gt-%EF%BC%9A%E5%8A%9B%E6%88%96%E5%8A%9B%E7%9F%A9%E6%8E%A7%E5%88%B6"><span class="post-toc-text">4.2 &lt;motor&gt;：力或力矩控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-lt-position-gt-%EF%BC%9A%E7%9B%AE%E6%A0%87%E4%BD%8D%E7%BD%AE%E6%8E%A7%E5%88%B6"><span class="post-toc-text">4.3 &lt;position&gt;：目标位置控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4-lt-velocity-gt-%EF%BC%9A%E7%9B%AE%E6%A0%87%E9%80%9F%E5%BA%A6%E6%8E%A7%E5%88%B6"><span class="post-toc-text">4.4 &lt;velocity&gt;：目标速度控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-ctrlrange-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="post-toc-text">4.5 ctrlrange 是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-6-ctrlrange-%E5%92%8C-forcerange-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="post-toc-text">4.6 ctrlrange 和 forcerange 的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-mj-step"><span class="post-toc-text">5. mj_step()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-mj-step-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="post-toc-text">5.1 mj_step() 是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-ctrl-%E4%B8%8D%E4%BC%9A%E7%9B%B4%E6%8E%A5%E4%BF%AE%E6%94%B9-qpos"><span class="post-toc-text">5.2 ctrl 不会直接修改 qpos</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-qacc-%E6%98%AF%E6%80%8E%E6%A0%B7%E7%AE%97%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%9F"><span class="post-toc-text">5.3 qacc 是怎样算出来的？</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0%E5%B0%8F%E7%BB%93"><span class="post-toc-text">6. 状态更新小结</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%B9%BF%E4%B9%89%E4%BD%8D%E7%BD%AE%E2%80%9D%EF%BC%9F"><span class="post-toc-text">什么是“广义位置”？</span></a></li></ol>
             
         
-        <div class=".article-gallery"><h1>理解 MuJoCo 的运行逻辑</h1>
-<h2 id="学习目标">学习目标</h2>
-<p>弄清楚 MuJoCo 中从模型定义到状态更新的完整流程：</p>
+        <div class=".article-gallery"><h1 id="理解-MuJoCo-的运行逻辑"><a href="#理解-MuJoCo-的运行逻辑" class="headerlink" title="理解 MuJoCo 的运行逻辑"></a>理解 MuJoCo 的运行逻辑</h1><h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><p>弄清楚 MuJoCo 中从模型定义到状态更新的完整流程：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">XML 模型</span><br><span class="line">   ↓</span><br><span class="line">MjModel</span><br><span class="line">   ↓</span><br><span class="line">MjData</span><br><span class="line">   ↓</span><br><span class="line">设置 data.ctrl</span><br><span class="line">   ↓</span><br><span class="line">mj_step()</span><br><span class="line">   ↓</span><br><span class="line">qpos、qvel 等状态更新</span><br></pre></td></tr></table></figure>
-<h2 id="必学概念">必学概念</h2>
+<h2 id="必学概念"><a href="#必学概念" class="headerlink" title="必学概念"></a>必学概念</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -476,13 +474,12 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>官方 Python 绑定直接暴露 <code>MjModel</code>、<code>MjData</code>、函数、枚举和常量。其中，数据字段直接对应底层内存，因此保存历史状态时需要使用 <code>.copy()</code>。</p>
-<h2 id="官方资料">官方资料</h2>
-<p><a target="_blank" rel="noopener" href="https://docs.mujoco.cn/en/stable/python.html#structs">MuJoCo 中文文档：Python API</a></p>
-<h2 id="1-XML-的整体结构">1. XML 的整体结构</h2>
-<p>一个比较完整的 MJCF 文件通常是这样：</p>
+<h2 id="官方资料"><a href="#官方资料" class="headerlink" title="官方资料"></a>官方资料</h2><p><a target="_blank" rel="noopener" href="https://docs.mujoco.cn/en/stable/python.html#structs">MuJoCo 中文文档：Python API</a></p>
+<h2 id="1-XML-的整体结构"><a href="#1-XML-的整体结构" class="headerlink" title="1. XML 的整体结构"></a>1. XML 的整体结构</h2><p>一个比较完整的 MJCF 文件通常是这样：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mujoco</span> <span class="attr">model</span>=<span class="string">&quot;simple_robot&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">compiler</span> <span class="attr">angle</span>=<span class="string">&quot;degree&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span></span></span><br><span class="line"><span class="tag">        <span class="attr">timestep</span>=<span class="string">&quot;0.002&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">gravity</span>=<span class="string">&quot;0 0 -9.81&quot;</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">default</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">joint</span> <span class="attr">damping</span>=<span class="string">&quot;0.1&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">geom</span> <span class="attr">density</span>=<span class="string">&quot;500&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">default</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">asset</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 网格、纹理、材质等资源 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">asset</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">worldbody</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 世界、地面、机器人本体 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">worldbody</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">actuator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 电机和控制器 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">actuator</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">sensor</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 传感器 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">sensor</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">mujoco</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-1-主要标签">1.1 主要标签</h3>
+<h3 id="1-1-主要标签"><a href="#1-1-主要标签" class="headerlink" title="1.1 主要标签"></a>1.1 主要标签</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -537,22 +534,21 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>MJCF 的主体是一棵由嵌套 <code>&lt;body&gt;</code> 构成的运动学树；不属于单个 body 的执行器、传感器、约束等，通常放在运动学树之外。</p>
-<h3 id="1-2-STL-文件">1.2 STL 文件</h3>
-<p><code>robot.stl</code> 是机器人或机器人零件的三维网格外形文件，但它本身不是完整的可运动机器人模型。</p>
-<h3 id="1-3-Actuator（执行器）">1.3 Actuator（执行器）</h3>
-<p><code>actuator</code> 中文叫“执行器”。在 MuJoCo 中，它不是一个可见的三维零件，而是一个数学模型：</p>
+<h3 id="1-2-STL-文件"><a href="#1-2-STL-文件" class="headerlink" title="1.2 STL 文件"></a>1.2 STL 文件</h3><p><code>robot.stl</code> 是机器人或机器人零件的三维网格外形文件，但它本身不是完整的可运动机器人模型。</p>
+<h3 id="1-3-Actuator（执行器）"><a href="#1-3-Actuator（执行器）" class="headerlink" title="1.3 Actuator（执行器）"></a>1.3 Actuator（执行器）</h3><p><code>actuator</code> 中文叫“执行器”。在 MuJoCo 中，它不是一个可见的三维零件，而是一个数学模型：</p>
 <blockquote>
 <p>接收控制命令 <code>data.ctrl</code>，计算出力或力矩，并把它作用到 joint、tendon、site 等对象上。</p>
 </blockquote>
 <p>例如机械臂肘关节：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hinge joint</span><br><span class="line">= 规定肘关节只能绕一根轴旋转</span><br><span class="line"></span><br><span class="line">actuator</span><br><span class="line">= 给这个关节施加力矩，让它真正转起来</span><br></pre></td></tr></table></figure>
-<h4 id="运行链路">运行链路</h4>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">data.ctrl</span><br><span class="line">控制命令</span><br><span class="line">    ↓</span><br><span class="line">actuator</span><br><span class="line">把命令转换为执行器输出力</span><br><span class="line">    ↓</span><br><span class="line">data.actuator_force</span><br><span class="line">执行器自身的输出</span><br><span class="line">    ↓</span><br><span class="line">transmission / gear</span><br><span class="line">把执行器力传递到关节</span><br><span class="line">    ↓</span><br><span class="line">data.qfrc_actuator</span><br><span class="line">作用到各自由度上的广义力</span><br><span class="line">    ↓</span><br><span class="line">动力学计算得到 qacc</span><br><span class="line">    ↓</span><br><span class="line">mj_step() 积分</span><br><span class="line">    ↓</span><br><span class="line">qvel、qpos 更新</span><br></pre></td></tr></table></figure>
+<h4 id="运行链路"><a href="#运行链路" class="headerlink" title="运行链路"></a>运行链路</h4><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">data.ctrl</span><br><span class="line">控制命令</span><br><span class="line">    ↓</span><br><span class="line">actuator</span><br><span class="line">把命令转换为执行器输出力</span><br><span class="line">    ↓</span><br><span class="line">data.actuator_force</span><br><span class="line">执行器自身的输出</span><br><span class="line">    ↓</span><br><span class="line">transmission / gear</span><br><span class="line">把执行器力传递到关节</span><br><span class="line">    ↓</span><br><span class="line">data.qfrc_actuator</span><br><span class="line">作用到各自由度上的广义力</span><br><span class="line">    ↓</span><br><span class="line">动力学计算得到 qacc</span><br><span class="line">    ↓</span><br><span class="line">mj_step() 积分</span><br><span class="line">    ↓</span><br><span class="line">qvel、qpos 更新</span><br></pre></td></tr></table></figure>
 <p>MuJoCo 中，大多数 actuator 是一个输入对应一个输出：输入通常来自 <code>data.ctrl</code>，输出保存在 <code>data.actuator_force</code>；经过传动映射后，作用到系统上的广义力保存在 <code>data.qfrc_actuator</code>。</p>
-<h4 id="Position-actuator-的简化模型">Position actuator 的简化模型</h4>
-<p>在没有 activation 动态的常见 position actuator 中，执行器输出可以简化为：</p>
-<p style=""><a target="_blank" rel="noopener" href="https://math.now.sh?from=p%20%3D%20k_p%28u-l%29-k_v%5Cdot%20l%0A" class="gallery-item" style="box-shadow: none;"> <img src="https://math.now.sh?from=p%20%3D%20k_p%28u-l%29-k_v%5Cdot%20l%0A" /></a></p><p>其中：</p>
+<h4 id="Position-actuator-的简化模型"><a href="#Position-actuator-的简化模型" class="headerlink" title="Position actuator 的简化模型"></a>Position actuator 的简化模型</h4><p>在没有 activation 动态的常见 position actuator 中，执行器输出可以简化为：</p>
+<script type="math/tex; mode=display">
+p = k_p(u-l)-k_v\dot l</script><p>其中：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -587,9 +583,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>MuJoCo 的 <code>&lt;position&gt;</code> shortcut 内部对应固定增益 <code>kp</code>，以及与位置和速度有关的偏置项 <code>-kp</code>、<code>-kv</code>。</p>
-<h2 id="2-MjModel">2. MjModel</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = mujoco.MjModel.from_xml_path(<span class="string">&quot;single_arm.xml&quot;</span>)</span><br><span class="line">data = mujoco.MjData(model)</span><br></pre></td></tr></table></figure>
+<h2 id="2-MjModel"><a href="#2-MjModel" class="headerlink" title="2. MjModel"></a>2. MjModel</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = mujoco.MjModel.from_xml_path(<span class="string">&quot;single_arm.xml&quot;</span>)</span><br><span class="line">data = mujoco.MjData(model)</span><br></pre></td></tr></table></figure>
 <p>此时，<code>model</code> 保存的是编译后的模型，例如：</p>
 <ul>
 <li>body 的数量</li>
@@ -600,8 +596,7 @@
 <li>时间步长</li>
 <li>父子关系</li>
 </ul>
-<h2 id="3-MjData">3. MjData</h2>
-<p><code>data</code> 保存当前状态，例如：</p>
+<h2 id="3-MjData"><a href="#3-MjData" class="headerlink" title="3. MjData"></a>3. MjData</h2><p><code>data</code> 保存当前状态，例如：</p>
 <ul>
 <li><code>data.qpos</code></li>
 <li><code>data.qvel</code></li>
@@ -612,19 +607,16 @@
 <li>接触信息</li>
 </ul>
 <p>官方 Python API 使用 <code>MjModel.from_xml_path()</code> 加载并编译 XML，再使用 <code>MjData(model)</code> 创建对应的状态数据。</p>
-<h2 id="4-data-ctrl">4. data.ctrl</h2>
-<p><code>data.ctrl</code> 是 MuJoCo 中的<strong>控制输入数组</strong>。可以把它理解成控制器发给机器人各个执行器的命令：</p>
+<h2 id="4-data-ctrl"><a href="#4-data-ctrl" class="headerlink" title="4. data.ctrl"></a>4. data.ctrl</h2><p><code>data.ctrl</code> 是 MuJoCo 中的<strong>控制输入数组</strong>。可以把它理解成控制器发给机器人各个执行器的命令：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">data.ctrl</span><br><span class="line">    ↓</span><br><span class="line">actuator</span><br><span class="line">    ↓</span><br><span class="line">产生力或力矩</span><br><span class="line">    ↓</span><br><span class="line">作用到 joint / tendon / site</span><br><span class="line">    ↓</span><br><span class="line">计算 qacc</span><br><span class="line">    ↓</span><br><span class="line">积分得到 qvel、qpos</span><br></pre></td></tr></table></figure>
 <p>MuJoCo 将所有执行器的控制输入存放在 <code>mjData.ctrl</code> 中，执行器产生的输出存放在 <code>data.actuator_force</code> 中，再经过传动关系映射为广义力 <code>data.qfrc_actuator</code>。</p>
-<h3 id="4-1-ctrl-的数值是什么意思？">4.1 <code>ctrl</code> 的数值是什么意思？</h3>
-<blockquote>
+<h3 id="4-1-ctrl-的数值是什么意思？"><a href="#4-1-ctrl-的数值是什么意思？" class="headerlink" title="4.1 ctrl 的数值是什么意思？"></a>4.1 <code>ctrl</code> 的数值是什么意思？</h3><blockquote>
 <p><code>data.ctrl[i]</code> 的意义不是固定的，而是由 XML 中对应 actuator 的类型决定。</p>
 </blockquote>
 <p>同样是：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data.ctrl[<span class="number">0</span>] = <span class="number">1.0</span></span><br></pre></td></tr></table></figure>
 <p>对于不同 actuator，它的含义可能完全不同。</p>
-<h3 id="4-2-motor-：力或力矩控制">4.2 <code>&lt;motor&gt;</code>：力或力矩控制</h3>
-<p>XML：</p>
+<h3 id="4-2-lt-motor-gt-：力或力矩控制"><a href="#4-2-lt-motor-gt-：力或力矩控制" class="headerlink" title="4.2 &lt;motor&gt;：力或力矩控制"></a>4.2 <code>&lt;motor&gt;</code>：力或力矩控制</h3><p>XML：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">actuator</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">motor</span></span></span><br><span class="line"><span class="tag">        <span class="attr">name</span>=<span class="string">&quot;shoulder_motor&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">joint</span>=<span class="string">&quot;shoulder&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">gear</span>=<span class="string">&quot;10&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">ctrllimited</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">ctrlrange</span>=<span class="string">&quot;-2 2&quot;</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">actuator</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Python：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data.ctrl[<span class="number">0</span>] = <span class="number">1.0</span></span><br></pre></td></tr></table></figure>
@@ -641,8 +633,7 @@
 <p>这不是：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data.qpos[<span class="number">0</span>] = <span class="number">1.0</span>  <span class="comment"># 把关节角度设置成 1 弧度</span></span><br></pre></td></tr></table></figure>
 <p>而是持续向关节施加驱动力。因此，motor 更接近“踩油门”。</p>
-<h3 id="4-3-position-：目标位置控制">4.3 <code>&lt;position&gt;</code>：目标位置控制</h3>
-<p>XML：</p>
+<h3 id="4-3-lt-position-gt-：目标位置控制"><a href="#4-3-lt-position-gt-：目标位置控制" class="headerlink" title="4.3 &lt;position&gt;：目标位置控制"></a>4.3 <code>&lt;position&gt;</code>：目标位置控制</h3><p>XML：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">actuator</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">position</span></span></span><br><span class="line"><span class="tag">        <span class="attr">name</span>=<span class="string">&quot;shoulder_position&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">joint</span>=<span class="string">&quot;shoulder&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">kp</span>=<span class="string">&quot;100&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">kv</span>=<span class="string">&quot;10&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">ctrllimited</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">ctrlrange</span>=<span class="string">&quot;-1.57 1.57&quot;</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">actuator</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Python：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data.ctrl[<span class="number">0</span>] = <span class="number">0.5</span></span><br></pre></td></tr></table></figure>
@@ -655,8 +646,7 @@
 <p>关节越接近目标位置，误差越小，产生的修正力矩通常也越小。<code>position</code> actuator 是位置伺服器，<code>kp</code> 决定位置反馈强度，<code>kv</code> 用来提供阻尼。</p>
 <p>可以把它理解成：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">motor    = 告诉电机“用多大力”</span><br><span class="line">position = 告诉电机“我要到什么位置”</span><br></pre></td></tr></table></figure>
-<h3 id="4-4-velocity-：目标速度控制">4.4 <code>&lt;velocity&gt;</code>：目标速度控制</h3>
-<p>XML：</p>
+<h3 id="4-4-lt-velocity-gt-：目标速度控制"><a href="#4-4-lt-velocity-gt-：目标速度控制" class="headerlink" title="4.4 &lt;velocity&gt;：目标速度控制"></a>4.4 <code>&lt;velocity&gt;</code>：目标速度控制</h3><p>XML：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">actuator</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">velocity</span></span></span><br><span class="line"><span class="tag">        <span class="attr">name</span>=<span class="string">&quot;wheel_velocity&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">joint</span>=<span class="string">&quot;wheel_joint&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">kv</span>=<span class="string">&quot;20&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">ctrllimited</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">ctrlrange</span>=<span class="string">&quot;-10 10&quot;</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">actuator</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Python：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data.ctrl[<span class="number">0</span>] = <span class="number">5.0</span></span><br></pre></td></tr></table></figure>
@@ -666,8 +656,7 @@
 <p>例如：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">目标速度 ctrl = 5</span><br><span class="line">当前速度 qvel = 2</span><br><span class="line">kv = 20</span><br><span class="line"></span><br><span class="line">输出力矩大约 = 20 × (5 - 2) = 60</span><br></pre></td></tr></table></figure>
 <p><code>velocity</code> actuator 会根据目标速度与实际速度之间的误差产生驱动力。</p>
-<h3 id="4-5-ctrlrange-是什么？">4.5 <code>ctrlrange</code> 是什么？</h3>
-<p>XML：</p>
+<h3 id="4-5-ctrlrange-是什么？"><a href="#4-5-ctrlrange-是什么？" class="headerlink" title="4.5 ctrlrange 是什么？"></a>4.5 <code>ctrlrange</code> 是什么？</h3><p>XML：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">motor</span></span></span><br><span class="line"><span class="tag">    <span class="attr">joint</span>=<span class="string">&quot;shoulder&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">ctrllimited</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">ctrlrange</span>=<span class="string">&quot;-2 2&quot;</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
 <p>表示控制输入被限制在：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">-2 ≤ ctrl ≤ 2</span><br></pre></td></tr></table></figure>
@@ -681,9 +670,9 @@
 <li><code>ctrllimited</code>：决定是否真的对输入进行限制。</li>
 </ul>
 <p>官方文档将 <code>ctrlrange</code> 定义为控制输入的限制范围；是否启用限制由 <code>ctrllimited</code> 决定。</p>
-<h3 id="4-6-ctrlrange-和-forcerange-的区别">4.6 <code>ctrlrange</code> 和 <code>forcerange</code> 的区别</h3>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">motor</span></span></span><br><span class="line"><span class="tag">    <span class="attr">joint</span>=<span class="string">&quot;shoulder&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">ctrllimited</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">ctrlrange</span>=<span class="string">&quot;-2 2&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">forcelimited</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">forcerange</span>=<span class="string">&quot;-15 15&quot;</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-6-ctrlrange-和-forcerange-的区别"><a href="#4-6-ctrlrange-和-forcerange-的区别" class="headerlink" title="4.6 ctrlrange 和 forcerange 的区别"></a>4.6 <code>ctrlrange</code> 和 <code>forcerange</code> 的区别</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">motor</span></span></span><br><span class="line"><span class="tag">    <span class="attr">joint</span>=<span class="string">&quot;shoulder&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">ctrllimited</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">ctrlrange</span>=<span class="string">&quot;-2 2&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">forcelimited</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">forcerange</span>=<span class="string">&quot;-15 15&quot;</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
 <p>区别如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -702,14 +691,12 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>例如：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">ctrl = 2</span><br><span class="line">gear = 100</span><br></pre></td></tr></table></figure>
 <p>虽然输入只有 <code>2</code>，但是经过增益和传动后，输出可能很大。此时可以使用 <code>forcerange</code> 限制执行器输出。MuJoCo 分别保存和限制控制输入、激活状态以及执行器力，它们不是同一个量。</p>
-<h2 id="5-mj-step">5. <code>mj_step()</code></h2>
-<h3 id="5-1-mj-step-是什么？">5.1 <code>mj_step()</code> 是什么？</h3>
-<p>根据当前状态和控制输入，计算物理运动，并把仿真时间向前推进一个时间步。</p>
-<h3 id="5-2-ctrl-不会直接修改-qpos">5.2 <code>ctrl</code> 不会直接修改 <code>qpos</code></h3>
-<p>假设：</p>
+<h2 id="5-mj-step"><a href="#5-mj-step" class="headerlink" title="5. mj_step()"></a>5. <code>mj_step()</code></h2><h3 id="5-1-mj-step-是什么？"><a href="#5-1-mj-step-是什么？" class="headerlink" title="5.1 mj_step() 是什么？"></a>5.1 <code>mj_step()</code> 是什么？</h3><p>根据当前状态和控制输入，计算物理运动，并把仿真时间向前推进一个时间步。</p>
+<h3 id="5-2-ctrl-不会直接修改-qpos"><a href="#5-2-ctrl-不会直接修改-qpos" class="headerlink" title="5.2 ctrl 不会直接修改 qpos"></a>5.2 <code>ctrl</code> 不会直接修改 <code>qpos</code></h3><p>假设：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(data.qpos)</span><br><span class="line">data.ctrl[<span class="number">0</span>] = <span class="number">1.0</span></span><br><span class="line"><span class="built_in">print</span>(data.qpos)</span><br></pre></td></tr></table></figure>
 <p>你会发现 <code>qpos</code> 通常没有变化，因为此时只是设置了控制命令，还没有推进仿真：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">设置 data.ctrl</span><br><span class="line">    ↓</span><br><span class="line">只是修改控制输入</span><br><span class="line">    ↓</span><br><span class="line">尚未计算新的运动状态</span><br></pre></td></tr></table></figure>
@@ -718,8 +705,7 @@
 <p>完整过程如下：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data.ctrl[<span class="number">0</span>] = <span class="number">1.0</span></span><br><span class="line">mujoco.mj_step(model, data)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(data.qpos)</span><br><span class="line"><span class="built_in">print</span>(data.qvel)</span><br></pre></td></tr></table></figure>
 <p><code>mj_step()</code> 会进行动力学计算并积分时间，从而更新 <code>qpos</code>、<code>qvel</code> 和仿真时间。控制输入会先影响执行器力，再影响加速度，最终通过积分改变状态。</p>
-<h3 id="5-3-qacc-是怎样算出来的？">5.3 <code>qacc</code> 是怎样算出来的？</h3>
-<p>可以粗略理解为：</p>
+<h3 id="5-3-qacc-是怎样算出来的？"><a href="#5-3-qacc-是怎样算出来的？" class="headerlink" title="5.3 qacc 是怎样算出来的？"></a>5.3 <code>qacc</code> 是怎样算出来的？</h3><p>可以粗略理解为：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">质量 × 加速度 = 所有力的总和</span><br></pre></td></tr></table></figure>
 <p>在 MuJoCo 中，所有力可能包括：</p>
 <ul>
@@ -734,9 +720,9 @@
 <p>于是形成：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">data.ctrl</span><br><span class="line">    ↓</span><br><span class="line">data.actuator_force</span><br><span class="line">    ↓</span><br><span class="line">data.qfrc_actuator</span><br><span class="line">    ↓</span><br><span class="line">和重力、阻尼、接触力等合并</span><br><span class="line">    ↓</span><br><span class="line">data.qacc</span><br></pre></td></tr></table></figure>
 <p>随后，积分器根据 <code>qacc</code> 更新 <code>qvel</code> 和 <code>qpos</code>。</p>
-<h2 id="6-状态更新小结">6. 状态更新小结</h2>
-<p>MuJoCo 的核心运行逻辑可以概括为：</p>
+<h2 id="6-状态更新小结"><a href="#6-状态更新小结" class="headerlink" title="6. 状态更新小结"></a>6. 状态更新小结</h2><p>MuJoCo 的核心运行逻辑可以概括为：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">XML</span><br><span class="line">    ↓ 编译</span><br><span class="line">MjModel</span><br><span class="line">    ↓ 创建状态</span><br><span class="line">MjData</span><br><span class="line">    ↓ 设置控制输入</span><br><span class="line">data.ctrl</span><br><span class="line">    ↓ 动力学计算</span><br><span class="line">qacc</span><br><span class="line">    ↓ 积分</span><br><span class="line">qvel、qpos、time</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -779,6 +765,46 @@
 </tr>
 </tbody>
 </table>
+</div>
+<h1 id="什么是“广义位置”？"><a href="#什么是“广义位置”？" class="headerlink" title="什么是“广义位置”？"></a>什么是“广义位置”？</h1><p>广义位置就是：</p>
+<blockquote>
+<p>用最少的一组数字，描述整个系统当前的构型。</p>
+</blockquote>
+<p>不同关节，需要的数字不同。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>joint 类型</th>
+<th><code>qpos</code> 表示什么</th>
+<th><code>qvel</code> 表示什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hinge</code></td>
+<td>转动角度，单位 rad</td>
+<td>角速度，单位 rad/s</td>
+</tr>
+<tr>
+<td><code>slide</code></td>
+<td>平移距离，单位 m</td>
+<td>线速度，单位 m/s</td>
+</tr>
+<tr>
+<td><code>ball</code></td>
+<td>姿态四元数，4 个数</td>
+<td>三轴角速度，3 个数</td>
+</tr>
+<tr>
+<td><code>free</code></td>
+<td>位置3个 + 四元数4个</td>
+<td>线速度3个 + 角速度3个</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>所以 <code>qpos</code> 不能一概理解成普通空间位置。</p>
 </div>
     </div>
 

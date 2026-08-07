@@ -6,7 +6,7 @@
   <link href="http://531party.cn/atom.xml" rel="self"/>
   
   <link href="http://531party.cn/"/>
-  <updated>2026-08-05T06:29:39.831Z</updated>
+  <updated>2026-08-06T07:11:14.779Z</updated>
   <id>http://531party.cn/</id>
   
   <author>
@@ -17,11 +17,138 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>补充动力学知识</title>
+    <link href="http://531party.cn/2026/08/06/%E8%A1%A5%E5%85%85%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9F%A5%E8%AF%86/"/>
+    <id>http://531party.cn/2026/08/06/%E8%A1%A5%E5%85%85%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9F%A5%E8%AF%86/</id>
+    <published>2026-08-06T02:40:22.000Z</published>
+    <updated>2026-08-06T07:11:14.779Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h3 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h3&gt;&lt;h3 id=&quot;第一阶段：坐标与运动&quot;&gt;&lt;a href=&quot;#第一阶段：坐标与运动&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vla学习</title>
+    <link href="http://531party.cn/2026/08/06/vla%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://531party.cn/2026/08/06/vla%E5%AD%A6%E4%B9%A0/</id>
+    <published>2026-08-06T02:37:33.000Z</published>
+    <updated>2026-08-06T02:38:40.487Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;更合适的顺序是：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1.</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mujoco学习5</title>
+    <link href="http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A05/"/>
+    <id>http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A05/</id>
+    <published>2026-08-05T08:22:27.000Z</published>
+    <updated>2026-08-05T08:23:34.606Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h2 id=&quot;推箱子与简单抓取&quot;&gt;&lt;a href=&quot;#推箱子与简单抓取&quot; class=&quot;headerlink&quot; title=&quot;推箱子与简单抓取&quot;&gt;&lt;/a&gt;推箱子与简单抓取&lt;/h2&gt;&lt;h3 id=&quot;目标&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mujoco学习4</title>
+    <link href="http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A04/"/>
+    <id>http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A04/</id>
+    <published>2026-08-05T08:22:24.000Z</published>
+    <updated>2026-08-05T08:23:22.718Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h2 id=&quot;Site、坐标系与-Jacobian&quot;&gt;&lt;a href=&quot;#Site、坐标系与-Jacobian&quot; class=&quot;headerlink&quot; title=&quot;Site、坐标系与</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mujoco学习3</title>
+    <link href="http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A03/"/>
+    <id>http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A03/</id>
+    <published>2026-08-05T08:22:22.000Z</published>
+    <updated>2026-08-05T08:22:48.244Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h2 id=&quot;执行器与-PD-控制&quot;&gt;&lt;a href=&quot;#执行器与-PD-控制&quot; class=&quot;headerlink&quot; title=&quot;执行器与 PD 控制&quot;&gt;&lt;/a&gt;执行器与 PD 控制&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mujoco学习2</title>
+    <link href="http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A02/"/>
+    <id>http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A02/</id>
+    <published>2026-08-05T08:20:26.000Z</published>
+    <updated>2026-08-06T08:02:43.123Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h2 id=&quot;自己搭建机器人模型&quot;&gt;&lt;a href=&quot;#自己搭建机器人模型&quot; class=&quot;headerlink&quot; title=&quot;自己搭建机器人模型&quot;&gt;&lt;/a&gt;自己搭建机器人模型&lt;/h2&gt;&lt;h3 id=&quot;目标&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>学习issaacSim1</title>
     <link href="http://531party.cn/2026/08/05/%E5%AD%A6%E4%B9%A0issaacSim1/"/>
     <id>http://531party.cn/2026/08/05/%E5%AD%A6%E4%B9%A0issaacSim1/</id>
     <published>2026-08-05T06:29:39.000Z</published>
-    <updated>2026-08-05T06:29:39.831Z</updated>
+    <updated>2026-08-05T06:42:11.443Z</updated>
     
     
       
@@ -42,17 +169,14 @@
     <link href="http://531party.cn/2026/08/04/mujoco%E5%AD%A6%E4%B9%A01/"/>
     <id>http://531party.cn/2026/08/04/mujoco%E5%AD%A6%E4%B9%A01/</id>
     <published>2026-08-04T07:44:42.000Z</published>
-    <updated>2026-08-05T06:28:20.675Z</updated>
+    <updated>2026-08-05T09:33:42.143Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h1&gt;理解 MuJoCo 的运行逻辑&lt;/h1&gt;
-&lt;h2 id=&quot;学习目标&quot;&gt;学习目标&lt;/h2&gt;
-&lt;p&gt;弄清楚 MuJoCo 中从模型定义到状态更新的完整流程：&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h1 id=&quot;理解-MuJoCo-的运行逻辑&quot;&gt;&lt;a href=&quot;#理解-MuJoCo-的运行逻辑&quot; class=&quot;headerlink&quot; title=&quot;理解 MuJoCo 的运行逻辑&quot;&gt;&lt;/a&gt;理解 MuJoCo</summary>
         
       
     
@@ -328,150 +452,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>vllm部署（python虚拟环境方式）</title>
-    <link href="http://531party.cn/2026/01/17/vllm%E9%83%A8%E7%BD%B2%EF%BC%88python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E6%96%B9%E5%BC%8F%EF%BC%89/"/>
-    <id>http://531party.cn/2026/01/17/vllm%E9%83%A8%E7%BD%B2%EF%BC%88python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E6%96%B9%E5%BC%8F%EF%BC%89/</id>
-    <published>2026-01-16T23:43:47.000Z</published>
-    <updated>2026-01-16T23:56:00.569Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;二组&lt;/p&gt;
-&lt;p&gt;1.创建虚拟环境&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>milvus作业</title>
-    <link href="http://531party.cn/2026/01/16/milvus%E4%BD%9C%E4%B8%9A/"/>
-    <id>http://531party.cn/2026/01/16/milvus%E4%BD%9C%E4%B8%9A/</id>
-    <published>2026-01-16T12:57:22.000Z</published>
-    <updated>2026-01-17T04:57:14.597Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;作者：徐天&lt;/p&gt;
-&lt;h3 id=&quot;第一部分：代码调试与基础（必做）&quot;&gt;第一部分：代码调试与基础（必做）&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;1.1 部署 milvus 数据库 standalone</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LMM 下盲解混方法综述：端元数估计、端元提取、丰度反演与常用约束/先验</title>
-    <link href="http://531party.cn/2025/12/22/LMM-%E4%B8%8B%E7%9B%B2%E8%A7%A3%E6%B7%B7%E6%96%B9%E6%B3%95%E7%BB%BC%E8%BF%B0%EF%BC%9A%E7%AB%AF%E5%85%83%E6%95%B0%E4%BC%B0%E8%AE%A1%E3%80%81%E7%AB%AF%E5%85%83%E6%8F%90%E5%8F%96%E3%80%81%E4%B8%B0%E5%BA%A6%E5%8F%8D%E6%BC%94%E4%B8%8E%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F-%E5%85%88%E9%AA%8C/"/>
-    <id>http://531party.cn/2025/12/22/LMM-%E4%B8%8B%E7%9B%B2%E8%A7%A3%E6%B7%B7%E6%96%B9%E6%B3%95%E7%BB%BC%E8%BF%B0%EF%BC%9A%E7%AB%AF%E5%85%83%E6%95%B0%E4%BC%B0%E8%AE%A1%E3%80%81%E7%AB%AF%E5%85%83%E6%8F%90%E5%8F%96%E3%80%81%E4%B8%B0%E5%BA%A6%E5%8F%8D%E6%BC%94%E4%B8%8E%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F-%E5%85%88%E9%AA%8C/</id>
-    <published>2025-12-22T06:09:47.000Z</published>
-    <updated>2025-12-25T08:49:39.023Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h4 id=&quot;引用论文怎么找&quot;&gt;引用论文怎么找&lt;/h4&gt;
-&lt;p&gt;第一层：先抓“地图”论文（1–3 篇），用它们帮你扩到 30+&lt;/p&gt;
-&lt;p&gt;先用 2 篇综述把候选池扩到 80–150 篇，再筛到 35–50</summary>
-        
-      
-    
-    
-    
-    
-    <category term="高光谱解混" scheme="http://531party.cn/tags/%E9%AB%98%E5%85%89%E8%B0%B1%E8%A7%A3%E6%B7%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>超分算法面试</title>
-    <link href="http://531party.cn/2025/12/18/%E8%B6%85%E5%88%86%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/"/>
-    <id>http://531party.cn/2025/12/18/%E8%B6%85%E5%88%86%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95/</id>
-    <published>2025-12-18T08:24:32.000Z</published>
-    <updated>2025-12-19T03:55:10.404Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;老师您好，目前是中国海洋大学农业工程与信息技术专业的硕士一年级。&lt;br&gt;
-我本科和之前的工作经历偏工程开发，主要做过后端和系统项目，但在研究生阶段我开始明确往 AI 算法，尤其是图像处理方向</summary>
-        
-      
-    
-    
-    
-    
-    <category term="算法" scheme="http://531party.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HU杂记</title>
-    <link href="http://531party.cn/2025/12/16/HU%E6%9D%82%E8%AE%B0/"/>
-    <id>http://531party.cn/2025/12/16/HU%E6%9D%82%E8%AE%B0/</id>
-    <published>2025-12-16T13:46:24.000Z</published>
-    <updated>2025-12-17T14:35:23.587Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;能用自己的话讲清楚：&lt;strong&gt;LMM = 端元线性组合 + 丰度约束（非负、和为1）&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;abundances should satisfy two physical</summary>
-        
-      
-    
-    
-    
-    
-    <category term="高光谱图像" scheme="http://531party.cn/tags/%E9%AB%98%E5%85%89%E8%B0%B1%E5%9B%BE%E5%83%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高光谱图像笔记</title>
-    <link href="http://531party.cn/2025/11/03/%E9%AB%98%E5%85%89%E8%B0%B1%E5%9B%BE%E5%83%8F%E7%AC%94%E8%AE%B0/"/>
-    <id>http://531party.cn/2025/11/03/%E9%AB%98%E5%85%89%E8%B0%B1%E5%9B%BE%E5%83%8F%E7%AC%94%E8%AE%B0/</id>
-    <published>2025-11-03T11:04:15.000Z</published>
-    <updated>2025-11-03T11:07:42.174Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;线性光谱混合模型&lt;/p&gt;
-&lt;p&gt;（Linear Spectral Mixture Model， LSMM）&lt;/p&gt;
-&lt;p&gt;非线性光谱混合模型(Nonlinear Spectral Mixture Models,</summary>
-        
-      
-    
-    
-    
-    
-    <category term="高光谱图像" scheme="http://531party.cn/tags/%E9%AB%98%E5%85%89%E8%B0%B1%E5%9B%BE%E5%83%8F/"/>
     
   </entry>
   

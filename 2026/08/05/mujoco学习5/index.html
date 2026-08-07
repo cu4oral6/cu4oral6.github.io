@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="学习issaacSim1" />
+    <meta name="description" content="mujoco学习5" />
     <meta name="hexo-theme-A4" content="v1.9.8" />
     <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
     <title>xander&#39;s blog</title>
@@ -385,7 +385,7 @@
         
             
                 <div class="post-main-title" style="text-align: center;">
-                    学习issaacSim1
+                    mujoco学习5
                 </div>
             
         
@@ -404,7 +404,7 @@
                     
                         &nbsp; | &nbsp;
                     
-                     <span>字数总计：5</span>
+                     <span>字数总计：153</span>
                 
                 
                     
@@ -426,11 +426,18 @@
     <div class="post-md">
         
             
-                
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%8E%A8%E7%AE%B1%E5%AD%90%E4%B8%8E%E7%AE%80%E5%8D%95%E6%8A%93%E5%8F%96"><span class="post-toc-text">推箱子与简单抓取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%BF%85%E5%AD%A6%E5%86%85%E5%AE%B9"><span class="post-toc-text">必学内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8E%A5%E8%A7%A6%E4%BF%A1%E6%81%AF"><span class="post-toc-text">接触信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%AC%E5%91%A8%E7%BB%83%E4%B9%A0"><span class="post-toc-text">本周练习</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-text"> </span></a></li></ol></li></ol>
             
         
-        <div class=".article-gallery"><p>没有显卡，卒</p>
-</div>
+        <div class=".article-gallery"><h2 id="推箱子与简单抓取"><a href="#推箱子与简单抓取" class="headerlink" title="推箱子与简单抓取"></a>推箱子与简单抓取</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>让机器人开始与环境交互。</p>
+<h3 id="必学内容"><a href="#必学内容" class="headerlink" title="必学内容"></a>必学内容</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">contact</span><br><span class="line">friction</span><br><span class="line">solref</span><br><span class="line">solimp</span><br><span class="line">collision</span><br><span class="line">sensor</span><br><span class="line">touch sensor</span><br><span class="line">joint position sensor</span><br><span class="line">joint velocity sensor</span><br><span class="line">force / torque sensor</span><br></pre></td></tr></table></figure>
+<h3 id="接触信息"><a href="#接触信息" class="headerlink" title="接触信息"></a>接触信息</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(data.ncon)</span><br><span class="line"></span><br><span class="line">for i in range(data.ncon):</span><br><span class="line">    contact = data.contact[i]</span><br><span class="line">    print(contact.geom1, contact.geom2)</span><br><span class="line">    print(contact.pos)</span><br></pre></td></tr></table></figure>
+<p>接触力：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">force = np.zeros(6)</span><br><span class="line">mujoco.mj_contactForce(model, data, 0, force)</span><br></pre></td></tr></table></figure>
+<h3 id="本周练习"><a href="#本周练习" class="headerlink" title="本周练习"></a>本周练习</h3><p>按照难度完成：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">机械臂末端碰到方块</span><br><span class="line">        ↓</span><br><span class="line">推动方块到指定区域</span><br><span class="line">        ↓</span><br><span class="line">两指夹爪夹住方块</span><br><span class="line">        ↓</span><br><span class="line">抬起方块</span><br></pre></td></tr></table></figure>
+<p>一开始不要追求复杂灵巧手。夹爪抓取涉及摩擦、接触、控制器和模型参数，调试难度明显高于关节控制。</p>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3></div>
     </div>
 
     <div class="post-meta">
@@ -451,11 +458,11 @@
     
             <div class="post-footer-pre-next">
                 
-                    <span>上一篇：<a href='/2026/08/05/mujoco%E5%AD%A6%E4%B9%A02/'>mujoco学习2</a></span>
+                    <span>上一篇：<a href='/2026/08/06/vla%E5%AD%A6%E4%B9%A0/'>vla学习</a></span>
                 
 
                 
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/08/04/mujoco%E5%AD%A6%E4%B9%A01/">MuJoCo 学习笔记 1</a>
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/08/05/mujoco%E5%AD%A6%E4%B9%A04/">mujoco学习4</a>
                     </span>
                 
             </div>
