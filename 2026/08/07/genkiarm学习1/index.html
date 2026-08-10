@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="mujoco学习4" />
+    <meta name="description" content="genkiarm学习1" />
     <meta name="hexo-theme-A4" content="v1.9.8" />
     <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
     <title>xander&#39;s blog</title>
@@ -385,7 +385,7 @@
         
             
                 <div class="post-main-title" style="text-align: center;">
-                    mujoco学习4
+                    genkiarm学习1
                 </div>
             
         
@@ -398,19 +398,19 @@
             <div class="post-head-meta-center">
         
                 
-                    <span>最近更新：2026-08-10</span> 
+                    <span>最近更新：2026-08-07</span> 
                 
                 
                     
                         &nbsp; | &nbsp;
                     
-                     <span>字数总计：785</span>
+                     <span>字数总计：803</span>
                 
                 
                     
                         &nbsp; | &nbsp;
                     
-                    <span>阅读估时：3分钟</span>
+                    <span>阅读估时：2分钟</span>
                 
                 
                     
@@ -426,117 +426,118 @@
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Site%E3%80%81%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8E-Jacobian"><span class="post-toc-text">Site、坐标系与 Jacobian</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%BF%85%E5%AD%A6%E5%86%85%E5%AE%B9"><span class="post-toc-text">必学内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BB%A5%E5%8F%8A%EF%BC%9A"><span class="post-toc-text">以及：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mj-jacSite-%E6%98%AF%E5%B9%B2%E4%BB%80%E4%B9%88%E7%9A%84"><span class="post-toc-text">mj_jacSite() 是干什么的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mj-jacBody-%E5%92%8C-mj-jacSite-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="post-toc-text">mj_jacBody() 和 mj_jacSite() 的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%9C%80%E8%A6%81%E8%A1%A5%E5%85%85%E7%9A%84%E6%95%B0%E5%AD%A6"><span class="post-toc-text">需要补充的数学</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%AB%E7%AB%AF%E6%8E%A7%E5%88%B6%E6%B5%81%E7%A8%8B"><span class="post-toc-text">末端控制流程</span></a></li></ol></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%8E%B0%E5%9C%A8%E4%B8%8D%E9%9C%80%E8%A6%81%E7%AB%8B%E5%88%BB%E5%8E%BB%E5%95%83%E4%B8%80%E5%A4%A7%E5%A5%97-ROS"><span class="post-toc-text">现在不需要立刻去啃一大套 ROS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%88%B5%E6%9C%BA%E5%92%8C%E5%BE%84%E5%90%91%E7%A3%81%E9%93%81"><span class="post-toc-text">什么是舵机和径向磁铁</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-%E8%88%B5%E6%9C%BA%E6%98%AF%E4%BB%80%E4%B9%88"><span class="post-toc-text">1. 舵机是什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-%E5%BE%84%E5%90%91%E7%A3%81%E9%93%81%E6%98%AF%E4%BB%80%E4%B9%88"><span class="post-toc-text">2. 径向磁铁是什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%88%B5%E6%9C%BA%E9%87%8C%E9%9D%A2%E9%9C%80%E8%A6%81%E7%A3%81%E9%93%81%EF%BC%9F"><span class="post-toc-text">3. 为什么舵机里面需要磁铁？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BC%BA%E6%9C%8D%E7%94%B5%E6%9C%BA"><span class="post-toc-text">什么是伺服电机</span></a></li></ol></li></ol>
             
         
-        <div class=".article-gallery"><h2 id="Site、坐标系与-Jacobian">Site、坐标系与 Jacobian</h2>
-<h3 id="目标">目标</h3>
-<p>从“控制关节角度”升级为：</p>
+        <div class=".article-gallery"><p>如果每天能学 <strong>3～4 小时</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间</th>
+<th>学到什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MuJoCo + 机械臂基础</td>
+<td>5～7 天</td>
+<td>URDF/XML、joint、actuator、qpos/qvel、碰撞、控制</td>
+</tr>
+<tr>
+<td>GenkiArm 仿真跑通</td>
+<td>5～7 天</td>
+<td>模型加载、关节控制、末端位置、PD/PID</td>
+</tr>
+<tr>
+<td>真机 + 遥操作</td>
+<td>5～10 天</td>
+<td>舵机、主从臂、关节状态读取</td>
+</tr>
+<tr>
+<td>LeRobot 数据采集</td>
+<td>3～5 天</td>
+<td>observation、action、camera、dataset</td>
+</tr>
+<tr>
+<td>ACT/模仿学习</td>
+<td>7～10 天</td>
+<td>数据训练、推理、机械臂执行</td>
+</tr>
+<tr>
+<td>做成简历项目</td>
+<td>3～5 天</td>
+<td>README、视频、架构图、结果分析</td>
+</tr>
+</tbody>
+</table>
+<p>也就是：</p>
+<p><strong>比较快：4～6 周。</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/itheima1/embodied_robot">https://github.com/itheima1/embodied_robot</a></p>
+<h3 id="现在不需要立刻去啃一大套-ROS">现在不需要立刻去啃一大套 ROS</h3>
+<p>我反而建议：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">现在</span><br><span class="line">MuJoCo + GenkiArm</span><br><span class="line">        ↓</span><br><span class="line">把 actuator / PD / qpos / qvel 搞懂</span><br><span class="line">        ↓</span><br><span class="line">机械臂基本控制</span><br><span class="line">        ↓</span><br><span class="line">ROS2 基础（约 1 周）</span><br><span class="line">        ↓</span><br><span class="line">MoveIt2 / ros2_control</span><br><span class="line">        ↓</span><br><span class="line">LeRobot / ACT</span><br></pre></td></tr></table></figure>
+<p>也就是说，<strong>ROS2 可以放在你 GenkiArm 基础控制学完之后马上补。</strong></p>
+<h4 id="什么是舵机和径向磁铁">什么是舵机和径向磁铁</h4>
+<h3 id="1-舵机是什么">1. 舵机是什么</h3>
+<p>你可以先把舵机理解成：</p>
 <blockquote>
-<p>控制机械臂末端移动到指定空间位置。</p>
+<p><strong>能够按照命令转到指定角度的电机模块。</strong></p>
 </blockquote>
-<h3 id="必学内容">必学内容</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">data.body(&quot;link&quot;).xpos</span><br><span class="line">data.body(&quot;link&quot;).xmat</span><br><span class="line"></span><br><span class="line">data.site(&quot;end_effector&quot;).xpos</span><br><span class="line">data.site(&quot;end_effector&quot;).xmat</span><br></pre></td></tr></table></figure>
-<p>body是某个刚体/连杆</p>
-<p>site是标记真正关心的位置</p>
-<p>xpos这个 <strong>body/site 坐标系原点在世界坐标系中的位置</strong>，例如 <code>[0.5, 0.2, 0.7]</code>，单位是米。</p>
-<p>xmat这个 <strong>body/site 坐标系相对于世界坐标系的朝向（姿态）</strong>，用 <code>3×3</code> 旋转矩阵表示。</p>
-<h3 id="以及：">以及：</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mujoco.mj_jacSite()</span><br><span class="line">mujoco.mj_jacBody()</span><br></pre></td></tr></table></figure>
-<h4 id="mj-jacSite-是干什么的"><code>mj_jacSite()</code> 是干什么的</h4>
-<p>它并不是：</p>
-<blockquote>
-<p>让机器人运动。</p>
-</blockquote>
-<p>它只是：</p>
-<blockquote>
-<p><strong>帮你计算当前姿态下的 Jacobian。</strong></p>
-</blockquote>
-<p>也就是告诉你：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">现在这个机械臂姿态下，</span><br><span class="line"></span><br><span class="line">关节1动 → 指尖怎么动</span><br><span class="line">关节2动 → 指尖怎么动</span><br><span class="line">关节3动 → 指尖怎么动</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h4 id="mj-jacBody-和-mj-jacSite-的区别"><code>mj_jacBody()</code> 和 <code>mj_jacSite()</code> 的区别</h4>
-<p>区别其实跟前面的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">body</span><br><span class="line">site</span><br></pre></td></tr></table></figure>
-<p>一样。</p>
-<p>如果写：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mujoco.mj_jacBody(...)</span><br></pre></td></tr></table></figure>
-<p>计算的是：</p>
-<blockquote>
-<p>某个 body 坐标系原点的 Jacobian。</p>
-</blockquote>
-<p>而：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mujoco.mj_jacSite(...)</span><br></pre></td></tr></table></figure>
-<p>计算的是：</p>
-<blockquote>
-<p>某个 site 的 Jacobian。</p>
-</blockquote>
-<p>对于你的屏幕点击任务，我推荐直接使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mj_jacSite()</span><br></pre></td></tr></table></figure>
-<p>因为你真正关心的是：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">触控笔尖</span><br></pre></td></tr></table></figure>
-<p>而不是：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">最后一个机械臂连杆的原点</span><br></pre></td></tr></table></figure>
-<p>Jacobian 描述“关节动一点，会让末端怎么动”。</p>
-<p>然后 IK 利用 Jacobian，算出<strong>关节应该变化多少 <code>dq</code></strong></p>
-<h3 id="需要补充的数学">需要补充的数学</h3>
-<p>只学够用的部分：</p>
-<ul>
-<li>向量；</li>
-</ul>
-<p>例如末端位置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">current_pos = np.array([0.4, 0.2, 0.6])</span><br></pre></td></tr></table></figure>
-<p>目标按钮：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">target_pos = np.array([0.5, 0.2, 0.65])</span><br></pre></td></tr></table></figure>
-<p>它们都是三维向量：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[x, y, z]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>旋转矩阵；</li>
-</ul>
-<blockquote>
-<p><strong>旋转矩阵的三列，分别告诉你“物体自己的 x、y、z 轴，在世界坐标系里朝哪里”。</strong></p>
-</blockquote>
+<p>普通电机更像：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">通电 → 一直转</span><br></pre></td></tr></table></figure>
+<p>而舵机更像：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">告诉它：转到 30°</span><br><span class="line">舵机 → 自动转到 30° → 停住并保持</span><br></pre></td></tr></table></figure>
+<p>一个舵机通常不只是“电机”，而是一个小系统：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">舵机</span><br><span class="line">├── 电机</span><br><span class="line">├── 减速齿轮</span><br><span class="line">├── 角度传感器</span><br><span class="line">└── 控制器</span><br></pre></td></tr></table></figure>
+<p>比如机械臂肩关节：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">目标角度 = 60°</span><br><span class="line">当前角度 = 30°</span><br><span class="line"></span><br><span class="line">控制器发现：</span><br><span class="line">还差 30°</span><br><span class="line"></span><br><span class="line">→ 驱动电机转动</span><br><span class="line">→ 当前角度逐渐变成 60°</span><br><span class="line">→ 到达目标后维持住</span><br></pre></td></tr></table></figure>
+<h3 id="2-径向磁铁是什么">2. 径向磁铁是什么</h3>
+<p>这里通常指一种<strong>磁铁的磁化方向</strong>。</p>
+<p>普通磁铁你可能见过：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">N ───────── S</span><br></pre></td></tr></table></figure>
+<p>磁场方向沿某个方向排列。</p>
+<p>而机器人舵机里的角度传感器，经常会在旋转轴上安装一块<strong>径向充磁 / 径向磁化磁铁</strong>，配合磁编码器测角度。</p>
+<p>可以粗略想象成：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">俯视旋转轴</span><br><span class="line"></span><br><span class="line">        N</span><br><span class="line">        ↑</span><br><span class="line">   ┌─────────┐</span><br><span class="line">   │  磁铁   │</span><br><span class="line">   └─────────┘</span><br><span class="line">        ↓</span><br><span class="line">        S</span><br></pre></td></tr></table></figure>
+<p>当轴旋转：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">磁铁一起旋转</span><br><span class="line">       ↓</span><br><span class="line">磁场方向发生变化</span><br><span class="line">       ↓</span><br><span class="line">磁编码器检测磁场</span><br><span class="line">       ↓</span><br><span class="line">计算当前旋转角度</span><br></pre></td></tr></table></figure>
 <p>比如：</p>
-<p>R=100010001</p>
-<p>把它按列看：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">第一列 = [1, 0, 0] → 物体自己的 x 轴朝世界 x 轴</span><br><span class="line">第二列 = [0, 1, 0] → 物体自己的 y 轴朝世界 y 轴</span><br><span class="line">第三列 = [0, 0, 1] → 物体自己的 z 轴朝世界 z 轴</span><br></pre></td></tr></table></figure>
-<p>所以物体没有旋转。</p>
-<p>假如变成：</p>
-<p>R=010−100001</p>
-<p>按列看：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">第一列 [0, 1, 0]</span><br><span class="line">→ 物体自己的 x 轴现在朝世界 +y</span><br><span class="line"></span><br><span class="line">第二列 [-1, 0, 0]</span><br><span class="line">→ 物体自己的 y 轴现在朝世界 -x</span><br><span class="line"></span><br><span class="line">第三列 [0, 0, 1]</span><br><span class="line">→ 物体自己的 z 轴还是朝世界 +z</span><br></pre></td></tr></table></figure>
-<p>也就是说，它绕 z 轴转了 90°。</p>
-<p>这就是<strong>矩阵和朝向的对应关系</strong>。</p>
-<ul>
-<li>四元数基础；</li>
-</ul>
-<p>四元数是另一种姿态表示方</p>
-<ul>
-<li>正向运动学；</li>
-</ul>
-<p><strong>Forward Kinematics，FK</strong></p>
-<p>它回答的问题是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">磁铁转了 45°</span><br><span class="line">        ↓</span><br><span class="line">编码器检测到磁场方向变化</span><br><span class="line">        ↓</span><br><span class="line">得到：关节角度 ≈ 45°</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-为什么舵机里面需要磁铁？">3. 为什么舵机里面需要磁铁？</h3>
+<p>因为舵机必须知道：</p>
 <blockquote>
-<p><strong>已知所有关节角，机械臂末端在哪里</strong></p>
+<p><strong>“我现在到底转到多少度了？”</strong></p>
 </blockquote>
-<ul>
-<li>Jacobian；</li>
-</ul>
-<p>Jacobian 描述“关节动一点，会让末端怎么动”。</p>
-<ul>
-<li>伪逆。</li>
-</ul>
-<p>用 J⁺ 根据末端误差求 dq</p>
-<h3 id="末端控制流程">末端控制流程</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">读取末端当前位置</span><br><span class="line">       ↓</span><br><span class="line">计算目标位置误差</span><br><span class="line">       ↓</span><br><span class="line">通过 Jacobian 转换到关节空间</span><br><span class="line">       ↓</span><br><span class="line">计算关节速度或力矩</span><br><span class="line">       ↓</span><br><span class="line">写入 data.ctrl</span><br></pre></td></tr></table></figure>
-<p>概念代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">jacp = np.zeros((3, model.nv))</span><br><span class="line">jacr = np.zeros((3, model.nv))</span><br><span class="line"></span><br><span class="line">site_id = model.site(&quot;end_effector&quot;).id</span><br><span class="line">mujoco.mj_jacSite(model, data, jacp, jacr, site_id)</span><br><span class="line"></span><br><span class="line">current = data.site(&quot;end_effector&quot;).xpos.copy()</span><br><span class="line">error = target - current</span><br><span class="line"></span><br><span class="line">joint_velocity = np.linalg.pinv(jacp) @ error</span><br><span class="line"></span><br><span class="line"># 如果actuator是velocity</span><br><span class="line">q_target = data.qpos[:6] + dq</span><br><span class="line">data.ctrl[:] = q_target</span><br><span class="line"></span><br><span class="line">#如果actuator是motor</span><br><span class="line">q_target = q_current + dq</span><br><span class="line"></span><br><span class="line">torque = kp * (q_target - q_current) - kd * qvel</span><br><span class="line"></span><br><span class="line">data.ctrl[:] = torque</span><br></pre></td></tr></table></figure>
+<p>否则它无法做闭环控制。</p>
+<p>所以可以组成：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  目标角度 90°</span><br><span class="line">       ↓</span><br><span class="line"> ┌─────────┐</span><br><span class="line"> │ 控制器  │</span><br><span class="line"> └────┬────┘</span><br><span class="line">      ↓</span><br><span class="line">    电机</span><br><span class="line">      ↓</span><br><span class="line">   减速齿轮</span><br><span class="line">      ↓</span><br><span class="line">   舵机输出轴</span><br><span class="line">      ↓</span><br><span class="line"> 径向磁铁旋转</span><br><span class="line">      ↓</span><br><span class="line">   磁编码器</span><br><span class="line">      ↓</span><br><span class="line">当前角度 72°</span><br><span class="line">      │</span><br><span class="line">      └────反馈给控制器</span><br></pre></td></tr></table></figure>
+<p>控制器发现：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">目标 = 90°</span><br><span class="line">当前 = 72°</span><br><span class="line"></span><br><span class="line">误差 = 18°</span><br></pre></td></tr></table></figure>
+<p>于是继续驱动。</p>
+<h4 id="什么是伺服电机">什么是伺服电机</h4>
+<p><strong>伺服电机</strong>可以先理解成：</p>
+<blockquote>
+<p><strong>能够按照指令，精确控制位置、速度或力矩的电机系统。</strong></p>
+</blockquote>
+<p>它和普通电机最大的区别，不是“电机会不会转”，而是：</p>
+<blockquote>
+<p><strong>伺服电机知道自己现在转到哪里、转多快，并且会根据误差自动修正。</strong></p>
+</blockquote>
+<p>比如你让一个关节转到 <code>60°</code>。</p>
+<p>普通电机可能只是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给电 → 开始转</span><br><span class="line">断电 → 停止</span><br></pre></td></tr></table></figure>
+<p>但伺服系统是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">目标角度 60°</span><br><span class="line">    ↓</span><br><span class="line">当前只有 35°</span><br><span class="line">    ↓</span><br><span class="line">继续驱动电机</span><br><span class="line">    ↓</span><br><span class="line">当前 55°</span><br><span class="line">    ↓</span><br><span class="line">继续但减小输出</span><br><span class="line">    ↓</span><br><span class="line">当前 60°</span><br><span class="line">    ↓</span><br><span class="line">保持在 60°</span><br></pre></td></tr></table></figure>
+<p>这就是<strong>闭环控制</strong>。</p>
 </div>
     </div>
 
     <div class="post-meta">
         <i>
         
-            <span>2026-08-05</span>
+            <span>2026-08-07</span>
             
             
              
@@ -551,11 +552,9 @@
     
             <div class="post-footer-pre-next">
                 
-                    <span>上一篇：<a href='/2026/08/05/mujoco%E5%AD%A6%E4%B9%A05/'>mujoco学习5</a></span>
-                
 
                 
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/08/05/mujoco%E5%AD%A6%E4%B9%A03/">mujoco学习3</a>
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/08/06/%E8%A1%A5%E5%85%85%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9F%A5%E8%AF%86/">补充动力学知识</a>
                     </span>
                 
             </div>

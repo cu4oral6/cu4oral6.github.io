@@ -6,7 +6,7 @@
   <link href="http://531party.cn/atom.xml" rel="self"/>
   
   <link href="http://531party.cn/"/>
-  <updated>2026-08-06T07:11:14.779Z</updated>
+  <updated>2026-08-07T06:36:52.091Z</updated>
   <id>http://531party.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>genkiarm学习1</title>
+    <link href="http://531party.cn/2026/08/07/genkiarm%E5%AD%A6%E4%B9%A01/"/>
+    <id>http://531party.cn/2026/08/07/genkiarm%E5%AD%A6%E4%B9%A01/</id>
+    <published>2026-08-07T02:43:14.000Z</published>
+    <updated>2026-08-07T06:36:52.091Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;如果每天能学 &lt;strong&gt;3～4</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>补充动力学知识</title>
@@ -85,14 +106,15 @@
     <link href="http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A04/"/>
     <id>http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A04/</id>
     <published>2026-08-05T08:22:24.000Z</published>
-    <updated>2026-08-05T08:23:22.718Z</updated>
+    <updated>2026-08-10T09:36:01.894Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h2 id=&quot;Site、坐标系与-Jacobian&quot;&gt;&lt;a href=&quot;#Site、坐标系与-Jacobian&quot; class=&quot;headerlink&quot; title=&quot;Site、坐标系与</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h2 id=&quot;Site、坐标系与-Jacobian&quot;&gt;Site、坐标系与 Jacobian&lt;/h2&gt;
+&lt;h3</summary>
         
       
     
@@ -106,14 +128,17 @@
     <link href="http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A03/"/>
     <id>http://531party.cn/2026/08/05/mujoco%E5%AD%A6%E4%B9%A03/</id>
     <published>2026-08-05T08:22:22.000Z</published>
-    <updated>2026-08-05T08:22:48.244Z</updated>
+    <updated>2026-08-07T08:47:06.892Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h2 id=&quot;执行器与-PD-控制&quot;&gt;&lt;a href=&quot;#执行器与-PD-控制&quot; class=&quot;headerlink&quot; title=&quot;执行器与 PD 控制&quot;&gt;&lt;/a&gt;执行器与 PD 控制&lt;/h2&gt;&lt;h3</summary>
+    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;h2 id=&quot;执行器与-PD-控制&quot;&gt;执行器与 PD 控制&lt;/h2&gt;
+&lt;h3 id=&quot;目标&quot;&gt;目标&lt;/h3&gt;
+&lt;p&gt;让机器人按照你的目标运动，而不是只靠重力自由运动。&lt;/p&gt;
+&lt;h3</summary>
         
       
     
@@ -425,28 +450,6 @@
         
     <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;postgre&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>neo4j折腾记录</title>
-    <link href="http://531party.cn/2026/01/23/neo4j%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/>
-    <id>http://531party.cn/2026/01/23/neo4j%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</id>
-    <published>2026-01-23T03:02:37.000Z</published>
-    <updated>2026-01-23T09:21:23.433Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;.article-gallery&quot;&gt;&lt;p&gt;组内服务器neo4j&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#</summary>
         
       
     
