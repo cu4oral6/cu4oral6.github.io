@@ -1,0 +1,5 @@
+### 设计模式-策略模式
+
+![image-20250804135900666](/Users/xander/Library/Application Support/typora-user-images/image-20250804135900666.png)
+
+假如你需要前往机场。 你可以选择乘坐公共汽车、 预约出租车或骑自行车。 这些就是你的出行策略。 你可以根据预算或时间等因素来选择其中一种策略。

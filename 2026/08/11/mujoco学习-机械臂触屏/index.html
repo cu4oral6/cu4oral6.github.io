@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="mujoco学习_机械臂触屏" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    mujoco学习_机械臂触屏
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2026-08-12</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：9分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%80%E4%BC%98%E5%85%88%E7%BA%A7%EF%BC%9A%E4%B8%80%E5%AE%9A%E8%A6%81%E5%AD%A6"><span class="post-toc-text">第一优先级：一定要学</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%BC%98%E5%85%88%E7%BA%A7%EF%BC%9A%E6%8E%A5%E8%A7%A6%E6%A3%80%E6%B5%8B"><span class="post-toc-text">第二优先级：接触检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%89%E4%BC%98%E5%85%88%E7%BA%A7%EF%BC%9A%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="post-toc-text">第三优先级：碰撞检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%80%E5%90%8E%E6%89%8D%E7%9C%8B-plan-collision-free-path"><span class="post-toc-text">最后才看 plan_collision_free_path()</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%89%E4%BA%9B%E5%87%BD%E6%95%B0%E4%BD%A0%E7%94%9A%E8%87%B3%E5%8F%AF%E4%BB%A5%E6%9A%82%E6%97%B6%E4%B8%8D%E7%A0%94%E7%A9%B6"><span class="post-toc-text">有些函数你甚至可以暂时不研究</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">所以我建议你接下来按这个顺序</span></a>
+            
+        
+        <div class=".article-gallery"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">建立四块屏幕</span><br><span class="line">    ↓</span><br><span class="line">建立触控笔</span><br><span class="line">    ↓</span><br><span class="line">给六个关节添加 position actuator</span><br><span class="line">    ↓</span><br><span class="line">IK 算点击姿态</span><br><span class="line">    ↓</span><br><span class="line">计算接近点 approach</span><br><span class="line">    ↓</span><br><span class="line">计算点击点 touch</span><br><span class="line">    ↓</span><br><span class="line">规划屏幕之间避碰路径</span><br><span class="line">    ↓</span><br><span class="line">data.ctrl 控制机械臂</span><br><span class="line">    ↓</span><br><span class="line">mj_step()</span><br><span class="line">    ↓</span><br><span class="line">机械臂真实运动</span><br><span class="line">    ↓</span><br><span class="line">触碰屏幕</span><br><span class="line">    ↓</span><br><span class="line">计算接触力</span><br></pre></td></tr></table></figure>
+<h3 id="第一优先级：一定要学">第一优先级：一定要学</h3>
+<p>先学这 3 个：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">solve_ik()</span><br><span class="line">smoothstep()</span><br><span class="line">apply_joint_control()</span><br></pre></td></tr></table></figure>
+<p>其中最重要的是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">solve_ik()</span><br></pre></td></tr></table></figure>
+<p>因为整个程序的核心链条其实就是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">屏幕目标 XYZ</span><br><span class="line">    ↓</span><br><span class="line">solve_ik()</span><br><span class="line">    ↓</span><br><span class="line">q_target</span><br><span class="line">    ↓</span><br><span class="line">smoothstep 插值</span><br><span class="line">    ↓</span><br><span class="line">desired_qpos</span><br><span class="line">    ↓</span><br><span class="line">apply_joint_control()</span><br><span class="line">    ↓</span><br><span class="line">data.ctrl</span><br><span class="line">    ↓</span><br><span class="line">mj_step()</span><br><span class="line">    ↓</span><br><span class="line">机器人运动</span><br></pre></td></tr></table></figure>
+<p>你现在已经把这条链的后半部分读懂了，所以现在回头学 <code>solve_ik()</code> 是最合适的时候。</p>
+<p>而且不用一开始理解里面所有矩阵，你先达到：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">target_position</span><br><span class="line">↓</span><br><span class="line">计算 position_error</span><br><span class="line"></span><br><span class="line">target_axis</span><br><span class="line">↓</span><br><span class="line">计算 axis_error</span><br><span class="line"></span><br><span class="line">Jacobian</span><br><span class="line">↓</span><br><span class="line">计算 delta</span><br><span class="line"></span><br><span class="line">qpos = qpos + delta</span><br><span class="line"></span><br><span class="line">不断循环</span><br><span class="line">↓</span><br><span class="line">找到一组 q1~q6</span><br></pre></td></tr></table></figure>
+<p>就已经够用了。</p>
+<p>这个 <code>solve_ik()</code> 可以先用一句话概括：</p>
+<blockquote>
+<p><strong>给定“末端要去哪里 + 末端要朝哪个方向”，不断调整 6 个关节角，直到找到一组满足要求的 <code>qpos</code>。</strong></p>
+</blockquote>
+<p>它不是一次算出答案，而是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">先猜一组关节角</span><br><span class="line">      ↓</span><br><span class="line">看看末端现在在哪里</span><br><span class="line">      ↓</span><br><span class="line">和目标差多少</span><br><span class="line">      ↓</span><br><span class="line">用 Jacobian 算“关节应该往哪边改”</span><br><span class="line">      ↓</span><br><span class="line">qpos = qpos + delta</span><br><span class="line">      ↓</span><br><span class="line">再检查</span><br><span class="line">      ↓</span><br><span class="line">不断重复</span><br></pre></td></tr></table></figure>
+<p>而且它为了避免“第一次猜得不好”，会换很多组初始姿态重新尝试。整个函数就在做这个。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 目标位置+目标方向 -&gt; solve_ik() -&gt; 六个目标关节角</span><br><span class="line">def solve_ik(</span><br><span class="line">    model: mujoco.MjModel,</span><br><span class="line">    data: mujoco.MjData,</span><br><span class="line">    site_id: int,</span><br><span class="line">    target_position: np.ndarray,</span><br><span class="line">    target_axis: np.ndarray,</span><br><span class="line">    seed: np.ndarray,</span><br><span class="line">    rng: np.random.Generator,</span><br><span class="line">) -&gt; np.ndarray:</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    site_id</span><br><span class="line">    = 哪个 site 是机械臂末端</span><br><span class="line"></span><br><span class="line">    target_position</span><br><span class="line">    = 末端目标位置 XYZ</span><br><span class="line"></span><br><span class="line">    target_axis</span><br><span class="line">    = 末端目标朝向</span><br><span class="line"></span><br><span class="line">    seed</span><br><span class="line">    = 优先从哪组关节角附近开始找</span><br><span class="line"></span><br><span class="line">    rng</span><br><span class="line">    = 生成随机初始关节角</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    # 获取关节的活动范围</span><br><span class="line">    joint_min = model.jnt_range[:6, 0]</span><br><span class="line">    joint_max = model.jnt_range[:6, 1]</span><br><span class="line">    joint_span = joint_max - joint_min</span><br><span class="line">    best_solution: tuple[float, np.ndarray] | None = None</span><br><span class="line"></span><br><span class="line">    # seed 作为第一组起始姿态</span><br><span class="line">    starts = [seed.copy()]</span><br><span class="line">    # 再随机生成 44 组合法关节角。</span><br><span class="line">    starts.extend(</span><br><span class="line">        # 这里的 uniform 是“均匀分布”的意思，在joint_min + 0.02，joint_max - 0.02范围内给 6 个关节各生成一个随机角度</span><br><span class="line">        rng.uniform(joint_min + 0.02, joint_max - 0.02) for _ in range(44)</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    # 依次拿这 45 个初始姿态做 IK</span><br><span class="line">    for qpos in starts:</span><br><span class="line">        # 内层循环：最多调整 420 次</span><br><span class="line">        for _ in range(420):</span><br><span class="line">            # 把当前猜测写进 MuJoCo</span><br><span class="line">            data.qpos[:6] = qpos</span><br><span class="line">            data.qvel[:] = 0.0</span><br><span class="line">            mujoco.mj_forward(model, data)</span><br><span class="line"></span><br><span class="line">            # 获取当前末端位置</span><br><span class="line">            position = data.site_xpos[site_id].copy()</span><br><span class="line">            # 获取末端当前朝向</span><br><span class="line">            tool_axis = data.site_xmat[site_id].reshape(3, 3)[:, 2].copy()</span><br><span class="line">            # 计算位置误差，position_error 告诉 IK 末端“还应该往哪里移动”。</span><br><span class="line">            position_error = target_position - position</span><br><span class="line">            # 计算方向误差</span><br><span class="line">            axis_error = target_axis - tool_axis</span><br><span class="line"></span><br><span class="line">            # 判断是不是已经成功</span><br><span class="line">            if (</span><br><span class="line">                # np.linalg.norm(一个向量) = 算这个向量有多长。笛卡尔空间里的实际位置距离</span><br><span class="line">                np.linalg.norm(position_error) &lt; 0.0018  # 位置误差</span><br><span class="line">                and np.dot(tool_axis, target_axis) &gt; 0.997 #方向误差</span><br><span class="line">            ):</span><br><span class="line">                # 当前这组解，离最初的 seed 有多远。</span><br><span class="line">                normalized_motion = np.linalg.norm((qpos - seed) / joint_span)</span><br><span class="line">                # 这组关节角离关节极限还有多远，整套姿态里，最接近关节极限的关节还有多少余量。</span><br><span class="line">                limit_margin = np.min(</span><br><span class="line">                    np.minimum(qpos - joint_min, joint_max - qpos) / joint_span</span><br><span class="line">                )</span><br><span class="line">                # score越小越好，因为normalized_motion越小越好，limit_margin越大越好</span><br><span class="line">                score = normalized_motion - 0.2 * limit_margin</span><br><span class="line">                if best_solution is None or score &lt; best_solution[0]:</span><br><span class="line">                    best_solution = (score, qpos.copy())</span><br><span class="line">                break</span><br><span class="line"></span><br><span class="line">            # 3 行代表末端 XYZ，6 列代表机械臂 6 个关节。</span><br><span class="line">            jacobian_position = np.zeros((3, model.nv))</span><br><span class="line">            jacobian_rotation = np.zeros((3, model.nv))</span><br><span class="line">            mujoco.mj_jacSite(</span><br><span class="line">                model,</span><br><span class="line">                data,</span><br><span class="line">                jacobian_position,</span><br><span class="line">                jacobian_rotation,</span><br><span class="line">                site_id,</span><br><span class="line">            )</span><br><span class="line">            # 6个关节变化对触控笔朝向的影响</span><br><span class="line">            jacobian_axis = -skew(tool_axis) @ jacobian_rotation[:, :6]</span><br><span class="line">            # 合并位置和方向 Jacobian，0.16 * jacobian_axis，因为程序认为：位置误差应该比朝向误差更重要一些。所以降低方向部分的权重。</span><br><span class="line">            jacobian = np.vstack(</span><br><span class="line">                (jacobian_position[:, :6], 0.16 * jacobian_axis)</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">            error = np.concatenate((position_error, 0.16 * axis_error))</span><br><span class="line">            # 这里是IK 数学求解里的 damping。作用可以理解为：防止 Jacobian 接近奇异状态时，算出来的关节变化突然爆得特别大。</span><br><span class="line">            damping = 0.0025</span><br><span class="line">            # 带阻尼的 Jacobian 伪逆。</span><br><span class="line">            delta = jacobian.T @ np.linalg.solve(</span><br><span class="line">                jacobian @ jacobian.T + damping * np.eye(6), error</span><br><span class="line">            )</span><br><span class="line">            # 找到这轮所有关节修正量里最大的一个</span><br><span class="line">            max_delta = np.max(np.abs(delta))</span><br><span class="line">            if max_delta &gt; 0.10:</span><br><span class="line">                # 把整组 delta 同比例缩小，让最大变化不超过 0.10 rad。</span><br><span class="line">                delta *= 0.10 / max_delta</span><br><span class="line">            # 不让关节超过：joint_min，joint_max</span><br><span class="line">            qpos = np.clip(qpos + delta, joint_min + 1e-4, joint_max - 1e-4)</span><br><span class="line"></span><br><span class="line">    if best_solution is None:</span><br><span class="line">        raise RuntimeError(</span><br><span class="line">            f&quot;IK failed for target position &#123;np.round(target_position, 4).tolist()&#125;&quot;</span><br><span class="line">        )</span><br><span class="line">    return best_solution[1]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def smoothstep(value: float) -&gt; float:</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    把“动作进度 0~1”变成一个更平滑的进度，让机械臂开始和结束时不要突然加速/减速</span><br><span class="line">    把机械臂原本生硬的线性运动，变成“慢启动—加速—慢停止”的运动。</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    # value 本质上就是：动作完成百分比。</span><br><span class="line">    value = float(np.clip(value, 0.0, 1.0))</span><br><span class="line">    #6t^5−15t^4+10t^3</span><br><span class="line">    return value * value * value * (value * (value * 6.0 - 15.0) + 10.0)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def apply_joint_control(data: mujoco.MjData, desired_qpos: np.ndarray) -&gt; None:</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    它就是把“这一帧希望机械臂到达的关节角”真正交给 MuJoCo 控制器</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    data.ctrl[:6] = desired_qpos</span><br><span class="line">    # data.qfrc_applied 是：你额外直接施加到自由度上的广义力。</span><br><span class="line">    # data.qfrc_bias 是 MuJoCo 计算出来的一些“本来就存在的动力学影响”。主要包括类似：重力、科氏力、离心力</span><br><span class="line">    data.qfrc_applied[:6] = data.qfrc_bias[:6]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>动力学补偿，让 position actuator 不用自己完全承担重力等偏置影响。</strong></p>
+</blockquote>
+<p>你可以把整个控制想成两部分：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">                     ┌→ position actuator</span><br><span class="line">desired_qpos → ctrl ─┤   负责“追目标角度”</span><br><span class="line">                     │</span><br><span class="line">                     └→ 产生控制力</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">qfrc_bias</span><br><span class="line">    ↓</span><br><span class="line">qfrc_applied</span><br><span class="line">    ↓</span><br><span class="line">补偿重力等偏置作用</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="第二优先级：接触检测">第二优先级：接触检测</h3>
+<p>然后学：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">contact_force()</span><br></pre></td></tr></table></figure>
+<p>以及稍微看一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tip_contact_summary()</span><br></pre></td></tr></table></figure>
+<p>因为你的项目不是“机械臂移动到某个位置”就结束，而是：</p>
+<blockquote>
+<p><strong>真的要判断有没有点击屏幕。</strong></p>
+</blockquote>
+<p>所以这条链也很重要：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mj_step()</span><br><span class="line">    ↓</span><br><span class="line">data.contact</span><br><span class="line">    ↓</span><br><span class="line">找到：</span><br><span class="line">tip geom ↔ screen geom</span><br><span class="line">    ↓</span><br><span class="line">mj_contactForce()</span><br><span class="line">    ↓</span><br><span class="line">接触力 N</span><br></pre></td></tr></table></figure>
+<p>学完这个，你会把之前学的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">data.ncon</span><br><span class="line">data.contact</span><br><span class="line">mj_contactForce()</span><br></pre></td></tr></table></figure>
+<p>真正和项目连起来。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def contact_force(</span><br><span class="line">    model: mujoco.MjModel,</span><br><span class="line">    data: mujoco.MjData,</span><br><span class="line">    tip_geom_id: int,</span><br><span class="line">    screen_geom_id: int | None = None,</span><br><span class="line">) -&gt; float:</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    model</span><br><span class="line">    = 模型</span><br><span class="line"></span><br><span class="line">    data</span><br><span class="line">    = 当前仿真状态</span><br><span class="line"></span><br><span class="line">    tip_geom_id</span><br><span class="line">    = 触控笔尖端 geom 的 ID</span><br><span class="line"></span><br><span class="line">    screen_geom_id</span><br><span class="line">    = 要检查的屏幕 geom ID</span><br><span class="line">    可以不传</span><br><span class="line"></span><br><span class="line">    返回 float</span><br><span class="line">    = 总接触法向力</span><br><span class="line">    检查触控笔 tip 当前和哪些物体发生了接触；如果指定了某块屏幕，就只统计 tip 和这块屏幕之间的接触法向力，最后把它们加起来返回。</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    total = 0.0</span><br><span class="line">    # mujoco.mj_contactForce(...)返回的是一个 6 维量：前3个：力,后3个：力矩</span><br><span class="line">    force = np.zeros(6)</span><br><span class="line">    for contact_index in range(data.ncon):</span><br><span class="line">        contact = data.contact[contact_index]</span><br><span class="line">        # 如果这个接触的两个 geom 都不是 tip，那我根本不关心，直接跳过。</span><br><span class="line">        if contact.geom1 != tip_geom_id and contact.geom2 != tip_geom_id:</span><br><span class="line">            continue</span><br><span class="line">        #把与tip接触的另一个geom取出来</span><br><span class="line">        other_geom_id = (</span><br><span class="line">            contact.geom2 if contact.geom1 == tip_geom_id else contact.geom1</span><br><span class="line">        )</span><br><span class="line">        if screen_geom_id is not None and other_geom_id != screen_geom_id:</span><br><span class="line">            continue</span><br><span class="line">        # 获取这个 contact 的接触力</span><br><span class="line">        mujoco.mj_contactForce(model, data, contact_index, force)</span><br><span class="line">        # 两个 geom 之间不一定只有一个接触点。当前 tip 对指定屏幕所有接触点的法向力总和。</span><br><span class="line">        total += max(0.0, force[0])</span><br><span class="line">    return total</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="第三优先级：碰撞检测">第三优先级：碰撞检测</h3>
+<p>再看：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">robot_screen_clearance()</span><br><span class="line">robot_screen_penetration()</span><br><span class="line">configuration_is_clear()</span><br><span class="line">edge_is_clear()</span><br></pre></td></tr></table></figure>
+<p>不用逐行死磕。</p>
+<p>你只要搞懂关系：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">configuration_is_clear(q)</span><br></pre></td></tr></table></figure>
+<p>回答：</p>
+<blockquote>
+<p>机器人处于这组 qpos 时，会不会撞屏幕？</p>
+</blockquote>
+<p>然后：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">edge_is_clear(q1, q2)</span><br></pre></td></tr></table></figure>
+<p>回答：</p>
+<blockquote>
+<p>从姿态 q1 移动到 q2 的过程中，会不会撞？</p>
+</blockquote>
+<p>比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">q1 ●──────────● q2</span><br><span class="line">       ×</span><br><span class="line">     撞屏幕</span><br></pre></td></tr></table></figure>
+<p>那就是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">edge_is_clear(...) == False</span><br></pre></td></tr></table></figure>
+<p>这几个函数你理解<strong>输入是什么、输出是什么、为什么需要它</strong>就够了。</p>
+<hr>
+<h3 id="最后才看-plan-collision-free-path">最后才看 <code>plan_collision_free_path()</code></h3>
+<p>这个函数比较长。</p>
+<p>它本质上是在干：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">起点 q_start</span><br><span class="line">     ↓</span><br><span class="line">直接去终点会不会撞？</span><br><span class="line">     ↓</span><br><span class="line"></span><br><span class="line">不撞 → 直接走</span><br><span class="line"></span><br><span class="line">撞</span><br><span class="line"> ↓</span><br><span class="line">随机找一些安全关节姿态</span><br><span class="line"> ↓</span><br><span class="line">不断连接</span><br><span class="line"> ↓</span><br><span class="line">找到一条绕开的路</span><br><span class="line"> ↓</span><br><span class="line">q_start</span><br><span class="line"> → q_mid1</span><br><span class="line"> → q_mid2</span><br><span class="line"> → q_goal</span><br></pre></td></tr></table></figure>
+<p>你目前<strong>不需要把里面的路径规划算法彻底学会</strong>。</p>
+<p>特别是这种：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for iteration in range(9000):</span><br><span class="line">    sample = ...</span><br><span class="line">    distances = ...</span><br><span class="line">    nearest_index = ...</span><br></pre></td></tr></table></figure>
+<p>你先理解成：</p>
+<blockquote>
+<p>“在关节空间里随机搜索安全路径。”</p>
+</blockquote>
+<p>就够了。</p>
+<p>以后如果专门学 RRT / motion planning，再深入。</p>
+<hr>
+<h2 id="有些函数你甚至可以暂时不研究">有些函数你甚至可以暂时不研究</h2>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vector_text()</span><br><span class="line">skew()</span><br><span class="line">tip_contact_summary()</span><br><span class="line">robot_screen_clearance()</span><br></pre></td></tr></table></figure>
+<p>第一遍都不用做到“能自己写出来”。</p>
+<p>尤其：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">skew()</span><br></pre></td></tr></table></figure>
+<p>现在很容易把你又拖进：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">叉乘</span><br><span class="line">反对称矩阵</span><br><span class="line">旋转微分</span><br><span class="line">Jacobian orientation</span><br></pre></td></tr></table></figure>
+<p>然后主线就断了。</p>
+<p>你现在只知道：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">skew()</span><br><span class="line">↓</span><br><span class="line">solve_ik() 计算末端朝向误差时用到</span><br></pre></td></tr></table></figure>
+<p>先够用。</p>
+<hr>
+<h1>所以我建议你接下来按这个顺序</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你现在：</span><br><span class="line">main() ✅</span><br><span class="line"></span><br><span class="line">下一步：</span><br><span class="line"></span><br><span class="line">1. solve_ik()                  ★★★★★</span><br><span class="line">       ↓</span><br><span class="line">2. smoothstep()               ★★★</span><br><span class="line">       ↓</span><br><span class="line">3. apply_joint_control()       ★★★★★</span><br><span class="line">       ↓</span><br><span class="line">4. contact_force()             ★★★★</span><br><span class="line">       ↓</span><br><span class="line">5. configuration_is_clear()    ★★★</span><br><span class="line">       ↓</span><br><span class="line">6. edge_is_clear()             ★★★</span><br><span class="line">       ↓</span><br><span class="line">7. plan_collision_free_path()  ★★★</span><br></pre></td></tr></table></figure>
+<p>完成以后，你应该能不看代码说出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我指定一个屏幕目标</span><br><span class="line">      ↓</span><br><span class="line">算 surface / touch / approach</span><br><span class="line">      ↓</span><br><span class="line">IK得到 approach_qpos / touch_qpos</span><br><span class="line">      ↓</span><br><span class="line">规划屏幕之间避碰路径</span><br><span class="line">      ↓</span><br><span class="line">生成 segments</span><br><span class="line">      ↓</span><br><span class="line">smoothstep生成每一帧的 desired_qpos</span><br><span class="line">      ↓</span><br><span class="line">data.ctrl</span><br><span class="line">      ↓</span><br><span class="line">mj_step</span><br><span class="line">      ↓</span><br><span class="line">检测触控笔与屏幕接触</span><br></pre></td></tr></table></figure>
+<p><strong>达到这个程度，就可以停。</strong></p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2026-08-11</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2026/08/11/%E5%A4%9C%E6%99%9A%E8%A1%97%E8%BE%B9%E6%B0%9B%E5%9B%B4%E7%85%A7-%E6%B8%85%E5%86%B7/'>夜晚街边氛围照</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/08/10/genkiarm%E5%AD%A6%E4%B9%A02/">genkiarm学习2</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>

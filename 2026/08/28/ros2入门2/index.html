@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="ros2入门2" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    ros2入门2
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2026-08-31</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：1.9k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：10分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">1. 最基础 Node 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">2. Timer 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">3. Topic Publisher 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">4. Topic Subscriber 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">5. QoS 传感器 Publisher</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">6. .srv 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">7. Service Server 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">8. Service Client 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">9. .action 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">10. Action Server 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">11. Action Client 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">12. TF Broadcaster 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">13. TF Listener &#x2F; Transform 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">14. URDF 最小模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">15. robot_state_publisher Launch 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">16. 同时启动多个 Node</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">17. Python setup.py 模板</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">18. 接口包 CMakeLists.txt</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">19. 接口包 package.xml 关键部分</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">20. rosbag 模板命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">21. 常用调试模板</span></a></li></ol>
+            
+        
+        <div class=".article-gallery"><h1>1. 最基础 Node 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class MyNode(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;my_node&#x27;)</span><br><span class="line"></span><br><span class="line">        self.get_logger().info(&#x27;节点启动&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main(args=None):</span><br><span class="line">    rclpy.init(args=args)</span><br><span class="line"></span><br><span class="line">    node = MyNode()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    node.destroy_node()</span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Node</span><br><span class="line">↓</span><br><span class="line">注册各种功能</span><br><span class="line">↓</span><br><span class="line">spin()</span><br><span class="line">↓</span><br><span class="line">等待 callback</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>2. Timer 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class TimerNode(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;timer_node&#x27;)</span><br><span class="line"></span><br><span class="line">        self.timer = self.create_timer(</span><br><span class="line">            1.0,</span><br><span class="line">            self.timer_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def timer_callback(self):</span><br><span class="line">        self.get_logger().info(&#x27;1 秒到了&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = TimerNode()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>记忆：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">self.create_timer(</span><br><span class="line">    时间,</span><br><span class="line">    callback</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>3. Topic Publisher 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line">from std_msgs.msg import String</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class PublisherNode(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;publisher_node&#x27;)</span><br><span class="line"></span><br><span class="line">        self.publisher = self.create_publisher(</span><br><span class="line">            String,</span><br><span class="line">            &#x27;message&#x27;,</span><br><span class="line">            10</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.timer = self.create_timer(</span><br><span class="line">            1.0,</span><br><span class="line">            self.timer_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def timer_callback(self):</span><br><span class="line"></span><br><span class="line">        msg = String()</span><br><span class="line">        msg.data = &#x27;hello&#x27;</span><br><span class="line"></span><br><span class="line">        self.publisher.publish(msg)</span><br><span class="line"></span><br><span class="line">        self.get_logger().info(</span><br><span class="line">            f&#x27;发送：&#123;msg.data&#125;&#x27;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = PublisherNode()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create_publisher()</span><br></pre></td></tr></table></figure>
+<p>创建 Publisher。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">publisher.publish(msg)</span><br></pre></td></tr></table></figure>
+<p>发送消息。</p>
+<hr>
+<h1>4. Topic Subscriber 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line">from std_msgs.msg import String</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class SubscriberNode(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;subscriber_node&#x27;)</span><br><span class="line"></span><br><span class="line">        self.subscription = self.create_subscription(</span><br><span class="line">            String,</span><br><span class="line">            &#x27;message&#x27;,</span><br><span class="line">            self.listener_callback,</span><br><span class="line">            10</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def listener_callback(self, msg):</span><br><span class="line"></span><br><span class="line">        self.get_logger().info(</span><br><span class="line">            f&#x27;收到：&#123;msg.data&#125;&#x27;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = SubscriberNode()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create_subscription(</span><br><span class="line">    消息类型,</span><br><span class="line">    Topic名字,</span><br><span class="line">    callback,</span><br><span class="line">    QoS</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>5. QoS 传感器 Publisher</h1>
+<p>例如模拟雷达：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line"></span><br><span class="line">from std_msgs.msg import Float32</span><br><span class="line">from rclpy.qos import qos_profile_sensor_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class LaserPublisher(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;laser_publisher&#x27;)</span><br><span class="line"></span><br><span class="line">        self.publisher = self.create_publisher(</span><br><span class="line">            Float32,</span><br><span class="line">            &#x27;laser_distance&#x27;,</span><br><span class="line">            qos_profile_sensor_data</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.timer = self.create_timer(</span><br><span class="line">            0.5,</span><br><span class="line">            self.timer_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.distance = 1.0</span><br><span class="line"></span><br><span class="line">    def timer_callback(self):</span><br><span class="line"></span><br><span class="line">        msg = Float32()</span><br><span class="line"></span><br><span class="line">        msg.data = self.distance</span><br><span class="line"></span><br><span class="line">        self.publisher.publish(msg)</span><br><span class="line"></span><br><span class="line">        self.distance += 0.1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = LaserPublisher()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>Subscriber：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line"></span><br><span class="line">from std_msgs.msg import Float32</span><br><span class="line">from rclpy.qos import qos_profile_sensor_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class LaserListener(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;laser_listener&#x27;)</span><br><span class="line"></span><br><span class="line">        self.subscription = self.create_subscription(</span><br><span class="line">            Float32,</span><br><span class="line">            &#x27;laser_distance&#x27;,</span><br><span class="line">            self.listener_callback,</span><br><span class="line">            qos_profile_sensor_data</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def listener_callback(self, msg):</span><br><span class="line"></span><br><span class="line">        self.get_logger().info(</span><br><span class="line">            f&#x27;雷达距离：&#123;msg.data:.2f&#125; m&#x27;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = LaserListener()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>6. <code>.srv</code> 模板</h1>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AddTwoInts.srv</span><br><span class="line">int64 a</span><br><span class="line">int64 b</span><br><span class="line">---</span><br><span class="line">int64 sum</span><br></pre></td></tr></table></figure>
+<p>理解：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Request</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">Response</span><br><span class="line">sum</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>7. Service Server 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line"></span><br><span class="line">from tutorial_interfaces.srv import AddTwoInts</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ServiceServer(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;service_server&#x27;)</span><br><span class="line"></span><br><span class="line">        self.service = self.create_service(</span><br><span class="line">            AddTwoInts,</span><br><span class="line">            &#x27;add_two_ints&#x27;,</span><br><span class="line">            self.service_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def service_callback(</span><br><span class="line">        self,</span><br><span class="line">        request,</span><br><span class="line">        response</span><br><span class="line">    ):</span><br><span class="line"></span><br><span class="line">        response.sum = (</span><br><span class="line">            request.a + request.b</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        return response</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = ServiceServer()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">request</span><br><span class="line">= Client 发来的数据</span><br><span class="line"></span><br><span class="line">response</span><br><span class="line">= Server 返回的数据</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>8. Service Client 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line"></span><br><span class="line">from tutorial_interfaces.srv import AddTwoInts</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ServiceClient(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;service_client&#x27;)</span><br><span class="line"></span><br><span class="line">        self.client = self.create_client(</span><br><span class="line">            AddTwoInts,</span><br><span class="line">            &#x27;add_two_ints&#x27;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        while not self.client.wait_for_service(</span><br><span class="line">            timeout_sec=1.0</span><br><span class="line">        ):</span><br><span class="line">            self.get_logger().info(</span><br><span class="line">                &#x27;等待 Server...&#x27;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">    def send_request(self, a, b):</span><br><span class="line"></span><br><span class="line">        request = AddTwoInts.Request()</span><br><span class="line"></span><br><span class="line">        request.a = a</span><br><span class="line">        request.b = b</span><br><span class="line"></span><br><span class="line">        future = self.client.call_async(</span><br><span class="line">            request</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        return future</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line"></span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = ServiceClient()</span><br><span class="line"></span><br><span class="line">    future = node.send_request(</span><br><span class="line">        2,</span><br><span class="line">        3</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    rclpy.spin_until_future_complete(</span><br><span class="line">        node,</span><br><span class="line">        future</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    result = future.result()</span><br><span class="line"></span><br><span class="line">    print(result.sum)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>9. <code>.action</code> 模板</h1>
+<p>我们之前写的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Count.action</span><br><span class="line">int32 target</span><br><span class="line">---</span><br><span class="line">bool success</span><br><span class="line">---</span><br><span class="line">int32 current</span><br></pre></td></tr></table></figure>
+<p>对应：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Count.Goal</span><br><span class="line">    target</span><br><span class="line"></span><br><span class="line">Count.Result</span><br><span class="line">    success</span><br><span class="line"></span><br><span class="line">Count.Feedback</span><br><span class="line">    current</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>10. Action Server 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import time</span><br><span class="line"></span><br><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line">from rclpy.action import ActionServer</span><br><span class="line"></span><br><span class="line">from tutorial_interfaces.action import Count</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class MyActionServer(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;action_server&#x27;)</span><br><span class="line"></span><br><span class="line">        self.server = ActionServer(</span><br><span class="line">            self,</span><br><span class="line">            Count,</span><br><span class="line">            &#x27;count&#x27;,</span><br><span class="line">            self.execute_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def execute_callback(</span><br><span class="line">        self,</span><br><span class="line">        goal_handle</span><br><span class="line">    ):</span><br><span class="line"></span><br><span class="line">        # Goal</span><br><span class="line">        target = (</span><br><span class="line">            goal_handle.request.target</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        # Feedback</span><br><span class="line">        feedback = Count.Feedback()</span><br><span class="line"></span><br><span class="line">        for i in range(</span><br><span class="line">            1,</span><br><span class="line">            target + 1</span><br><span class="line">        ):</span><br><span class="line"></span><br><span class="line">            feedback.current = i</span><br><span class="line"></span><br><span class="line">            goal_handle.publish_feedback(</span><br><span class="line">                feedback</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">            time.sleep(1)</span><br><span class="line"></span><br><span class="line">        # 成功</span><br><span class="line">        goal_handle.succeed()</span><br><span class="line"></span><br><span class="line">        # Result</span><br><span class="line">        result = Count.Result()</span><br><span class="line"></span><br><span class="line">        result.success = True</span><br><span class="line"></span><br><span class="line">        return result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line"></span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = MyActionServer()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>Action Server 记：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">读取 Goal</span><br><span class="line">↓</span><br><span class="line">执行任务</span><br><span class="line">↓</span><br><span class="line">publish_feedback()</span><br><span class="line">↓</span><br><span class="line">succeed()</span><br><span class="line">↓</span><br><span class="line">return Result</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>11. Action Client 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line">from rclpy.action import ActionClient</span><br><span class="line"></span><br><span class="line">from tutorial_interfaces.action import Count</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class MyActionClient(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;action_client&#x27;)</span><br><span class="line"></span><br><span class="line">        self.client = ActionClient(</span><br><span class="line">            self,</span><br><span class="line">            Count,</span><br><span class="line">            &#x27;count&#x27;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def send_goal(self):</span><br><span class="line"></span><br><span class="line">        self.client.wait_for_server()</span><br><span class="line"></span><br><span class="line">        # Goal</span><br><span class="line">        goal = Count.Goal()</span><br><span class="line"></span><br><span class="line">        goal.target = 10</span><br><span class="line"></span><br><span class="line">        future = self.client.send_goal_async(</span><br><span class="line">            goal,</span><br><span class="line">            feedback_callback=</span><br><span class="line">            self.feedback_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        future.add_done_callback(</span><br><span class="line">            self.goal_response_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def goal_response_callback(</span><br><span class="line">        self,</span><br><span class="line">        future</span><br><span class="line">    ):</span><br><span class="line"></span><br><span class="line">        goal_handle = future.result()</span><br><span class="line"></span><br><span class="line">        if not goal_handle.accepted:</span><br><span class="line">            print(&#x27;任务被拒绝&#x27;)</span><br><span class="line">            return</span><br><span class="line"></span><br><span class="line">        print(&#x27;任务被接受&#x27;)</span><br><span class="line"></span><br><span class="line">        result_future = (</span><br><span class="line">            goal_handle.get_result_async()</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        result_future.add_done_callback(</span><br><span class="line">            self.result_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def feedback_callback(</span><br><span class="line">        self,</span><br><span class="line">        feedback</span><br><span class="line">    ):</span><br><span class="line"></span><br><span class="line">        print(</span><br><span class="line">            &#x27;当前：&#x27;,</span><br><span class="line">            feedback.feedback.current</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def result_callback(</span><br><span class="line">        self,</span><br><span class="line">        future</span><br><span class="line">    ):</span><br><span class="line"></span><br><span class="line">        result = (</span><br><span class="line">            future.result().result</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        print(</span><br><span class="line">            &#x27;成功：&#x27;,</span><br><span class="line">            result.success</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line"></span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = MyActionClient()</span><br><span class="line"></span><br><span class="line">    node.send_goal()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>12. TF Broadcaster 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line"></span><br><span class="line">from geometry_msgs.msg import TransformStamped</span><br><span class="line">from tf2_ros import TransformBroadcaster</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class TfBroadcaster(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;tf_broadcaster&#x27;)</span><br><span class="line"></span><br><span class="line">        self.broadcaster = (</span><br><span class="line">            TransformBroadcaster(self)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.timer = self.create_timer(</span><br><span class="line">            0.1,</span><br><span class="line">            self.timer_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def timer_callback(self):</span><br><span class="line"></span><br><span class="line">        t = TransformStamped()</span><br><span class="line"></span><br><span class="line">        t.header.stamp = (</span><br><span class="line">            self.get_clock()</span><br><span class="line">            .now()</span><br><span class="line">            .to_msg()</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        # 父坐标系</span><br><span class="line">        t.header.frame_id = &#x27;base_link&#x27;</span><br><span class="line"></span><br><span class="line">        # 子坐标系</span><br><span class="line">        t.child_frame_id = &#x27;laser_link&#x27;</span><br><span class="line"></span><br><span class="line">        # 位置</span><br><span class="line">        t.transform.translation.x = 1.0</span><br><span class="line">        t.transform.translation.y = 0.0</span><br><span class="line">        t.transform.translation.z = 0.5</span><br><span class="line"></span><br><span class="line">        # 不旋转</span><br><span class="line">        t.transform.rotation.x = 0.0</span><br><span class="line">        t.transform.rotation.y = 0.0</span><br><span class="line">        t.transform.rotation.z = 0.0</span><br><span class="line">        t.transform.rotation.w = 1.0</span><br><span class="line"></span><br><span class="line">        self.broadcaster.sendTransform(t)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line"></span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = TfBroadcaster()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>这里：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">translation</span><br><span class="line">= laser_link 在哪里</span><br><span class="line"></span><br><span class="line">rotation</span><br><span class="line">= laser_link 朝哪里</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>13. TF Listener / Transform 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line"></span><br><span class="line">from geometry_msgs.msg import PointStamped</span><br><span class="line"></span><br><span class="line">from tf2_ros import (</span><br><span class="line">    Buffer,</span><br><span class="line">    TransformListener,</span><br><span class="line">    TransformException</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">import tf2_geometry_msgs</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class TfListener(Node):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(&#x27;tf_listener&#x27;)</span><br><span class="line"></span><br><span class="line">        self.buffer = Buffer()</span><br><span class="line"></span><br><span class="line">        self.listener = TransformListener(</span><br><span class="line">            self.buffer,</span><br><span class="line">            self</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.timer = self.create_timer(</span><br><span class="line">            1.0,</span><br><span class="line">            self.timer_callback</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def timer_callback(self):</span><br><span class="line"></span><br><span class="line">        point = PointStamped()</span><br><span class="line"></span><br><span class="line">        point.header.frame_id = (</span><br><span class="line">            &#x27;laser_link&#x27;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        point.header.stamp = (</span><br><span class="line">            rclpy.time.Time().to_msg()</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        point.point.x = 2.0</span><br><span class="line">        point.point.y = 0.0</span><br><span class="line">        point.point.z = 0.0</span><br><span class="line"></span><br><span class="line">        try:</span><br><span class="line"></span><br><span class="line">            new_point = (</span><br><span class="line">                self.buffer.transform(</span><br><span class="line">                    point,</span><br><span class="line">                    &#x27;base_link&#x27;</span><br><span class="line">                )</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">            print(</span><br><span class="line">                new_point.point.x,</span><br><span class="line">                new_point.point.y,</span><br><span class="line">                new_point.point.z</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        except TransformException as e:</span><br><span class="line"></span><br><span class="line">            print(e)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line"></span><br><span class="line">    rclpy.init()</span><br><span class="line"></span><br><span class="line">    node = TfListener()</span><br><span class="line"></span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">buffer.transform(</span><br><span class="line">    数据,</span><br><span class="line">    目标坐标系</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>14. URDF 最小模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;robot name=&quot;mini_robot&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 车身 --&gt;</span><br><span class="line">    &lt;link name=&quot;base_link&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;visual&gt;</span><br><span class="line">            &lt;geometry&gt;</span><br><span class="line">                &lt;box size=&quot;0.5 0.3 0.2&quot;/&gt;</span><br><span class="line">            &lt;/geometry&gt;</span><br><span class="line">        &lt;/visual&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/link&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 雷达 --&gt;</span><br><span class="line">    &lt;link name=&quot;laser_link&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;visual&gt;</span><br><span class="line">            &lt;geometry&gt;</span><br><span class="line">                &lt;cylinder</span><br><span class="line">                    radius=&quot;0.05&quot;</span><br><span class="line">                    length=&quot;0.05&quot;</span><br><span class="line">                /&gt;</span><br><span class="line">            &lt;/geometry&gt;</span><br><span class="line">        &lt;/visual&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/link&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 连接 --&gt;</span><br><span class="line">    &lt;joint</span><br><span class="line">        name=&quot;laser_joint&quot;</span><br><span class="line">        type=&quot;fixed&quot;</span><br><span class="line">    &gt;</span><br><span class="line"></span><br><span class="line">        &lt;parent link=&quot;base_link&quot;/&gt;</span><br><span class="line"></span><br><span class="line">        &lt;child link=&quot;laser_link&quot;/&gt;</span><br><span class="line"></span><br><span class="line">        &lt;origin</span><br><span class="line">            xyz=&quot;0.2 0 0.15&quot;</span><br><span class="line">            rpy=&quot;0 0 0&quot;</span><br><span class="line">        /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/joint&gt;</span><br><span class="line"></span><br><span class="line">&lt;/robot&gt;</span><br></pre></td></tr></table></figure>
+<p>关系：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">base_link</span><br><span class="line">↓ laser_joint</span><br><span class="line">laser_link</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">xyz=&quot;0.2 0 0.15&quot;</span><br></pre></td></tr></table></figure>
+<p>相当于之前 TF：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">translation.x = 0.2</span><br><span class="line">translation.y = 0</span><br><span class="line">translation.z = 0.15</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>15. robot_state_publisher Launch 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from launch import LaunchDescription</span><br><span class="line"></span><br><span class="line">from launch_ros.actions import Node</span><br><span class="line"></span><br><span class="line">from ament_index_python.packages import (</span><br><span class="line">    get_package_share_directory</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def generate_launch_description():</span><br><span class="line"></span><br><span class="line">    package_path = (</span><br><span class="line">        get_package_share_directory(</span><br><span class="line">            &#x27;mini_robot&#x27;</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    urdf_path = os.path.join(</span><br><span class="line">        package_path,</span><br><span class="line">        &#x27;urdf&#x27;,</span><br><span class="line">        &#x27;mini_robot.urdf&#x27;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    with open(</span><br><span class="line">        urdf_path,</span><br><span class="line">        &#x27;r&#x27;</span><br><span class="line">    ) as file:</span><br><span class="line"></span><br><span class="line">        robot_description = file.read()</span><br><span class="line"></span><br><span class="line">    robot_state_publisher = Node(</span><br><span class="line">        package=&#x27;robot_state_publisher&#x27;,</span><br><span class="line">        executable=&#x27;robot_state_publisher&#x27;,</span><br><span class="line"></span><br><span class="line">        parameters=[&#123;</span><br><span class="line">            &#x27;robot_description&#x27;:</span><br><span class="line">            robot_description</span><br><span class="line">        &#125;]</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    return LaunchDescription([</span><br><span class="line">        robot_state_publisher</span><br><span class="line">    ])</span><br></pre></td></tr></table></figure>
+<p>核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">读取 URDF</span><br><span class="line">↓</span><br><span class="line">传给 robot_state_publisher</span><br><span class="line">↓</span><br><span class="line">自动发布 TF</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>16. 同时启动多个 Node</h1>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from launch import LaunchDescription</span><br><span class="line">from launch_ros.actions import Node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def generate_launch_description():</span><br><span class="line"></span><br><span class="line">    laser_publisher = Node(</span><br><span class="line">        package=&#x27;mini_robot&#x27;,</span><br><span class="line">        executable=&#x27;laser_publisher&#x27;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    laser_listener = Node(</span><br><span class="line">        package=&#x27;mini_robot&#x27;,</span><br><span class="line">        executable=&#x27;laser_listener&#x27;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    return LaunchDescription([</span><br><span class="line">        laser_publisher,</span><br><span class="line">        laser_listener</span><br><span class="line">    ])</span><br></pre></td></tr></table></figure>
+<p>启动：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 launch mini_robot robot.launch.py</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>17. Python <code>setup.py</code> 模板</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from setuptools import (</span><br><span class="line">    find_packages,</span><br><span class="line">    setup</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">import os</span><br><span class="line">from glob import glob</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">package_name = &#x27;mini_robot&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line"></span><br><span class="line">    name=package_name,</span><br><span class="line"></span><br><span class="line">    version=&#x27;0.0.0&#x27;,</span><br><span class="line"></span><br><span class="line">    packages=find_packages(</span><br><span class="line">        exclude=[&#x27;test&#x27;]</span><br><span class="line">    ),</span><br><span class="line"></span><br><span class="line">    data_files=[</span><br><span class="line"></span><br><span class="line">        (</span><br><span class="line">            &#x27;share/ament_index/resource_index/packages&#x27;,</span><br><span class="line">            [&#x27;resource/&#x27; + package_name]</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        (</span><br><span class="line">            &#x27;share/&#x27; + package_name,</span><br><span class="line">            [&#x27;package.xml&#x27;]</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        (</span><br><span class="line">            os.path.join(</span><br><span class="line">                &#x27;share&#x27;,</span><br><span class="line">                package_name,</span><br><span class="line">                &#x27;launch&#x27;</span><br><span class="line">            ),</span><br><span class="line">            glob(&#x27;launch/*.launch.py&#x27;)</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        (</span><br><span class="line">            os.path.join(</span><br><span class="line">                &#x27;share&#x27;,</span><br><span class="line">                package_name,</span><br><span class="line">                &#x27;urdf&#x27;</span><br><span class="line">            ),</span><br><span class="line">            glob(&#x27;urdf/*.urdf&#x27;)</span><br><span class="line">        ),</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    install_requires=[</span><br><span class="line">        &#x27;setuptools&#x27;</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    zip_safe=True,</span><br><span class="line"></span><br><span class="line">    entry_points=&#123;</span><br><span class="line"></span><br><span class="line">        &#x27;console_scripts&#x27;: [</span><br><span class="line"></span><br><span class="line">            &#x27;laser_publisher = &#x27;</span><br><span class="line">            &#x27;mini_robot.laser_publisher:main&#x27;,</span><br><span class="line"></span><br><span class="line">            &#x27;laser_listener = &#x27;</span><br><span class="line">            &#x27;mini_robot.laser_listener:main&#x27;,</span><br><span class="line">        ],</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>特别注意：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Python 文件写好了</span><br><span class="line">≠</span><br><span class="line">ros2 run 能运行</span><br></pre></td></tr></table></figure>
+<p>还需要：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">entry_points</span><br></pre></td></tr></table></figure>
+<p>注册。</p>
+<hr>
+<h1>18. 接口包 <code>CMakeLists.txt</code></h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tutorial_interfaces/CMakeLists.txt</span><br><span class="line">cmake_minimum_required(VERSION 3.8)</span><br><span class="line"></span><br><span class="line">project(tutorial_interfaces)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">find_package(</span><br><span class="line">  ament_cmake REQUIRED</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">find_package(</span><br><span class="line">  rosidl_default_generators REQUIRED</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rosidl_generate_interfaces(</span><br><span class="line">  $&#123;PROJECT_NAME&#125;</span><br><span class="line"></span><br><span class="line">  &quot;srv/AddTwoInts.srv&quot;</span><br><span class="line"></span><br><span class="line">  &quot;action/Count.action&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ament_package()</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>19. 接口包 <code>package.xml</code> 关键部分</h1>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;buildtool_depend&gt;</span><br><span class="line">  ament_cmake</span><br><span class="line">&lt;/buildtool_depend&gt;</span><br><span class="line"></span><br><span class="line">&lt;build_depend&gt;</span><br><span class="line">  rosidl_default_generators</span><br><span class="line">&lt;/build_depend&gt;</span><br><span class="line"></span><br><span class="line">&lt;exec_depend&gt;</span><br><span class="line">  rosidl_default_runtime</span><br><span class="line">&lt;/exec_depend&gt;</span><br><span class="line"></span><br><span class="line">&lt;member_of_group&gt;</span><br><span class="line">  rosidl_interface_packages</span><br><span class="line">&lt;/member_of_group&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>20. rosbag 模板命令</h1>
+<p>看 Topic：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 topic list</span><br></pre></td></tr></table></figure>
+<p>录一个：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 bag record /laser_distance</span><br></pre></td></tr></table></figure>
+<p>录多个：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 bag record \</span><br><span class="line">/laser_distance \</span><br><span class="line">/tf \</span><br><span class="line">/tf_static</span><br></pre></td></tr></table></figure>
+<p>全部录制：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 bag record -a</span><br></pre></td></tr></table></figure>
+<p>查看 bag：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 bag info &lt;bag目录&gt;</span><br></pre></td></tr></table></figure>
+<p>播放：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 bag play &lt;bag目录&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>21. 常用调试模板</h1>
+<p>Node：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 node list</span><br></pre></td></tr></table></figure>
+<p>Topic：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 topic list</span><br></pre></td></tr></table></figure>
+<p>看内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 topic echo /laser_distance</span><br></pre></td></tr></table></figure>
+<p>看频率：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 topic hz /laser_distance</span><br></pre></td></tr></table></figure>
+<p>看信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 topic info /laser_distance</span><br></pre></td></tr></table></figure>
+<p>Service：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 service list</span><br></pre></td></tr></table></figure>
+<p>Action：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 action list</span><br></pre></td></tr></table></figure>
+<p>TF：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 run tf2_tools view_frames</span><br></pre></td></tr></table></figure>
+<p>实时查看两个坐标系：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 run tf2_ros tf2_echo \</span><br><span class="line">base_link \</span><br><span class="line">laser_link</span><br></pre></td></tr></table></figure>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2026-08-28</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2026/09/09/%E8%B0%83%E8%89%B2%E7%AC%94%E8%AE%B0/'>调色笔记</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/08/26/ros2%E5%85%A5%E9%97%A81/">ros2入门1</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>

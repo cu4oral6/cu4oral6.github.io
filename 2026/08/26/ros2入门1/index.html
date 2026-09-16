@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="ros2入门1" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    ros2入门1
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2026-08-28</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.7k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：11分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">ROS 2 Python 新建项目并运行</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">ROS 2 学习笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-ROS-2-%E6%95%B4%E4%BD%93%E5%9C%A8%E5%B9%B2%E4%BB%80%E4%B9%88"><span class="post-toc-text">1. ROS 2 整体在干什么</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">2. Workspace、Package、Node</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Workspace"><span class="post-toc-text">Workspace</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Package"><span class="post-toc-text">Package</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node"><span class="post-toc-text">Node</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">3. Node → spin → callback</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#callback"><span class="post-toc-text">callback</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#spin"><span class="post-toc-text">spin</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">4. Topic</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">5. Service</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">6. Action</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Action-Server"><span class="post-toc-text">Action Server</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Action-Client"><span class="post-toc-text">Action Client</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">7. Topic &#x2F; Service &#x2F; Action 怎么选</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">8. msg &#x2F; srv &#x2F; action 放哪里</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">9. 自定义接口生成</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">10. TF2</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">11. TransformBroadcaster</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">12. TF 的 rotation</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">13. TF Listener &#x2F; Buffer</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">14. QoS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Reliable"><span class="post-toc-text">Reliable</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Best-Effort"><span class="post-toc-text">Best Effort</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">15. URDF</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">16. Link 和 Joint</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">17. robot_state_publisher</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">18. rosbag</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">19. Gazebo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">20. Nav2</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">21. MuJoCo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">22. 推荐的小项目</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">23. 推荐学习顺序</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">24. 当前最需要建立的 ROS 2 思维</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%80%BB%E8%A7%88"><span class="post-toc-text">一句话总览</span></a></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h1>ROS 2 Python 新建项目并运行</h1>
+<ol>
+<li>
+<p><strong>创建 ROS 2 工作空间</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/ros2_ws/src</span><br><span class="line"><span class="built_in">cd</span> ~/ros2_ws</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>创建 Python ROS 2 包</strong></p>
+<p>进入 <code>src</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ros2_ws/src</span><br></pre></td></tr></table></figure>
+<p>创建包：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ros2 pkg create --build-type ament_python my_robot --dependencies rclpy</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>创建 Python 节点</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ros2_ws/src/my_robot/my_robot</span><br><span class="line">nano hello.py</span><br></pre></td></tr></table></figure>
+<p>示例代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> rclpy</span><br><span class="line"><span class="keyword">from</span> rclpy.node <span class="keyword">import</span> Node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloNode</span>(<span class="title class_ inherited__">Node</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__(<span class="string">&#x27;hello_node&#x27;</span>)</span><br><span class="line">        <span class="variable language_">self</span>.get_logger().info(<span class="string">&#x27;Hello ROS 2&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">args=<span class="literal">None</span></span>):</span><br><span class="line">    rclpy.init(args=args)</span><br><span class="line"></span><br><span class="line">    node = HelloNode()</span><br><span class="line">    rclpy.spin(node)</span><br><span class="line"></span><br><span class="line">    node.destroy_node()</span><br><span class="line">    rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>在 <code>setup.py</code> 中注册节点</strong></p>
+<p>打开：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/ros2_ws/src/my_robot/setup.py</span><br></pre></td></tr></table></figure>
+<p>找到：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">entry_points=&#123;</span><br><span class="line">    <span class="string">&#x27;console_scripts&#x27;</span>: [</span><br><span class="line">    ],</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">entry_points=&#123;</span><br><span class="line">    <span class="string">&#x27;console_scripts&#x27;</span>: [</span><br><span class="line">        <span class="string">&#x27;hello = my_robot.hello:main&#x27;</span>,</span><br><span class="line">    ],</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>编译工作空间</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ros2_ws</span><br><span class="line">colcon build --symlink-install</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>加载环境</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> install/setup.bash</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>运行节点</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ros2 run my_robot hello</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">my_robot  → 包名</span><br><span class="line">hello     → setup.py 中注册的命令名</span><br></pre></td></tr></table></figure>
+<p>正常会输出：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">[INFO] [hello_node]: Hello ROS 2</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以后如果只是修改 <code>hello.py</code>，使用了 <code>--symlink-install</code> 后通常不需要重新 <code>colcon build</code>，直接再次运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ros2 run my_robot hello</span><br></pre></td></tr></table></figure>
+<h1>ROS 2 学习笔记</h1>
+<h2 id="1-ROS-2-整体在干什么">1. ROS 2 整体在干什么</h2>
+<p>ROS 2 可以理解成一个<strong>机器人软件通信框架</strong>。</p>
+<p>机器人里通常会有很多程序：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">camera_node      摄像头</span><br><span class="line">lidar_node       雷达</span><br><span class="line">control_node     控制电机</span><br><span class="line">navigation_node  导航</span><br></pre></td></tr></table></figure>
+<p>ROS 2 负责让这些程序：</p>
+<ul>
+<li>找到彼此</li>
+<li>交换数据</li>
+<li>调用功能</li>
+<li>管理机器人坐标</li>
+<li>一起启动和运行</li>
+</ul>
+<p>Seeed 教程主要覆盖了工作空间、Node、Topic、Service、Parameter、Launch、TF 等基础内容。</p>
+<hr>
+<h1>2. Workspace、Package、Node</h1>
+<p>最简单的关系：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Workspace</span><br><span class="line">└── Package</span><br><span class="line">    └── Node</span><br></pre></td></tr></table></figure>
+<h3 id="Workspace">Workspace</h3>
+<p>整个 ROS 2 工程目录，例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">~/ros2_ws/</span><br><span class="line">├── src/</span><br><span class="line">├── build/</span><br><span class="line">├── install/</span><br><span class="line">└── log/</span><br></pre></td></tr></table></figure>
+<p>我们主要写：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">src/</span><br></pre></td></tr></table></figure>
+<p>其他目录通常由：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">colcon build</span><br></pre></td></tr></table></figure>
+<p>生成。</p>
+<hr>
+<h2 id="Package">Package</h2>
+<p>Package 是一个功能包。</p>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">mini_robot</span><br><span class="line">tutorial_interfaces</span><br><span class="line">my_robot</span><br></pre></td></tr></table></figure>
+<p>一个项目可以有很多 Package。</p>
+<hr>
+<h2 id="Node">Node</h2>
+<p>Node 是真正运行起来的程序单位。</p>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyNode</span>(<span class="title class_ inherited__">Node</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__(<span class="string">&#x27;my_node&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>一个 Node 可以拥有：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Publisher</span><br><span class="line">Subscriber</span><br><span class="line">Timer</span><br><span class="line">Service</span><br><span class="line">Action</span><br><span class="line">Parameter</span><br><span class="line">TF</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>3. Node → spin → callback</h1>
+<p>这是理解 ROS 2 Python 最重要的一条线。</p>
+<h2 id="callback">callback</h2>
+<p>Callback 就是：</p>
+<blockquote>
+<p>某件事情发生后，要执行的函数。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">timer_callback</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>注册：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">self</span>.create_timer(</span><br><span class="line">    <span class="number">1.0</span>,</span><br><span class="line">    <span class="variable language_">self</span>.timer_callback</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>意思是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">每过 1 秒</span><br><span class="line">↓</span><br><span class="line">调用 timer_callback()</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="spin">spin</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">rclpy.spin(node)</span><br></pre></td></tr></table></figure>
+<p>不要理解成“程序卡死”。</p>
+<p>它真正的意思是：</p>
+<blockquote>
+<p>Node 开始值班，一直等待 ROS 事件。</p>
+</blockquote>
+<p>流程：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">spin()</span><br><span class="line">↓</span><br><span class="line">等待</span><br><span class="line">↓</span><br><span class="line">Timer 到了</span><br><span class="line">↓</span><br><span class="line">执行 callback</span><br><span class="line">↓</span><br><span class="line">继续等待</span><br><span class="line"></span><br><span class="line">Topic 来消息</span><br><span class="line">↓</span><br><span class="line">执行 callback</span><br><span class="line">↓</span><br><span class="line">继续等待</span><br></pre></td></tr></table></figure>
+<p>所以：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Node</span><br><span class="line">↓</span><br><span class="line">注册各种 callback</span><br><span class="line">↓</span><br><span class="line">spin()</span><br><span class="line">↓</span><br><span class="line">等待事件</span><br><span class="line">↓</span><br><span class="line">ROS 自动调用对应 callback</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>4. Topic</h1>
+<p>Topic 用来发送<strong>持续的数据流</strong>。</p>
+<p>Seeed 的例子就是 Publisher / Subscriber 模型。</p>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">雷达</span><br><span class="line">↓</span><br><span class="line">/scan</span><br><span class="line">↓</span><br><span class="line">导航程序</span><br></pre></td></tr></table></figure>
+<p>Publisher：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">self</span>.publisher_ = <span class="variable language_">self</span>.create_publisher(</span><br><span class="line">    String,</span><br><span class="line">    <span class="string">&#x27;topic&#x27;</span>,</span><br><span class="line">    <span class="number">10</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>发送：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">self</span>.publisher_.publish(msg)</span><br></pre></td></tr></table></figure>
+<p>Subscriber：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">self</span>.subscription = <span class="variable language_">self</span>.create_subscription(</span><br><span class="line">    String,</span><br><span class="line">    <span class="string">&#x27;topic&#x27;</span>,</span><br><span class="line">    <span class="variable language_">self</span>.listener_callback,</span><br><span class="line">    <span class="number">10</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>收到数据后：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">listener_callback</span>(<span class="params">self, msg</span>):</span><br><span class="line">    <span class="built_in">print</span>(msg.data)</span><br></pre></td></tr></table></figure>
+<p>整个流程：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Publisher</span><br><span class="line">↓</span><br><span class="line">publish()</span><br><span class="line">↓</span><br><span class="line">Topic</span><br><span class="line">↓</span><br><span class="line">Subscriber</span><br><span class="line">↓</span><br><span class="line">callback()</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>5. Service</h1>
+<p>Service 是：</p>
+<blockquote>
+<p>请求一次，回答一次。</p>
+</blockquote>
+<p>结构：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Client</span><br><span class="line">↓ Request</span><br><span class="line">Server</span><br><span class="line">↓ Response</span><br><span class="line">Client</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Client：2 + 3 等于多少？</span><br><span class="line"></span><br><span class="line">Server：5</span><br></pre></td></tr></table></figure>
+<p>Seeed 教程中的 <code>.srv</code>：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">int64 a</span><br><span class="line">int64 b</span><br><span class="line">---</span><br><span class="line">int64 sum</span><br></pre></td></tr></table></figure>
+<p><code>---</code>：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">上面 = Request</span><br><span class="line">下面 = Response</span><br></pre></td></tr></table></figure>
+<p>Service 适合：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">打开摄像头</span><br><span class="line">保存地图</span><br><span class="line">查询一次状态</span><br><span class="line">执行一次简单操作</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>6. Action</h1>
+<p>Action 是教程八讲里缺的一块。</p>
+<p>Action 用于：</p>
+<blockquote>
+<p>需要执行一段时间，而且希望看到进度、结果，甚至取消的任务。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">导航到房间门口</span><br><span class="line">机械臂抓取物体</span><br><span class="line">数到 10</span><br></pre></td></tr></table></figure>
+<p>Action 有三部分：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Goal</span><br><span class="line">---</span><br><span class="line">Result</span><br><span class="line">---</span><br><span class="line">Feedback</span><br></pre></td></tr></table></figure>
+<p>官方 Fibonacci Action 也是这个结构。</p>
+<p>我们的：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Count.action</span><br></pre></td></tr></table></figure>
+<p>是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">int32 target</span><br><span class="line">---</span><br><span class="line">bool success</span><br><span class="line">---</span><br><span class="line">int32 current</span><br></pre></td></tr></table></figure>
+<p>对应：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Goal</span><br><span class="line">target</span><br><span class="line"></span><br><span class="line">Result</span><br><span class="line">success</span><br><span class="line"></span><br><span class="line">Feedback</span><br><span class="line">current</span><br></pre></td></tr></table></figure>
+<p>所以：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">goal_handle.request.target</span><br></pre></td></tr></table></figure>
+<p>读取 Goal。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">feedback = Count.Feedback()</span><br><span class="line">feedback.current = i</span><br><span class="line">goal_handle.publish_feedback(feedback)</span><br></pre></td></tr></table></figure>
+<p>发布 Feedback。</p>
+<p>最后：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result = Count.Result()</span><br><span class="line">result.success = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<p>返回 Result。</p>
+<hr>
+<h2 id="Action-Server">Action Server</h2>
+<p>核心结构：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">self</span>.server = ActionServer(</span><br><span class="line">    <span class="variable language_">self</span>,</span><br><span class="line">    Count,</span><br><span class="line">    <span class="string">&#x27;count&#x27;</span>,</span><br><span class="line">    <span class="variable language_">self</span>.execute_callback</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>意思：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">创建 /count Action</span><br><span class="line"></span><br><span class="line">收到 Goal</span><br><span class="line">↓</span><br><span class="line">execute_callback()</span><br></pre></td></tr></table></figure>
+<p>执行：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Goal</span><br><span class="line">↓</span><br><span class="line">开始工作</span><br><span class="line">↓</span><br><span class="line">Feedback</span><br><span class="line">↓</span><br><span class="line">Feedback</span><br><span class="line">↓</span><br><span class="line">Feedback</span><br><span class="line">↓</span><br><span class="line">succeed()</span><br><span class="line">↓</span><br><span class="line">Result</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Action-Client">Action Client</h2>
+<p>Client 负责：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">发送 Goal</span><br><span class="line">↓</span><br><span class="line">接收 Feedback</span><br><span class="line">↓</span><br><span class="line">接收 Result</span><br></pre></td></tr></table></figure>
+<p>关键 API：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">send_goal_async()</span><br></pre></td></tr></table></figure>
+<p>发任务。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">feedback_callback()</span><br></pre></td></tr></table></figure>
+<p>收进度。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">get_result_async()</span><br></pre></td></tr></table></figure>
+<p>等最终结果。</p>
+<hr>
+<h1>7. Topic / Service / Action 怎么选</h1>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>雷达不断发数据</td>
+<td>Topic</td>
+</tr>
+<tr>
+<td>摄像头不断发图像</td>
+<td>Topic</td>
+</tr>
+<tr>
+<td>不断发送速度</td>
+<td>Topic</td>
+</tr>
+<tr>
+<td>查询一次状态</td>
+<td>Service</td>
+</tr>
+<tr>
+<td>开关某个功能</td>
+<td>Service</td>
+</tr>
+<tr>
+<td>导航到某处</td>
+<td>Action</td>
+</tr>
+<tr>
+<td>机械臂完成抓取</td>
+<td>Action</td>
+</tr>
+<tr>
+<td>长时间执行且要进度</td>
+<td>Action</td>
+</tr>
+</tbody>
+</table>
+<p>记忆：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Topic</span><br><span class="line">= 一直发数据</span><br><span class="line"></span><br><span class="line">Service</span><br><span class="line">= 问一次，答一次</span><br><span class="line"></span><br><span class="line">Action</span><br><span class="line">= 给一个任务，执行一段时间</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>8. msg / srv / action 放哪里</h1>
+<p>通常建议建立单独的接口包：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">tutorial_interfaces/</span><br><span class="line">├── msg/</span><br><span class="line">├── srv/</span><br><span class="line">└── action/</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">tutorial_interfaces/</span><br><span class="line">├── srv/</span><br><span class="line">│   └── AddTwoInts.srv</span><br><span class="line">│</span><br><span class="line">└── action/</span><br><span class="line">    └── Count.action</span><br></pre></td></tr></table></figure>
+<p>真正的 Python 节点放另外的 Package。</p>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">ros2_ws/src/</span><br><span class="line"></span><br><span class="line">tutorial_interfaces/</span><br><span class="line">    action/Count.action</span><br><span class="line"></span><br><span class="line">my_robot/</span><br><span class="line">    my_robot/</span><br><span class="line">        server.py</span><br><span class="line">        client.py</span><br></pre></td></tr></table></figure>
+<p>Python 使用：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tutorial_interfaces.action <span class="keyword">import</span> Count</span><br></pre></td></tr></table></figure>
+<p>Service：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tutorial_interfaces.srv <span class="keyword">import</span> AddTwoInts</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>9. 自定义接口生成</h1>
+<p>接口包一般使用：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">ament_cmake</span><br></pre></td></tr></table></figure>
+<p>即使真正使用它的是 Python Node。</p>
+<p><code>CMakeLists.txt</code>：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(ament_cmake REQUIRED)</span><br><span class="line"><span class="keyword">find_package</span>(rosidl_default_generators REQUIRED)</span><br><span class="line"></span><br><span class="line">rosidl_generate_interfaces(<span class="variable">$&#123;PROJECT_NAME&#125;</span></span><br><span class="line">  <span class="string">&quot;srv/AddTwoInts.srv&quot;</span></span><br><span class="line">  <span class="string">&quot;action/Count.action&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">ament_package()</span><br></pre></td></tr></table></figure>
+<p>然后：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">colcon build --packages-select tutorial_interfaces</span><br><span class="line"><span class="built_in">source</span> install/setup.bash</span><br></pre></td></tr></table></figure>
+<p>检查：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ros2 interface show tutorial_interfaces/action/Count</span><br></pre></td></tr></table></figure>
+<p>正常显示：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">int32 target</span><br><span class="line">---</span><br><span class="line">bool success</span><br><span class="line">---</span><br><span class="line">int32 current</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>10. TF2</h1>
+<p>TF2 可以理解为：</p>
+<blockquote>
+<p>ROS 2 的坐标翻译器。</p>
+</blockquote>
+<p>假设：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">机器人中心</span><br><span class="line">base_link</span><br><span class="line"></span><br><span class="line">雷达</span><br><span class="line">radar_link</span><br></pre></td></tr></table></figure>
+<p>雷达说：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">障碍物在我前方 2 米</span><br></pre></td></tr></table></figure>
+<p>这其实是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">radar_link 坐标</span><br></pre></td></tr></table></figure>
+<p>机器人控制程序可能需要：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">base_link 坐标</span><br></pre></td></tr></table></figure>
+<p>TF2 就负责：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">radar_link</span><br><span class="line">↓</span><br><span class="line">坐标转换</span><br><span class="line">↓</span><br><span class="line">base_link</span><br></pre></td></tr></table></figure>
+<p>Seeed 教程也是通过 <code>base_link</code> 和 <code>radar_link</code> 演示这个过程。</p>
+<hr>
+<h1>11. TransformBroadcaster</h1>
+<p><code>tf2_broadcaster.py</code> 的任务不是控制雷达。</p>
+<p>它只是：</p>
+<blockquote>
+<p>不断告诉 ROS，雷达坐标系相对于机器人坐标系在哪里、朝哪里。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t.header.frame_id = <span class="string">&#x27;base_link&#x27;</span></span><br><span class="line">t.child_frame_id = <span class="string">&#x27;radar_link&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>意思：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">我要描述：</span><br><span class="line"></span><br><span class="line">radar_link</span><br><span class="line">相对于</span><br><span class="line">base_link</span><br><span class="line"></span><br><span class="line">的位置和方向</span><br></pre></td></tr></table></figure>
+<p>位置：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t.transform.translation.x = <span class="number">1.0</span></span><br><span class="line">t.transform.translation.y = <span class="number">0.0</span></span><br><span class="line">t.transform.translation.z = <span class="number">0.5</span></span><br></pre></td></tr></table></figure>
+<p>严格来说表示：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">radar_link 坐标系原点</span><br><span class="line"></span><br><span class="line">在 base_link 看来位于：</span><br><span class="line"></span><br><span class="line">(1.0, 0.0, 0.5)</span><br></pre></td></tr></table></figure>
+<p>不是这三个数字天生代表雷达。</p>
+<p>因为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">child_frame_id = <span class="string">&#x27;radar_link&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>所以它描述的是 <code>radar_link</code>。</p>
+<hr>
+<h1>12. TF 的 rotation</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">q = quaternion_from_euler(</span><br><span class="line">    <span class="number">0</span>,</span><br><span class="line">    <span class="number">0</span>,</span><br><span class="line">    <span class="variable language_">self</span>.angle</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>表示：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">roll  = 0</span><br><span class="line">pitch = 0</span><br><span class="line">yaw   = self.angle</span><br></pre></td></tr></table></figure>
+<p>也就是：</p>
+<blockquote>
+<p>radar_link 绕 Z 轴旋转。</p>
+</blockquote>
+<p>然后：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t.transform.rotation.x = q[<span class="number">0</span>]</span><br><span class="line">t.transform.rotation.y = q[<span class="number">1</span>]</span><br><span class="line">t.transform.rotation.z = q[<span class="number">2</span>]</span><br><span class="line">t.transform.rotation.w = q[<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<p>因为 TF 用<strong>四元数</strong>表示旋转。</p>
+<p>目前不需要会计算四元数。</p>
+<p>只记：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">translation</span><br><span class="line">= 在哪里</span><br><span class="line"></span><br><span class="line">rotation</span><br><span class="line">= 朝哪里</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>13. TF Listener / Buffer</h1>
+<p>Broadcaster：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">发布坐标关系</span><br></pre></td></tr></table></figure>
+<p>Listener：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">接收坐标关系</span><br></pre></td></tr></table></figure>
+<p>Buffer：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">保存坐标关系</span><br></pre></td></tr></table></figure>
+<p>转换：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">base_point = <span class="variable language_">self</span>.tf_buffer.transform(</span><br><span class="line">    radar_point,</span><br><span class="line">    <span class="string">&#x27;base_link&#x27;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>意思：</p>
+<blockquote>
+<p>把 radar_point 当前所在坐标系的数据转换到 base_link。</p>
+</blockquote>
+<hr>
+<h1>14. QoS</h1>
+<p>QoS 可以理解成：</p>
+<blockquote>
+<p>ROS 2 消息应该“怎么送”。</p>
+</blockquote>
+<p>以前：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">create_publisher(</span><br><span class="line">    String,</span><br><span class="line">    <span class="string">&#x27;topic&#x27;</span>,</span><br><span class="line">    <span class="number">10</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>最后的 <code>10</code> 属于 QoS 的一部分，可以先理解成：</p>
+<blockquote>
+<p>缓存最近 10 条消息。</p>
+</blockquote>
+<p>QoS 最重要的几个概念：</p>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reliability</td>
+<td>消息丢了是否需要尽量重传</td>
+</tr>
+<tr>
+<td>History</td>
+<td>怎么保存历史消息</td>
+</tr>
+<tr>
+<td>Depth</td>
+<td>最多缓存多少</td>
+</tr>
+<tr>
+<td>Durability</td>
+<td>后来的节点能不能看到以前的数据</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Reliable">Reliable</h2>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">消息最好必须送到</span><br></pre></td></tr></table></figure>
+<p>适合比较重要的数据。</p>
+<hr>
+<h2 id="Best-Effort">Best Effort</h2>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">尽量发送</span><br><span class="line">丢一条算了</span><br></pre></td></tr></table></figure>
+<p>特别适合：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">雷达</span><br><span class="line">摄像头</span><br><span class="line">高频传感器</span><br></pre></td></tr></table></figure>
+<p>因为旧数据价值通常不大。</p>
+<p>ROS 2 Python 可以直接使用：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> rclpy.qos <span class="keyword">import</span> qos_profile_sensor_data</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">self</span>.publisher_ = <span class="variable language_">self</span>.create_publisher(</span><br><span class="line">    Float32,</span><br><span class="line">    <span class="string">&#x27;laser_distance&#x27;</span>,</span><br><span class="line">    qos_profile_sensor_data</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>15. URDF</h1>
+<p>URDF 是：</p>
+<blockquote>
+<p>用 XML 描述机器人结构。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">base_link</span><br><span class="line">↓</span><br><span class="line">laser_link</span><br></pre></td></tr></table></figure>
+<p>URDF 会定义：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">机器人有哪些 link</span><br><span class="line">link 怎么连接</span><br><span class="line">joint 在哪里</span><br><span class="line">外观是什么</span><br><span class="line">碰撞形状是什么</span><br></pre></td></tr></table></figure>
+<p>最基础：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">robot</span> <span class="attr">name</span>=<span class="string">&quot;mini_robot&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">name</span>=<span class="string">&quot;base_link&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">link</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">name</span>=<span class="string">&quot;laser_link&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">link</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">robot</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1>16. Link 和 Joint</h1>
+<p>Link：</p>
+<blockquote>
+<p>机器人中的一个刚体部件。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">base_link</span><br><span class="line">wheel_link</span><br><span class="line">camera_link</span><br><span class="line">laser_link</span><br></pre></td></tr></table></figure>
+<p>Joint：</p>
+<blockquote>
+<p>两个 Link 怎么连接。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">base_link</span><br><span class="line">↓ joint</span><br><span class="line">laser_link</span><br></pre></td></tr></table></figure>
+<p>Joint 可以描述：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">位置</span><br><span class="line">角度</span><br><span class="line">能不能旋转</span><br><span class="line">旋转范围</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>17. robot_state_publisher</h1>
+<p>以前 TF 教程里我们自己写：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">TransformBroadcaster</span><br></pre></td></tr></table></figure>
+<p>告诉 ROS：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">base_link → radar_link</span><br></pre></td></tr></table></figure>
+<p>但真实机器人通常不会把所有固定部件的 TF 一个个手写。</p>
+<p>更常见：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">URDF</span><br><span class="line">↓</span><br><span class="line">robot_state_publisher</span><br><span class="line">↓</span><br><span class="line">自动产生 TF</span><br></pre></td></tr></table></figure>
+<p>所以：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">URDF</span><br><span class="line">= 描述机器人身体结构</span><br><span class="line"></span><br><span class="line">robot_state_publisher</span><br><span class="line">= 根据结构发布 TF</span><br></pre></td></tr></table></figure>
+<p>这是 URDF 和之前 TF 知识真正连接的地方。</p>
+<hr>
+<h1>18. rosbag</h1>
+<p>rosbag 可以理解成：</p>
+<blockquote>
+<p>ROS 2 数据录像机。</p>
+</blockquote>
+<p>例如机器人运行时有：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">/scan</span><br><span class="line">/odom</span><br><span class="line">/tf</span><br><span class="line">/camera/image</span><br></pre></td></tr></table></figure>
+<p>可以录制：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ros2 bag record /scan /odom /tf</span><br></pre></td></tr></table></figure>
+<p>停止机器人以后再：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ros2 bag play xxx</span><br></pre></td></tr></table></figure>
+<p>Topic 会重新播放出来。</p>
+<p>非常适合：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">记录真实机器人数据</span><br><span class="line">离线调试</span><br><span class="line">算法重复测试</span><br><span class="line">问题复现</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>19. Gazebo</h1>
+<p>Gazebo 是：</p>
+<blockquote>
+<p>机器人仿真器。</p>
+</blockquote>
+<p>它能提供一个虚拟世界：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">机器人</span><br><span class="line">地面</span><br><span class="line">墙</span><br><span class="line">障碍物</span><br><span class="line">重力</span><br><span class="line">碰撞</span><br><span class="line">雷达</span><br><span class="line">摄像头</span><br><span class="line">轮子</span><br></pre></td></tr></table></figure>
+<p>然后 ROS 2 可以像控制真机器人一样控制 Gazebo 中的机器人。</p>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">ROS 2</span><br><span class="line">↓ /cmd_vel</span><br><span class="line">Gazebo 小车</span><br><span class="line"></span><br><span class="line">Gazebo 雷达</span><br><span class="line">↓ /scan</span><br><span class="line">ROS 2</span><br></pre></td></tr></table></figure>
+<p>Gazebo 建议学基础，但暂时不用钻太深。</p>
+<hr>
+<h1>20. Nav2</h1>
+<p>Nav2 是：</p>
+<blockquote>
+<p>ROS 2 的移动机器人导航系统。</p>
+</blockquote>
+<p>输入：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">地图</span><br><span class="line">雷达 /scan</span><br><span class="line">里程计 /odom</span><br><span class="line">TF</span><br><span class="line">目标位置</span><br></pre></td></tr></table></figure>
+<p>它负责：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">定位</span><br><span class="line">↓</span><br><span class="line">路径规划</span><br><span class="line">↓</span><br><span class="line">避障</span><br><span class="line">↓</span><br><span class="line">控制机器人</span><br><span class="line">↓</span><br><span class="line">到达目标</span><br></pre></td></tr></table></figure>
+<p>所以：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Gazebo</span><br><span class="line">= 模拟机器人和世界</span><br><span class="line"></span><br><span class="line">Nav2</span><br><span class="line">= 让机器人自主导航</span><br></pre></td></tr></table></figure>
+<p>Nav2 如果以后做：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">轮式小车</span><br><span class="line">巡检机器人</span><br><span class="line">配送机器人</span><br><span class="line">AMR</span><br></pre></td></tr></table></figure>
+<p>很重要。</p>
+<p>如果主要做：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">机械臂</span><br><span class="line">视觉</span><br><span class="line">强化学习</span><br></pre></td></tr></table></figure>
+<p>可以后学。</p>
+<hr>
+<h1>21. MuJoCo</h1>
+<p>MuJoCo 和 Gazebo 属于同类：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">物理仿真器</span><br></pre></td></tr></table></figure>
+<p>但是定位不同。</p>
+<p>粗略理解：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Gazebo</span><br><span class="line">更偏 ROS 机器人系统仿真</span><br><span class="line"></span><br><span class="line">MuJoCo</span><br><span class="line">更偏动力学、控制、强化学习</span><br></pre></td></tr></table></figure>
+<p>MuJoCo 常用：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">MJCF/XML</span><br></pre></td></tr></table></figure>
+<p>ROS 常用：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">URDF</span><br></pre></td></tr></table></figure>
+<p>MuJoCo 可以加载 URDF，但 MuJoCo 自己的 MJCF 一般不能直接作为：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">robot_state_publisher</span><br><span class="line">Gazebo</span><br></pre></td></tr></table></figure>
+<p>的机器人描述文件。</p>
+<p>如果主要学习：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">ROS 2</span><br><span class="line">↓</span><br><span class="line">Gazebo</span><br><span class="line">↓</span><br><span class="line">Nav2</span><br></pre></td></tr></table></figure>
+<p>优先使用 URDF。</p>
+<hr>
+<h1>22. 推荐的小项目</h1>
+<p>项目：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">mini_robot_ros2</span><br></pre></td></tr></table></figure>
+<p>目录：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">mini_robot_ros2/</span><br><span class="line">├── README.md</span><br><span class="line">└── src/</span><br><span class="line">    └── mini_robot/</span><br><span class="line">        ├── mini_robot/</span><br><span class="line">        │   ├── laser_publisher.py</span><br><span class="line">        │   └── laser_listener.py</span><br><span class="line">        │</span><br><span class="line">        ├── urdf/</span><br><span class="line">        │   └── mini_robot.urdf</span><br><span class="line">        │</span><br><span class="line">        ├── launch/</span><br><span class="line">        │   └── robot.launch.py</span><br><span class="line">        │</span><br><span class="line">        ├── package.xml</span><br><span class="line">        └── setup.py</span><br></pre></td></tr></table></figure>
+<p>功能：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">laser_publisher</span><br><span class="line">↓</span><br><span class="line">/laser_distance</span><br><span class="line">QoS: sensor_data</span><br><span class="line">↓</span><br><span class="line">laser_listener</span><br></pre></td></tr></table></figure>
+<p>同时：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">mini_robot.urdf</span><br><span class="line">↓</span><br><span class="line">robot_state_publisher</span><br><span class="line">↓</span><br><span class="line">base_link → laser_link TF</span><br></pre></td></tr></table></figure>
+<p>最后：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">/laser_distance</span><br><span class="line">/tf</span><br><span class="line">/tf_static</span><br><span class="line">↓</span><br><span class="line">rosbag</span><br></pre></td></tr></table></figure>
+<p>完整架构：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">mini_robot.urdf</span><br><span class="line">        ↓</span><br><span class="line">robot_state_publisher</span><br><span class="line">        ↓</span><br><span class="line">      /tf</span><br><span class="line">   /tf_static</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">laser_publisher</span><br><span class="line">        ↓</span><br><span class="line"> /laser_distance</span><br><span class="line">        ↓</span><br><span class="line">laser_listener</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/laser_distance</span><br><span class="line">/tf</span><br><span class="line">/tf_static</span><br><span class="line">        ↓</span><br><span class="line">      rosbag</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>23. 推荐学习顺序</h1>
+<p>目前：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Workspace / Package</span><br><span class="line">↓</span><br><span class="line">Node</span><br><span class="line">↓</span><br><span class="line">spin</span><br><span class="line">↓</span><br><span class="line">callback</span><br><span class="line">↓</span><br><span class="line">Topic</span><br><span class="line">↓</span><br><span class="line">Service</span><br><span class="line">↓</span><br><span class="line">Action</span><br><span class="line">↓</span><br><span class="line">TF</span><br></pre></td></tr></table></figure>
+<p>下一阶段：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">QoS</span><br><span class="line">↓</span><br><span class="line">URDF</span><br><span class="line">↓</span><br><span class="line">robot_state_publisher</span><br><span class="line">↓</span><br><span class="line">rosbag</span><br><span class="line">↓</span><br><span class="line">Gazebo 基础</span><br></pre></td></tr></table></figure>
+<p>如果以后做移动机器人：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">/cmd_vel</span><br><span class="line">/odom</span><br><span class="line">/scan</span><br><span class="line">TF</span><br><span class="line">↓</span><br><span class="line">Nav2</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>24. 当前最需要建立的 ROS 2 思维</h1>
+<p>不要把 ROS 2 理解成：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">很多命令</span><br><span class="line">很多 Python API</span><br><span class="line">很多配置文件</span><br></pre></td></tr></table></figure>
+<p>应该把它理解成：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">机器人由很多 Node 组成</span><br><span class="line"></span><br><span class="line">Node 通过</span><br><span class="line">Topic</span><br><span class="line">Service</span><br><span class="line">Action</span><br><span class="line">交换信息</span><br><span class="line"></span><br><span class="line">spin 负责等待事件</span><br><span class="line">callback 负责处理事件</span><br><span class="line"></span><br><span class="line">TF 负责统一坐标</span><br><span class="line"></span><br><span class="line">URDF 描述机器人身体</span><br><span class="line"></span><br><span class="line">robot_state_publisher</span><br><span class="line">把机器人身体结构变成 TF</span><br><span class="line"></span><br><span class="line">QoS 控制消息传输方式</span><br><span class="line"></span><br><span class="line">Launch 负责一次启动很多 Node</span><br><span class="line"></span><br><span class="line">rosbag 负责记录整个 ROS 数据流</span><br></pre></td></tr></table></figure>
+<p>最终一个真实机器人系统大概就是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">传感器 Node</span><br><span class="line">↓ Topic</span><br><span class="line"></span><br><span class="line">感知 Node</span><br><span class="line">↓ Topic</span><br><span class="line"></span><br><span class="line">导航 / 控制 Node</span><br><span class="line">↓ Topic / Action</span><br><span class="line"></span><br><span class="line">电机驱动 Node</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">同时：</span><br><span class="line">URDF + TF</span><br><span class="line">连接所有部件坐标</span><br><span class="line"></span><br><span class="line">Launch</span><br><span class="line">负责全部启动</span><br><span class="line"></span><br><span class="line">rosbag</span><br><span class="line">负责记录和调试</span><br></pre></td></tr></table></figure>
+<h2 id="一句话总览">一句话总览</h2>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Node 是工人</span><br><span class="line">Topic 是广播频道</span><br><span class="line">Service 是一次问答</span><br><span class="line">Action 是长期任务</span><br><span class="line">Callback 是事件来了之后执行的函数</span><br><span class="line">spin 是让 Node 一直值班</span><br><span class="line">TF 是坐标翻译器</span><br><span class="line">QoS 是通信规则</span><br><span class="line">URDF 是机器人身体说明书</span><br><span class="line">robot_state_publisher 把 URDF 变成 TF</span><br><span class="line">rosbag 是 ROS 录像机</span><br><span class="line">Gazebo 是虚拟机器人世界</span><br><span class="line">Nav2 是移动机器人的自主导航系统</span><br></pre></td></tr></table></figure>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2026-08-26</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2026/08/28/ros2%E5%85%A5%E9%97%A82/'>ros2入门2</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/08/18/%E8%8E%B7%E5%8F%96%E7%94%B5%E6%9C%BA%E5%8F%97%E5%8A%9B/">获取电机受力</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>

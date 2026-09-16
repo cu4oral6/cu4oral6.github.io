@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="海边生命力" />
+    <meta name="hexo-theme-A4" content="v1.9.8" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.jpg">
+    <title>xander&#39;s blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xander's blog" type="application/atom+xml">
+</head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+    <style>
+        body {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/images/bg.jpeg);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const bgImages = [
+                "/images/bg1.jpeg",
+                "/images/bg2.jpeg",
+                "/images/bg3.jpeg"
+            ];
+            const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+            
+            document.body.style.backgroundImage = `url(${randomBg})`;
+            
+            const paperElements = document.querySelectorAll('.paper');
+            paperElements.forEach(el => {
+                el.style.backgroundImage = `url(${randomBg})`;
+            });
+        });
+    </script>
+
+
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/favicon.jpg" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">xander&#39;s blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🏃首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    海边生命力
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2026-08-12</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：7分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">海边生命力｜今天下午拍摄执行方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E6%8B%8D%E6%91%84%E7%9B%AE%E6%A0%87"><span class="post-toc-text">一、拍摄目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%8A%E5%A4%A9%E4%B8%8B%E5%8D%88%E7%9A%84%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92"><span class="post-toc-text">二、今天下午的时间安排</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E6%9C%8D%E8%A3%85%E3%80%81%E9%81%93%E5%85%B7%E4%B8%8E%E7%8E%B0%E5%9C%BA%E5%87%86%E5%A4%87"><span class="post-toc-text">三、服装、道具与现场准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E7%8E%B0%E5%9C%BA%E5%8A%A8%E4%BD%9C%E6%8C%87%E5%AF%BC"><span class="post-toc-text">四、现场动作指导</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-%E8%BF%9B%E5%85%A5%E7%8A%B6%E6%80%81%EF%BC%9A%E8%B5%B0%E8%B5%B7%E6%9D%A5"><span class="post-toc-text">1. 进入状态：走起来</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-%E5%8D%8A%E8%BA%AB%E4%B8%8E%E8%BF%91%E6%99%AF%EF%BC%9A%E8%84%B8%E8%BD%AC-15%C2%B0%E2%80%9430%C2%B0"><span class="post-toc-text">2. 半身与近景：脸转 15°—30°</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-%E9%81%93%E5%85%B7%E5%8A%A8%E4%BD%9C%EF%BC%9A%E4%B8%8D%E8%A6%81%E7%9B%AF%E7%9D%80%E9%81%93%E5%85%B7%E6%91%86%E6%8B%8D"><span class="post-toc-text">3. 道具动作：不要盯着道具摆拍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-%E5%8A%A8%E6%80%81%E9%AB%98%E6%BD%AE%EF%BC%9A%E6%8A%8A%E2%80%9C%E7%94%9F%E5%91%BD%E5%8A%9B%E2%80%9D%E6%8B%8D%E5%87%BA%E6%9D%A5"><span class="post-toc-text">4. 动态高潮：把“生命力”拍出来</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%94%E3%80%81%E5%BF%85%E6%8B%8D%E6%B8%85%E5%8D%95"><span class="post-toc-text">五、必拍清单</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%AD%E3%80%81%E6%9E%84%E5%9B%BE%E4%B8%8E%E6%9B%9D%E5%85%89%E6%89%A7%E8%A1%8C"><span class="post-toc-text">六、构图与曝光执行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%83%E3%80%81%E5%AE%89%E5%85%A8%E4%B8%8E%E5%A4%87%E7%94%A8%E6%96%B9%E6%A1%88"><span class="post-toc-text">七、安全与备用方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%AB%E3%80%81%E5%8F%82%E8%80%83%E5%9B%BE%E7%89%87%E7%B4%A2%E5%BC%95"><span class="post-toc-text">八、参考图片索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#A-%E5%A7%BF%E5%8A%BF%E5%8F%82%E8%80%83%E6%88%AA%E5%9B%BE%EF%BC%9A%E7%94%A8%E4%BA%8E%E7%8E%B0%E5%9C%BA%E6%A8%A1%E4%BB%BF%E5%8A%A8%E4%BD%9C"><span class="post-toc-text">A. 姿势参考截图：用于现场模仿动作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#B-%E7%B2%89%E8%89%B2%E8%A3%99%E6%88%90%E7%89%87%E5%8F%82%E8%80%83%EF%BC%9A%E7%94%A8%E4%BA%8E%E7%A1%AE%E5%AE%9A%E7%94%BB%E9%9D%A2%E7%9B%AE%E6%A0%87"><span class="post-toc-text">B. 粉色裙成片参考：用于确定画面目标</span></a></li></ol></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h1>海边生命力｜今天下午拍摄执行方案</h1>
+<h2 id="一、拍摄目标">一、拍摄目标</h2>
+<p>这次不拍站定的标准游客照，重点拍出人物在海风、阳光和浪花里的真实反应：走、跑、回头、抬手、坐下、踩水、张开双臂。画面整体保持清透、明亮、轻松，粉色裙子和蓝色海面形成柔和对比。</p>
+<p><strong>成片关键词：</strong> 粉色、海风、笑容、裙摆、浪花、自由、生命力。</p>
+<p><strong>模特状态：</strong> 不要求一直看镜头。优先让她做连续动作，摄影师抓表情和裙摆自然变化。</p>
+<h2 id="二、今天下午的时间安排">二、今天下午的时间安排</h2>
+<p>以下时间以“日落前约 90 分钟”为基准，若实际日落时间不同，整体前后平移即可。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th style="text-align:right">用时</th>
+<th>拍摄内容</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>到场准备</td>
+<td style="text-align:right">15 分钟</td>
+<td>看潮位、选干净背景、整理裙摆和头发</td>
+<td>先确认安全路线，不急着下水</td>
+</tr>
+<tr>
+<td>热身适应</td>
+<td style="text-align:right">15 分钟</td>
+<td>沙滩走动、侧身、回头、整理头发</td>
+<td>让模特适应风和镜头</td>
+</tr>
+<tr>
+<td>静态与半身</td>
+<td style="text-align:right">25 分钟</td>
+<td>贝壳、花束、树枝框景、坐姿</td>
+<td>先拍干净、稳定的画面</td>
+</tr>
+<tr>
+<td>动态高潮</td>
+<td style="text-align:right">30 分钟</td>
+<td>奔跑、转身、张臂、踩浪、扬裙摆</td>
+<td>连拍，不要一个动作只拍一张</td>
+</tr>
+<tr>
+<td>低角度补拍</td>
+<td style="text-align:right">10 分钟</td>
+<td>贴近海面拍裙摆和浪花</td>
+<td>摄影师不要站在浪线内</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td style="text-align:right">10 分钟</td>
+<td>背影、看海、自然笑、离开海边</td>
+<td>留出安静画面，也检查是否漏拍</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三、服装、道具与现场准备">三、服装、道具与现场准备</h2>
+<ul>
+<li><strong>主服装</strong>：粉色裙子；提前确认裙摆长度，避免踩住裙边。</li>
+<li><strong>道具优先级</strong>：贝壳或小花束二选一即可；如果没有道具，用手捧海水、整理裙摆替代。</li>
+<li><strong>可选道具</strong>：草帽可以作为动作参考，但不要让帽子遮住脸；帽子只在一部分画面中出现。</li>
+<li><strong>必须携带</strong>：纸巾、毛巾、拖鞋、备用发绳、别针、透明防水袋、饮用水。</li>
+<li><strong>镜头建议</strong>：50mm 作为主力；有 24/35mm 时用于拍环境全身和奔跑画面。没有广角也没关系，摄影师后退拍即可。</li>
+<li><strong>相机机位</strong>：半身接近眼睛高度；全身大约在腰到胸口高度；动态时宁可多留一点裙摆和海面空间。</li>
+</ul>
+<h2 id="四、现场动作指导">四、现场动作指导</h2>
+<p>不要让模特一次性记很多姿势，每次只给一个简单指令，连续拍 5—10 张。</p>
+<h3 id="1-进入状态：走起来">1. 进入状态：走起来</h3>
+<p>口令可以这样说：</p>
+<blockquote>
+<p>“先别看我，沿着海边慢慢走。走三步以后回头看我，再把头转回海面。”</p>
+</blockquote>
+<ul>
+<li>身体朝海，脸回到镜头方向；</li>
+<li>一只手整理头发或裙摆，另一只手自然下垂；</li>
+<li>连续拍“看海—回头—笑—再看海”；</li>
+<li>不要让她停住摆出僵硬的正面站姿。</li>
+</ul>
+<p>参考：<code>IMG_5699.PNG</code>、<code>IMG_5700.PNG</code>、<code>IMG_5701.PNG</code>、<code>IMG_5711.HEIC</code>、<code>IMG_5718.HEIC</code>。</p>
+<h3 id="2-半身与近景：脸转-15°—30°">2. 半身与近景：脸转 15°—30°</h3>
+<ul>
+<li>身体先侧 30°—45°；</li>
+<li>脸再转回来找镜头；</li>
+<li>下巴微收，不要用力低头；</li>
+<li>相机比眼睛高约 5—10 cm，模特轻轻抬眼；</li>
+<li>拍“看镜头—看旁边—低头—回头”的连续变化。</li>
+</ul>
+<p>参考：<code>IMG_5704.PNG</code>、<code>IMG_5705.PNG</code>、<code>IMG_5707.PNG</code>、<code>IMG_5710.HEIC</code>、<code>IMG_5712.HEIC</code>、<code>IMG_5716.HEIC</code>、<code>IMG_5717.HEIC</code>、<code>IMG_5719.HEIC</code>。</p>
+<h3 id="3-道具动作：不要盯着道具摆拍">3. 道具动作：不要盯着道具摆拍</h3>
+<p>贝壳或花束只需要给手一个事情做：</p>
+<ul>
+<li>低头看贝壳，再抬眼看海；</li>
+<li>把贝壳靠近脸，但不要挡住眼睛；</li>
+<li>把花束放在胸前，身体侧向海面；</li>
+<li>抱着花束走两步，再回头笑；</li>
+<li>拍一张手部、道具和裙摆的近景。</li>
+</ul>
+<p>参考：<code>IMG_5709.HEIC</code>、<code>IMG_5710.HEIC</code>、<code>IMG_5713.HEIC</code>、<code>IMG_5714.HEIC</code>、<code>IMG_5716.HEIC</code>、<code>IMG_5717.HEIC</code>。</p>
+<h3 id="4-动态高潮：把“生命力”拍出来">4. 动态高潮：把“生命力”拍出来</h3>
+<p>按难度从低到高执行：</p>
+<ol>
+<li>迎风抬手，头发被吹起来时连拍；</li>
+<li>向镜头走来，走到第三步时回头；</li>
+<li>向海边跑 3—5 步，摄影师平移或后退跟拍；</li>
+<li>在浅水边抬腿、踢起一点水花；</li>
+<li>张开双臂迎着海浪，动作结束后自然大笑；</li>
+<li>双手提起裙摆，在浪线外转半圈；</li>
+<li>最后拍一次从海边走回来的背影。</li>
+</ol>
+<p>参考：<code>IMG_5715.HEIC</code>、<code>IMG_5718.HEIC</code>、<code>IMG_5720.HEIC</code>、<code>IMG_5721.HEIC</code>。</p>
+<p><strong>摄影师注意：</strong> 动作开始前先对焦并预留快门速度；每个动作至少连拍一组，不要只等“标准姿势”。人物表情比动作幅度更重要。</p>
+<h2 id="五、必拍清单">五、必拍清单</h2>
+<p>今天至少完成下面 12 类画面，每类选出 1—3 张即可：</p>
+<ul>
+<li>[ ] 环境全身：人物在蓝天、海面和沙滩之间，交代地点。</li>
+<li>[ ] 侧身迎风：身体朝海，脸回头看镜头。</li>
+<li>[ ] 近景笑容：头发被风吹起，背景保持干净。</li>
+<li>[ ] 坐在海边：手捧贝壳或花束，拍自然聊天感。</li>
+<li>[ ] 树枝框景：人物置于枝条或自然前景后面。</li>
+<li>[ ] 走向海边：裙摆和脚步有连续变化。</li>
+<li>[ ] 回头：背对镜头走几步后回头笑。</li>
+<li>[ ] 张臂：人物与海浪同框，表现情绪释放。</li>
+<li>[ ] 踩浪：只到脚踝或浅水处，抓水花和裙摆。</li>
+<li>[ ] 扬裙摆：留足裙摆运动空间，避免裁掉手脚。</li>
+<li>[ ] 道具特写：贝壳、花束、手和裙子形成细节画面。</li>
+<li>[ ] 安静收尾：背影或侧脸看海，不再安排大动作。</li>
+</ul>
+<h2 id="六、构图与曝光执行">六、构图与曝光执行</h2>
+<ul>
+<li><strong>海平线</strong>：全身照尽量保持水平；人物头部不要正好落在海平线上。</li>
+<li><strong>天空比例</strong>：想拍轻盈感时多留天空；想突出人物时减少天空，把裙摆放在画面下方。</li>
+<li><strong>逆光</strong>：可以拍，但先保证脸部不死黑；必要时让模特侧向光线，或用反光板补脸。</li>
+<li><strong>动态快门</strong>：跑动、甩裙和踩水建议使用较快快门，避免裙摆和手臂糊掉。</li>
+<li><strong>低机位</strong>：相机可以降低到膝盖附近拍全身，但不要用明显低机位近距离怼脸。</li>
+<li><strong>默认机位</strong>：身体侧 45° → 脸回 15°—20° → 镜头接近眼睛高度 → 摄影师后退一点拍。</li>
+</ul>
+<h2 id="七、安全与备用方案">七、安全与备用方案</h2>
+<ul>
+<li>只在平缓、干净、确认安全的浅水区拍；水深控制在脚踝附近，不追求大浪。</li>
+<li>礁石、湿滑地面和退潮后的青苔区域不安排奔跑、跳跃和转身。</li>
+<li>裙子一旦被浪打湿，先拍湿裙效果，再立即换干鞋或擦脚，避免着凉和滑倒。</li>
+<li>如果风太大，取消帽子和大幅跑动，改拍侧脸、头发、裙摆和手部细节。</li>
+<li>如果阳光太硬，先拍树影框景、侧逆光和近景；等光线变柔后再拍海边全身。</li>
+<li>如果不能下水，使用“走向海边—回头—张臂—坐在沙滩”的动作组合，也能完成整组片子。</li>
+</ul>
+<h2 id="八、参考图片索引">八、参考图片索引</h2>
+<h3 id="A-姿势参考截图：用于现场模仿动作">A. 姿势参考截图：用于现场模仿动作</h3>
+<ul>
+<li><code>IMG_5698.PNG</code>：开场标题，核心提示是“让人物动起来”。<br>
+<a href="IMG_5698.PNG" title="IMG_5698.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5698.PNG" alt="IMG_5698.PNG"></a></li>
+<li><code>IMG_5699.PNG</code>：侧身伸展、抬头迎风。<br>
+<a href="IMG_5699.PNG" title="IMG_5699.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5699.PNG" alt="IMG_5699.PNG"></a></li>
+<li><code>IMG_5700.PNG</code>：提包奔跑、拍裙摆运动轨迹。<br>
+<a href="IMG_5700.PNG" title="IMG_5700.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5700.PNG" alt="IMG_5700.PNG"></a></li>
+<li><code>IMG_5701.PNG</code>：手持草帽向海边走动。<br>
+<a href="IMG_5701.PNG" title="IMG_5701.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5701.PNG" alt="IMG_5701.PNG"></a></li>
+<li><code>IMG_5702.PNG</code>：躺姿或低机位仰拍。<br>
+<a href="IMG_5702.PNG" title="IMG_5702.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5702.PNG" alt="IMG_5702.PNG"></a></li>
+<li><code>IMG_5703.PNG</code>：正面站立与轻微走动。<br>
+<a href="IMG_5703.PNG" title="IMG_5703.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5703.PNG" alt="IMG_5703.PNG"></a></li>
+<li><code>IMG_5704.PNG</code>：手靠近镜头的互动近景。<br>
+<a href="IMG_5704.PNG" title="IMG_5704.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5704.PNG" alt="IMG_5704.PNG"></a></li>
+<li><code>IMG_5705.PNG</code>：单手扶帽、看向镜头。<br>
+<a href="IMG_5705.PNG" title="IMG_5705.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5705.PNG" alt="IMG_5705.PNG"></a></li>
+<li><code>IMG_5706.PNG</code>：举手与抬头。<br>
+<a href="IMG_5706.PNG" title="IMG_5706.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5706.PNG" alt="IMG_5706.PNG"></a></li>
+<li><code>IMG_5707.PNG</code>：碰帽檐、身体微侧。<br>
+<a href="IMG_5707.PNG" title="IMG_5707.PNG" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5707.PNG" alt="IMG_5707.PNG"></a></li>
+</ul>
+<h3 id="B-粉色裙成片参考：用于确定画面目标">B. 粉色裙成片参考：用于确定画面目标</h3>
+<ul>
+<li><code>IMG_5708.HEIC</code>：环境与人物组合，参考开场构图。<br>
+<a href="IMG_5708.HEIC" title="IMG_5708.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5708.HEIC" alt="IMG_5708.HEIC"></a></li>
+<li><code>IMG_5709.HEIC</code>：坐在海边、手捧贝壳。<br>
+<a href="IMG_5709.HEIC" title="IMG_5709.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5709.HEIC" alt="IMG_5709.HEIC"></a></li>
+<li><code>IMG_5710.HEIC</code>：手捧贝壳的近景。<br>
+<a href="IMG_5710.HEIC" title="IMG_5710.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5710.HEIC" alt="IMG_5710.HEIC"></a></li>
+<li><code>IMG_5711.HEIC</code>：走入浅水区的安静全身照。<br>
+<a href="IMG_5711.HEIC" title="IMG_5711.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5711.HEIC" alt="IMG_5711.HEIC"></a></li>
+<li><code>IMG_5712.HEIC</code>：靠近镜头微笑。<br>
+<a href="IMG_5712.HEIC" title="IMG_5712.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5712.HEIC" alt="IMG_5712.HEIC"></a></li>
+<li><code>IMG_5713.HEIC</code>：树枝框景与坐姿。<br>
+<a href="IMG_5713.HEIC" title="IMG_5713.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5713.HEIC" alt="IMG_5713.HEIC"></a></li>
+<li><code>IMG_5714.HEIC</code>：坐在海边自然笑。<br>
+<a href="IMG_5714.HEIC" title="IMG_5714.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5714.HEIC" alt="IMG_5714.HEIC"></a></li>
+<li><code>IMG_5715.HEIC</code>：浪花中张开双臂。<br>
+<a href="IMG_5715.HEIC" title="IMG_5715.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5715.HEIC" alt="IMG_5715.HEIC"></a></li>
+<li><code>IMG_5716.HEIC</code>：侧脸、贝壳和海浪。<br>
+<a href="IMG_5716.HEIC" title="IMG_5716.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5716.HEIC" alt="IMG_5716.HEIC"></a></li>
+<li><code>IMG_5717.HEIC</code>：手捧花束的半身肖像。<br>
+<a href="IMG_5717.HEIC" title="IMG_5717.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5717.HEIC" alt="IMG_5717.HEIC"></a></li>
+<li><code>IMG_5718.HEIC</code>：张臂奔向海边。<br>
+<a href="IMG_5718.HEIC" title="IMG_5718.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5718.HEIC" alt="IMG_5718.HEIC"></a></li>
+<li><code>IMG_5719.HEIC</code>：低机位动态近景。<br>
+<a href="IMG_5719.HEIC" title="IMG_5719.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5719.HEIC" alt="IMG_5719.HEIC"></a></li>
+<li><code>IMG_5720.HEIC</code>：沙滩上的全身动态。<br>
+<a href="IMG_5720.HEIC" title="IMG_5720.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5720.HEIC" alt="IMG_5720.HEIC"></a></li>
+<li><code>IMG_5721.HEIC</code>：水边扬起裙摆。<br>
+<a href="IMG_5721.HEIC" title="IMG_5721.HEIC" class="gallery-item" style="box-shadow: none;"> <img src="IMG_5721.HEIC" alt="IMG_5721.HEIC"></a></li>
+</ul>
+<blockquote>
+<p>HEIC 是原始参考图格式。现场拍摄时以动作和构图为准，不需要逐张复制；优先完成“静态—走动—道具—踩水—背影”五个阶段。</p>
+</blockquote>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2026-08-12</span>
+            
+                <span>该篇文章被 xander</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E6%B5%B7%E8%BE%B9%E5%86%99%E7%9C%9F/'>
+                            海边写真
+                        </a>
+                    
+                        <a href='/tags/%E4%BA%BA%E5%83%8F%E6%91%84%E5%BD%B1/'>
+                            人像摄影
+                        </a>
+                    
+                        <a href='/tags/%E6%8B%8D%E7%85%A7%E5%A7%BF%E5%8A%BF/'>
+                            拍照姿势
+                        </a>
+                    
+                        <a href='/tags/%E7%B2%89%E8%89%B2%E8%A3%99%E5%AD%90/'>
+                            粉色裙子
+                        </a>
+                    
+                        <a href='/tags/%E6%97%85%E8%A1%8C%E6%8B%8D%E7%85%A7/'>
+                            旅行拍照
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E6%91%84%E5%BD%B1%E7%AD%96%E5%88%92/'>
+                            摄影策划
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2026/08/18/%E8%8E%B7%E5%8F%96%E7%94%B5%E6%9C%BA%E5%8F%97%E5%8A%9B/'>获取电机受力</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2026/08/12/%E6%B5%B7%E8%BE%B9%E7%BA%A2%E8%A3%99%E5%AD%90/">海边红裙子</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2025 China 
+
+            
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    wrapEmojis('.paper');
+  });
+</script>
